@@ -23,14 +23,14 @@ class Category{
 
     /**
      * @var string
-     *
+     * maxlength, striptags, isString, unique
      * @ORM\Column(name="name", type="string", length=75)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * maxlength, striptags, isString
      * @ORM\Column(name="summary", type="text")
      */
     private $summary;
