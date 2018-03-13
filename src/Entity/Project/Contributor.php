@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Contributor
  *
  * @ORM\Entity
- * @ORM\Table(name="contributor")
+ * @ORM\Table(name="project_contributor")
  */
 class Contributor{
 
@@ -24,16 +24,9 @@ class Contributor{
     /**
      * @var string
      *
-     * @ORM\Column(name="first_name", type="string", length=75)
+     * @ORM\Column(name="name", type="string", length=75)
      */
-    private $firstName;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="last_name", type="string", length=75)
-     */
-    private $lastName;
+    private $name;
 
     /**
      * @var string
@@ -41,6 +34,16 @@ class Contributor{
      * @ORM\Column(name="role", type="string")
      */
     private $role;
+
+    /**
+     * @var Project
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Project\Project",
+     *     mappedBy="contributors"
+     * )
+     */
+    private $project;
 
     /**
      * Get id
@@ -52,43 +55,23 @@ class Contributor{
     }
 
     /**
-     * Get firstName
+     * Get name
      *
      * @return string
      */
-    public function getFirstName()
+    public function getName()
     {
-        return $this->firstName;
+        return $this->name;
     }
 
     /**
-     * Set firstName
+     * Set name
      *
-     * @param string $firstName
+     * @param string $name
      */
-    public function setFirstName(string $firstName)
+    public function setName(string $name)
     {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * Get lastName
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * Set lastName
-     *
-     * @param string $lastName
-     */
-    public function setLastName(string $lastName)
-    {
-        $this->lastName = $lastName;
+        $this->name = $name;
     }
 
     /**
@@ -109,6 +92,22 @@ class Contributor{
     public function setRole(string $role)
     {
         $this->role = $role;
+    }
+
+    /**
+     * @return Project
+     */
+    public function getProject(): Project
+    {
+        return $this->project;
+    }
+
+    /**
+     * @param Project $project
+     */
+    public function setProject(Project $project)
+    {
+        $this->project = $project;
     }
 
 }

@@ -1,6 +1,5 @@
 <?php
-
-namespace AppBundle\Entity\Media;
+namespace App\Entity\Media;
 
 use Doctrine\ORM\Mapping as ORM;
 

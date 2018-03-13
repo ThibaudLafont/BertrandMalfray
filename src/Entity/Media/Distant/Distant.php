@@ -1,9 +1,8 @@
 <?php
-
-namespace AppBundle\Entity\Media\Distant;
+namespace App\Entity\Media\Distant;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Media\File;
+use App\Entity\Media\File;
 
 /**
  * Distant

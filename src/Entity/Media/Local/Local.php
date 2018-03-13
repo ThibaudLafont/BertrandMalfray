@@ -1,9 +1,8 @@
 <?php
-
-namespace AppBundle\Entity\Media\Local;
+namespace App\Entity\Media\Local;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Media\File;
+use App\Entity\Media\File;
 
 /**
  * Local

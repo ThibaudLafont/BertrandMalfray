@@ -1,0 +1,99 @@
+Level Design: 
+    summary: Dummy Text
+
+Projects: 
+    Map Unreal Tournament: 
+      init_date: 15-09-2016
+      end_date: 01-10-2016
+      roles: [Level Design, Game Design]
+      summary: <p>Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.</p>
+        <p>La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).</p>
+      content:
+        <h2>Note d'intention</h2>
+        <p>La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range.
+        Mais cette zone est très ouverte, ce qui incite le joueur a utilisé des armes mi-distance, quand un ennemi est du même côté que le joueur. </p>
+        <p>Des couloirs font le tour, afin de récupérer armes/munitions/soins, ces couloirs sont des zones de corps à corps,
+        et sont des zones plus sûres pour se régénérer. Certains gardent une grande visibilité pour permettre d’utiliser aussi des armes mi-distance. </p>
+        <p>Il y a des wall dodge, wall slide, lift jump pour atteindre des bonus, mais ils restent toujours atteignable,
+        par d’autres chemins si le joueur ne maîtrise pas ces features. </p>
+        <h2>Explication</h2>
+        <p>Cette map est faite pour du Deathmatch, une autre contrainte, puisque les spawn des joueurs doivent être bien timé, pour ne pas favoriser un joueur.
+        Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu. </p>
+        <p>Dans Unreal Tournament, la verticalité est très utilisé, j’ai choisi de placer des “base jump” pour changer très rapidement d’étage, et ainsi ne pas casser le flow comme pourrait le faire des ascenseurs. </p>
+        <p>Le plus gros bonus, le “Berserker”, se situe au milieu de la map, dans le bâtiment central. Des couloirs font le tour de ce bâtiment, on y trouve armes/soin/munitions. </p>
+        <p>La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).</p>
+        <h2>Event</h2>
+        <p>L’event de la map ”Brouillard” a été pensé pour réduire la visibilité du joueur et ainsi l’inciter à utiliser des armes corps à corps.
+        Au départ, le brouillard devait être empoisonné et retirer 1 point de vie par seconde pendant 50 secondes, afin de réduire de moitié la vie de tous les joueurs.
+        Mais les joueurs trouvaient cela frustrant alors l’empoisonnement a été enlevé. </p>
+      medias:
+        local:
+          1:
+            name: UT-Spacebase41Map01
+            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+            extension: .jpg
+          2:
+            name: Planche-Rendu-Map
+            alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+            extension: .jpg
+          3:
+            name: Preview_Spacebase41
+            alt : Turn-around de DM Spacebase41 sur unreal tournament.
+            extension: .mp4
+          4:
+            name: Gameplay_Spacebase41
+            alt : Présentation de l'obtention des différents pick-ups de DM Spacebase41 sur unreal tournament.
+            extension: .mp4
+          5:
+            name: CheminCritique_Spacebase41
+            alt : Présentation du chemin principal de l'obtention de toutes les armes de DM Spacebase41 sur unreal tournament.
+            extension: .mp4
+          6:
+            name: Planche_rendu_modules
+            alt : Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
+            extension: .jpg
+    Arma 3: 
+      init_date: 01-10-2016
+      end_date: 01-03-2017
+      summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
+      content:
+        <h2>Note d'intention</h2>
+        <p>Dans la campagne Arma, j’ai été en charge de la 4eme mission. </p>
+        <p>Dans cette mission, je voulais que les joueurs soient conscient du déroulement du scénario dans lequel ils évoluent. </p>
+        <p>Etant un joueur qui aime jouer en assaut, j’ai voulu faire une mission avec beaucoup d’action pour cette classe, mais en laissant des spots pour qu’un sniper puisse s’amuser. </p>
+        <p>Les joueurs devaient constamment être sous pression à partir de la première zone d’action et rester ainsi tout le long de la mission.
+        Tanoa étant très forestière comparé à Altis, le joueur a plus de difficulté à détecter les ennemis, ce qui a aider à monter et garder ce stress. </p>
+        <p>Un timer a été mis en place après la première action et les joueurs doivent effectuer une activité avant la fin de celui-ci.
+        Juste le fait d’afficher un timer toutes les minutes laisse les joueurs en état de stress. </p>
+        <p>La mission est basée sur de la défense, il y en a deux, la première est une embuscade réalisé sur les joueurs par le Syndikat.
+        La deuxième, par contre ce sont les joueurs qui attendent que l’AAF passe à l’action. Ce sont deux approches différentes de défense pour avoir de la variété sur une même activité. </p>
+        <p>Il y a bien sûr plus d’ennemis à la deuxième défense, il faut que les joueurs se dépassent et travaillent leurs skills. </p>
+        <h2>Story</h2>
+        <h3>Background</h3>
+        <p>Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
+        pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
+        installer une base dangereuse pour ses rivaux. </p>
+        <p>Pour éviter une crise planétaire, ces deux superpuissances travaillent avec des forces milicienne. Le NATO emploie l’AAF, un groupe d’Altis contraint d’exécuter les ordres des
+        Nations Unies et envoyé pour asservir l’île. Le CSAT, eux, ont réussi à prendre le contrôle d’un groupe de rebelle indépendantiste de Tanoa, le Syndikat, qui lutte contre la prise de
+        pouvoir de NATO. </p>
+        <h3>Scénario</h3>
+        <p>L’escouade est envoyée en mission afin de trouver comment le Syndikat se fournit en armes afin d’aider l’AAF envoyé sur Tanoa. En s'apercevant que le CSAT fournit des armes aux
+        indépendantiste de Tanoa, le Blufor décide de faire exploser un entrepôt de munitions Opfor situé sur Altis. </p>
+        <p>Sur cette île, un commandant de la milice d’Altis envoie un ordre, détruire un convoi du Syndikat. Malheureusement, le commandant en question, se sert des Nations Unies pour
+        arriver à ces fins, prendre le contrôle de l’AAF afin de se libérer de l’emprise qu’a NATO sur Altis. L’un des passagers du convoi est le supérieur du commandant. </p>
+        <p>Suite à cette assassinat, un appel est envoyé, les Blufor établis sur Tanoa luttent contre l’AAF qui s’est rangé du côté du Syndikat et du CSAT </p>
+        <h3>Ma mission</h3>
+        <p>Arrivée sur l’île, en se dirigeant vers la base, l’escouade est pris en embuscade et est obligé de fuir jusqu’à la base pour rejoindre
+        leur commandant et ainsi établir un plan pour contrer les menaces de la fusion des groupes AAF et Syndikat.
+        <h3>Fin</h3>
+        <p>Une fois que les Nations Unies ont établis leur ordre de priorité, elle envoie l’escouade tuer le chef Syndikat. </p>
+        <p>Enfin, le NATO débarque sur Georgestown afin d’anéantir les derniers traîtres AAF sur l’île, et ainsi obtenir la suprématie de Tanoa. </p>
+      medias:
+        local:
+          1:
+            name: 01_VideoCampagneBlackFox
+            alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
+            extension: .mp4
+      contributors:
+        Alex Mitard: Level Designer
+        John Doe: Créateur de textures

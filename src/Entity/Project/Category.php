@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Category
  *
  * @ORM\Entity
- * @ORM\Table(name="category")
+ * @ORM\Table(name="project_category")
  */
 class Category{
 
@@ -34,6 +34,30 @@ class Category{
      * @ORM\Column(name="summary", type="text")
      */
     private $summary;
+
+    /**
+     * Distant medias of category
+     *
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Media\Distant\Category",
+     *     mappedBy="category"
+     * )
+     */
+    private $distantMedias;
+
+    /**
+     * Category's projects
+     *
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Project\Project",
+     *     mappedBy="category"
+     * )
+     */
+    private $projects;
 
     /**
      * Get id
@@ -82,6 +106,38 @@ class Category{
     public function setSummary(string $summary)
     {
         $this->summary = $summary;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistantMedias()
+    {
+        return $this->distantMedias;
+    }
+
+    /**
+     * @param mixed $distantMedias
+     */
+    public function setDistantMedias($distantMedias)
+    {
+        $this->distantMedias = $distantMedias;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    /**
+     * @param mixed $projects
+     */
+    public function setProjects($projects)
+    {
+        $this->projects = $projects;
     }
 
 }
