@@ -2,14 +2,14 @@
 namespace App\Entity\Media\Distant;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Media\File;
+use App\Entity\Media\Media;
 
 /**
  * Distant
  *
  * @ORM\MappedSuperclass()
  */
-abstract class Distant extends File
+abstract class Distant extends Media
 {
 
     /**

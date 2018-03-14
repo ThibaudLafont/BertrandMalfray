@@ -2,14 +2,14 @@
 namespace App\Entity\Media\Local;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Media\File;
+use App\Entity\Media\Media;
 
 /**
  * Local
  *
  * @ORM\MappedSuperclass()
  */
-abstract class Local extends File
+abstract class Local extends Media
 {
     /**
      * @var string

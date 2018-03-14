@@ -5,11 +5,11 @@ use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * File
+ * Media
  *
  * @ORM\MappedSuperclass()
  */
-abstract class File
+abstract class Media
 {
     /**
      * @var int
@@ -33,13 +33,6 @@ abstract class File
      * @ORM\Column(name="alt", type="string", length=255)
      */
     private $alt;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="type", type="integer")
-     */
-    private $type;
 
     // Traits
     use Hydrate;
@@ -101,29 +94,5 @@ abstract class File
     public function getAlt()
     {
         return $this->alt;
-    }
-
-    /**
-     * Set type.
-     *
-     * @param int $type
-     *
-     * @return File
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type.
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 }
