@@ -28,6 +28,13 @@ trait Hydrate
         }
     }
 
+    /**
+     * Name converter
+     * Convert snake_case to camelCase
+     *
+     * @param string $string
+     * @return string
+     */
     private function snakeToCamel(string $string)
     {
         // Init empty var

@@ -1,7 +1,8 @@
-Level Design: 
+category:
+    name: Level Design
     summary: Dummy Text
 
-Projects: 
+projects:
     Map Unreal Tournament: 
       init_date: 15-09-2016
       end_date: 01-10-2016

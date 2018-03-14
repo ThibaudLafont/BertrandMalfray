@@ -39,9 +39,10 @@ class Contributor{
     /**
      * @var Project
      *
-     * @ORM\OneToMany(
+     * @ORM\ManyToOne(
      *     targetEntity="\App\Entity\Project\Project",
-     *     mappedBy="contributors"
+     *     inversedBy="contributors",
+     *     cascade={"persist"}
      * )
      */
     private $project;
