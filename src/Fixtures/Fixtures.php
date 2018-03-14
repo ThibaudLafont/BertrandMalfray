@@ -4,8 +4,10 @@ namespace App\Fixtures;
 use App\Entity\Project\Category;
 use App\Entity\Project\Contributor;
 use App\Entity\Project\Project;
+use App\Service\Sluggifier;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -22,6 +24,16 @@ class Fixtures extends Fixture
     private $manager;
 
     /**
+     * @var Sluggifier
+     */
+    private $sluggifier;
+
+    public function __construct(Sluggifier $sluggifier)
+    {
+        $this->setSluggifier($sluggifier);
+    }
+
+    /**
      * Load data fixtures with the passed EntityManager
      *
      * @param ObjectManager $manager
@@ -36,8 +48,8 @@ class Fixtures extends Fixture
         $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
-        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-        $this->loadCategoryProjects($datas);
+//        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
+//        $this->loadCategoryProjects($datas);
 
         // Flush results
         $manager->flush();
@@ -67,6 +79,22 @@ class Fixtures extends Fixture
             $project->setCategory($category);
             // Persist Project
             $manager->persist($project);
+
+            // Check if project has medias
+            if(isset($v['medias'])) {
+                // Check if project has local medias
+                if(isset($v['medias']['local'])) {
+                    foreach($v['medias']['local'] as $k => $v) {
+
+                        // Create Local and set Project
+                        $local = $this->createLocal($k, $v);
+                        $local->setProject($project);
+
+                        $manager->persist($local);
+
+                    }
+                }
+            }
 
             // Check if Project has Contributors
             if(isset($v['ext_contributors'])) {
@@ -142,6 +170,25 @@ class Fixtures extends Fixture
 
     }
 
+    private function createLocal(int $position, array $datas)
+    {
+        // Create Project Local
+        $local = new \App\Entity\Media\Local\Project();
+        $local->hydrate($datas);
+        $local->setPath('/web/img/leveldesign/');
+
+        $file = new File(
+            '/var/www/html/src/Fixtures/data/medias/leveldesign/'
+            . $datas['name']
+            . '.'
+            . $datas['extension']
+        );
+        $local->setFile($file);
+        $local->setSlugName($this->getSluggifier()->sluggify($datas['name']));
+
+        return $local;
+    }
+
     /**
      * Get manager
      *
@@ -160,6 +207,22 @@ class Fixtures extends Fixture
     public function setManager(ObjectManager $manager)
     {
         $this->manager = $manager;
+    }
+
+    /**
+     * @return Sluggifier
+     */
+    public function getSluggifier(): Sluggifier
+    {
+        return $this->sluggifier;
+    }
+
+    /**
+     * @param Sluggifier $sluggifier
+     */
+    public function setSluggifier(Sluggifier $sluggifier)
+    {
+        $this->sluggifier = $sluggifier;
     }
 
 }

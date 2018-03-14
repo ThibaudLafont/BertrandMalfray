@@ -3,6 +3,8 @@ namespace App\Entity\Media\Local;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Media\Media;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Local
@@ -31,6 +33,11 @@ abstract class Local extends Media
      * @ORM\Column(name="path", type="string", length=255)
      */
     private $path;
+
+    /**
+     * @var File|UploadedFile
+     */
+    private $file;
 
     /**
      * Set slugName.
@@ -102,5 +109,25 @@ abstract class Local extends Media
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Get file
+     *
+     * @return File|UploadedFile
+     */
+    public function getFile() : File
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set file
+     *
+     * @param File|UploadedFile $file
+     */
+    public function setFile(File $file)
+    {
+        $this->file = $file;
     }
 }

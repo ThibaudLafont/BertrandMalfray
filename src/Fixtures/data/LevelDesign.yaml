@@ -32,27 +32,11 @@ projects:
           1:
             name: UT-Spacebase41Map01
             alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-            extension: .jpg
+            extension: jpg
           2:
             name: Planche-Rendu-Map
             alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
-            extension: .jpg
-          3:
-            name: Preview_Spacebase41
-            alt : Turn-around de DM Spacebase41 sur unreal tournament.
-            extension: .mp4
-          4:
-            name: Gameplay_Spacebase41
-            alt : Présentation de l'obtention des différents pick-ups de DM Spacebase41 sur unreal tournament.
-            extension: .mp4
-          5:
-            name: CheminCritique_Spacebase41
-            alt : Présentation du chemin principal de l'obtention de toutes les armes de DM Spacebase41 sur unreal tournament.
-            extension: .mp4
-          6:
-            name: Planche_rendu_modules
-            alt : Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
-            extension: .jpg
+            extension: jpg
     Arma 3: 
       init_date: 01-10-2016
       end_date: 01-03-2017
@@ -89,12 +73,6 @@ projects:
         <h3>Fin</h3>
         <p>Une fois que les Nations Unies ont établis leur ordre de priorité, elle envoie l’escouade tuer le chef Syndikat. </p>
         <p>Enfin, le NATO débarque sur Georgestown afin d’anéantir les derniers traîtres AAF sur l’île, et ainsi obtenir la suprématie de Tanoa. </p>
-      medias:
-        local:
-          1:
-            name: 01_VideoCampagneBlackFox
-            alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
-            extension: .mp4
       ext_contributors:
         Alex Mitard: Level Designer
         John Doe: Créateur de textures
