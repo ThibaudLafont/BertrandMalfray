@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
@@ -85,6 +86,9 @@ class Project{
      * )
      */
     private $contributors;
+
+    // Traits
+    use Hydrate;
 
     public function __construct()
     {

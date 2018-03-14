@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,6 +49,9 @@ class User{
      * Used for login form submission
      */
     private $plainPassword;
+
+    // Traits
+    use Hydrate;
 
     /**
      * Get id

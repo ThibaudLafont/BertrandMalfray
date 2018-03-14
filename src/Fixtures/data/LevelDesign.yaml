@@ -94,6 +94,6 @@ Projects:
             name: 01_VideoCampagneBlackFox
             alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
             extension: .mp4
-      contributors:
+      ext_contributors:
         Alex Mitard: Level Designer
         John Doe: Créateur de textures

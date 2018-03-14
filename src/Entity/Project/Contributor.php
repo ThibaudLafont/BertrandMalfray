@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -44,6 +45,9 @@ class Contributor{
      * )
      */
     private $project;
+
+    // Traits
+    use Hydrate;
 
     /**
      * Get id

@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -58,6 +59,9 @@ class Category{
      * )
      */
     private $projects;
+
+    // Traits
+    use Hydrate;
 
     /**
      * Get id

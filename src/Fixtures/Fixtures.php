@@ -38,10 +38,8 @@ class Fixtures extends Fixture
             // Create&Hydrate Project
             $project = new Project();
             $project->setName($k);
-            $project->setInitDate($v['init_date']);
-            $project->setEndDate($v['end_date']);
-            $project->setSummary($v['summary']);
-            $project->setContent($v['content']);
+            $project->hydrate($v);
+            // Assign category
             $project->setCategory($category);
 
             // Check if Project has Contributors

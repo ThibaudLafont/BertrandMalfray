@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Media;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,6 +40,9 @@ abstract class File
      * @ORM\Column(name="type", type="integer")
      */
     private $type;
+
+    // Traits
+    use Hydrate;
 
 
     /**
