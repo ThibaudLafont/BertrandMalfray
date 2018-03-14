@@ -33,16 +33,23 @@ class Fixtures extends Fixture
 
         // Load and parse LD YAML file
         $datas = Yaml::parse(file_get_contents(__DIR__ . '/data/LevelDesign.yaml'));
-        $this->loadProjects($datas);
+        $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
         $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-        $this->loadProjects($datas);
+        $this->loadCategoryProjects($datas);
 
+        // Flush results
         $manager->flush();
     }
 
-    private function loadProjects(array $datas)
+    /**
+     * From YAML::parse, init and persist objects
+     * General method for persist Category, Projects, Medias, Contributors
+     *
+     * @param array $datas
+     */
+    private function loadCategoryProjects(array $datas)
     {
         // Get manager
         $manager = $this->getManager();
@@ -75,11 +82,16 @@ class Fixtures extends Fixture
                     $manager->persist($contributor);
 
                 }
-
             }
         }
     }
 
+    /**
+     * Create and Hydrate Category from array
+     *
+     * @param array $datas
+     * @return Category
+     */
     private function createCategory(array $datas)
     {
 
@@ -92,6 +104,13 @@ class Fixtures extends Fixture
 
     }
 
+    /**
+     * Create and Hydrate Project
+     *
+     * @param string $name
+     * @param array $datas
+     * @return Project
+     */
     private function createProject(string $name, array $datas)
     {
 
@@ -104,6 +123,13 @@ class Fixtures extends Fixture
 
     }
 
+    /**
+     * Create and Hydrate Contributor
+     *
+     * @param string $name
+     * @param string $role
+     * @return Contributor
+     */
     private function createContributor(string $name, string $role)
     {
 
@@ -117,6 +143,8 @@ class Fixtures extends Fixture
     }
 
     /**
+     * Get manager
+     *
      * @return ObjectManager
      */
     public function getManager(): ObjectManager
@@ -125,6 +153,8 @@ class Fixtures extends Fixture
     }
 
     /**
+     * Set manager
+     *
      * @param ObjectManager $manager
      */
     public function setManager(ObjectManager $manager)
