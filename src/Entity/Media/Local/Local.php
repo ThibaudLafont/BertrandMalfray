@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  * Local
  *
  * @ORM\MappedSuperclass()
+ * @ORM\EntityListeners({"App\EventListener\Local"})
  */
 abstract class Local extends Media
 {
@@ -30,9 +31,18 @@ abstract class Local extends Media
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255)
+     * @ORM\Column(name="folder_name", type="string", length=255)
      */
-    private $path;
+    private $folderName;
+
+    /**
+     * Display order
+     *
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", length=255)
+     */
+    private $position;
 
     /**
      * @var File|UploadedFile
@@ -88,27 +98,27 @@ abstract class Local extends Media
     }
 
     /**
-     * Set path.
+     * Set folderName.
      *
-     * @param string $path
+     * @param string $folderName
      *
      * @return Local
      */
-    public function setPath($path)
+    public function setFolderName($folderName)
     {
-        $this->path = $path;
+        $this->folderName = $folderName;
 
         return $this;
     }
 
     /**
-     * Get path.
+     * Get folderName.
      *
      * @return string
      */
-    public function getPath()
+    public function getFolderName()
     {
-        return $this->path;
+        return $this->folderName;
     }
 
     /**
@@ -129,5 +139,21 @@ abstract class Local extends Media
     public function setFile(File $file)
     {
         $this->file = $file;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
     }
 }

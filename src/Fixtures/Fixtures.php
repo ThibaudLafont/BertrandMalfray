@@ -48,8 +48,8 @@ class Fixtures extends Fixture
         $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
-//        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-//        $this->loadCategoryProjects($datas);
+        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
+        $this->loadCategoryProjects($datas);
 
         // Flush results
         $manager->flush();
@@ -174,17 +174,25 @@ class Fixtures extends Fixture
     {
         // Create Project Local
         $local = new \App\Entity\Media\Local\Project();
-        $local->hydrate($datas);
-        $local->setPath('/web/img/leveldesign/');
+        // Inquire attributes
+        $local->hydrate($datas);         // Hydrate with datas array
+        $local->setPosition($position);  // Set position
+        $local->setSlugName(             // Generate slug-name
+            $this->getSluggifier()->sluggify($datas['name'])
+        );
 
+        // Create File Object
         $file = new File(
-            '/var/www/html/src/Fixtures/data/medias/leveldesign/'
+            '/var/www/html/src/Fixtures/data/medias/'
+            . $local->getFolderName()
+            . '/'
             . $datas['name']
             . '.'
             . $datas['extension']
         );
+
+        // Assign created File to Local
         $local->setFile($file);
-        $local->setSlugName($this->getSluggifier()->sluggify($datas['name']));
 
         return $local;
     }
