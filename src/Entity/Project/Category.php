@@ -37,18 +37,6 @@ class Category{
     private $summary;
 
     /**
-     * Distant medias of category
-     *
-     * @var mixed
-     *
-     * @ORM\OneToMany(
-     *     targetEntity="\App\Entity\Media\Distant\Category",
-     *     mappedBy="category"
-     * )
-     */
-    private $distantMedias;
-
-    /**
      * Category's projects
      *
      * @var mixed
@@ -118,14 +106,6 @@ class Category{
     public function getDistantMedias()
     {
         return $this->distantMedias;
-    }
-
-    /**
-     * @param mixed $distantMedias
-     */
-    public function setDistantMedias($distantMedias)
-    {
-        $this->distantMedias = $distantMedias;
     }
 
     /**
