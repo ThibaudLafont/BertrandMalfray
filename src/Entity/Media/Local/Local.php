@@ -49,6 +49,11 @@ abstract class Local extends Media
      */
     private $file;
 
+    public function getFullFileName()
+    {
+        return $this->getSlugName() . '.' . $this->getExtension();
+    }
+
     /**
      * Set slugName.
      *

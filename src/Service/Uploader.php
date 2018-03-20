@@ -17,17 +17,15 @@ class Uploader
             $local instanceof Category
         ) {
             // Path generation
-            $targetDir = "/public/img/" . $local->getFolderName() . '/';
+            $targetDir = "/var/www/html/public/img/" . $local->getFolderName() . '/';
             // Create folder if inexistent
             // Get File from local object
             $file = $local->getFile();
             // Move file from temp to web server
             $file->move(
                 $targetDir,
-                $local->getSlugName()
+                $local->getFullFileName()
             );
-            // Delete temp file
-//            unlink($file->getRealPath());
             // return bool for success
         }
 

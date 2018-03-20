@@ -1,6 +1,8 @@
 <?php
 namespace App\EventListener;
 
+use App\Entity\Media\Local\Category;
+use App\Entity\Media\Local\Project;
 use App\Service\Uploader;
 
 /**
@@ -33,7 +35,7 @@ class Local
         if(
             $local instanceof Project ||
             $local instanceof Category
-        ) echo $lalal; $this->getUploader()->uploadToWebServer($local);
+        ) $this->getUploader()->uploadToWebServer($local);
 
     }
 

@@ -50,7 +50,7 @@ class Sluggifier
                 'ù', 'û', 'ú', 'Ù', 'Û', 'Ú',
                 'é', 'è', 'ê', 'ë', 'É', 'È', 'Ê', 'Ë',
                 'ç', 'Ç',
-                '\'', ' '
+                '\'', ' ', '_'
             ),
 
             // Replacement characters for forbidden ones
@@ -61,7 +61,7 @@ class Sluggifier
                 'u', 'u', 'u', 'u', 'u', 'u',
                 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
                 'c', 'c',
-                '-', '-'
+                '-', '-', '-'
             ),
 
             // Target is given string

@@ -80,12 +80,12 @@ projects:
           1:
             name: Image_Bison
             alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-            extension: jpg
+            extension: jpeg
             folder_name: leveldesign
           2:
             name: Image_Bison_2
             alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
-            extension: jpg
+            extension: jpeg
             folder_name: leveldesign
       ext_contributors:
         Alex Mitard: Level Designer

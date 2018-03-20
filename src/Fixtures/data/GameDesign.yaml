@@ -21,7 +21,7 @@ projects:
             1:
               name: alphaproject
               alt : Image principale du projet AlphaProject
-              extension: jpeg
+              extension: jpg
               folder_name: gamedesign
         ext_contributors:
           Alex Mitard: Level Designer

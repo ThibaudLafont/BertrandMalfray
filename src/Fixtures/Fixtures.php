@@ -181,11 +181,21 @@ class Fixtures extends Fixture
             $this->getSluggifier()->sluggify($datas['name'])
         );
 
+        // Store relative path to media
+        $fileName = $datas['name']
+            . '.'
+            . $datas['extension']
+        ;
+
+        // Copy media to temp dir
+        copy(
+            __DIR__ . '/data/medias/' . $datas['folder_name'] . '/' . $fileName,
+            __DIR__ . '/data/medias/temp/' . $fileName
+        );
+
         // Create File Object
         $file = new File(
-            '/var/www/html/src/Fixtures/data/medias/'
-            . $local->getFolderName()
-            . '/'
+            '/var/www/html/src/Fixtures/data/medias/temp/'
             . $datas['name']
             . '.'
             . $datas['extension']
