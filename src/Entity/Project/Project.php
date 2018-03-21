@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Entity\Project\Explanation\Explanation;
 use App\Traits\Entity\Hydrate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;

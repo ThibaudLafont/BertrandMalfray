@@ -2,6 +2,7 @@
 namespace App\Service;
 
 use App\Entity\Media\Local\Category;
+use App\Entity\Media\Local\Explanation;
 use App\Entity\Media\Local\Local;
 use App\Entity\Media\Local\Project;
 use Symfony\Component\HttpFoundation\File\File;
@@ -14,7 +15,7 @@ class Uploader
         // Check Object
         if(
             $local instanceof Project ||
-            $local instanceof Category
+            $local instanceof Explanation
         ) {
             // Path generation
             $targetDir = "/var/www/html/public/img/" . $local->getFolderName() . '/';

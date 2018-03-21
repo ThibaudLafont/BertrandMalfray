@@ -1,7 +1,7 @@
 <?php
 namespace App\EventListener;
 
-use App\Entity\Media\Local\Category;
+use App\Entity\Media\Local\Explanation;
 use App\Entity\Media\Local\Project;
 use App\Service\Uploader;
 
@@ -34,7 +34,7 @@ class Local
         // Ask upload if Object is right type
         if(
             $local instanceof Project ||
-            $local instanceof Category
+            $local instanceof Explanation
         ) $this->getUploader()->uploadToWebServer($local);
 
     }

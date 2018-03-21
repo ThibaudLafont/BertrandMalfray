@@ -1,8 +1,11 @@
 <?php
 namespace App\Fixtures;
 
+use App\Entity\Media\Local\Explanation;
 use App\Entity\Project\Category;
 use App\Entity\Project\Contributor;
+use App\Entity\Project\Explanation\Paragraph;
+use App\Entity\Project\Explanation\Title;
 use App\Entity\Project\Project;
 use App\Service\Sluggifier;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -48,8 +51,8 @@ class Fixtures extends Fixture
         $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
-        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-        $this->loadCategoryProjects($datas);
+//        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
+//        $this->loadCategoryProjects($datas);
 
         // Flush results
         $manager->flush();
@@ -80,6 +83,47 @@ class Fixtures extends Fixture
             // Persist Project
             $manager->persist($project);
 
+            // Create Explanation
+            $explanation = new \App\Entity\Project\Explanation\Explanation();
+            $manager->persist($explanation);
+
+            // Assign explanation to project
+            $project->setExplanation($explanation);
+
+            // Treatment of Explanation parts
+            $parts = $v['content'];
+            // Loop on every part
+            foreach($parts as $position => $attributes)
+            {
+                // If part is title
+                if ($attributes['type'] === 'title') {
+
+                    // Create Title and assign Explanation
+                    $entity = $this->createTitle(
+                        $attributes['level'],
+                        $attributes['content'],
+                        $position
+                    );
+
+                // If part is paragraph
+                } elseif ($attributes['type'] === 'paragraph') {
+
+                    // Create and hydrate Paragraph
+                    $entity = $this->createParagraph($attributes['content'], $position);
+
+                } elseif ($attributes['type'] === 'local') {
+
+                    // create local entity
+                    $entity = $this->createExplanationLocal($position, $attributes);
+
+                }
+
+                // Set explanation & persist entity
+                $entity->setExplanation($explanation);
+                $manager->persist($entity);
+
+            }
+
             // Check if project has medias
             if(isset($v['medias'])) {
                 // Check if project has local medias
@@ -87,7 +131,7 @@ class Fixtures extends Fixture
                     foreach($v['medias']['local'] as $k => $v) {
 
                         // Create Local and set Project
-                        $local = $this->createLocal($k, $v);
+                        $local = $this->createProjectLocal($k, $v);
                         $local->setProject($project);
 
                         $manager->persist($local);
@@ -114,6 +158,29 @@ class Fixtures extends Fixture
         }
     }
 
+    private function createParagraph(string $content, int $position)
+    {
+        // Create and hydrate paragraph
+        $paragraph = new Paragraph();
+        $paragraph->setPosition($position);
+        $paragraph->setContent($content);
+
+        // Return object
+        return $paragraph;
+    }
+
+    private function createTitle(int $level, string $content, int $position)
+    {
+        // Create and hydrate Title
+        $title = new Title();
+        $title->setLevel($level);
+        $title->setContent($content);
+        $title->setPosition($position);
+
+        // Return object
+        return $title;
+    }
+
     /**
      * Create and Hydrate Category from array
      *
@@ -128,6 +195,7 @@ class Fixtures extends Fixture
         $category->setName($datas['name']);
         $category->setSummary($datas['summary']);
 
+        // Return object
         return $category;
 
     }
@@ -147,6 +215,7 @@ class Fixtures extends Fixture
         $project->setName($name);
         $project->hydrate($datas);
 
+        // Return object
         return $project;
 
     }
@@ -166,14 +235,33 @@ class Fixtures extends Fixture
         $contributor->setName($name);
         $contributor->setRole($role);
 
+        // Return object
         return $contributor;
 
     }
 
-    private function createLocal(int $position, array $datas)
+    private function createProjectLocal(int $position, array $datas)
     {
         // Create Project Local
         $local = new \App\Entity\Media\Local\Project();
+
+        // Return hydrated Local
+        return $this->createLocal($local, $position, $datas);
+
+    }
+
+    private function createExplanationLocal(int $position, array $datas)
+    {
+        // Create Project Local
+        $local = new \App\Entity\Media\Local\Explanation();
+
+        // Return hydrated Local
+        return $this->createLocal($local, $position, $datas);
+
+    }
+
+    private function createLocal($local, int $position, array $datas)
+    {
         // Inquire attributes
         $local->hydrate($datas);         // Hydrate with datas array
         $local->setPosition($position);  // Set position
