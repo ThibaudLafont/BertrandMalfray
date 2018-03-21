@@ -19,21 +19,21 @@ abstract class Local extends Media
      *
      * @ORM\Column(name="slug_name", type="string", length=255)
      */
-    private $slugName;
+    protected $slugName;
 
     /**
      * @var string
      *
      * @ORM\Column(name="extension", type="string", length=6)
      */
-    private $extension;
+    protected $extension;
 
     /**
      * @var string
      *
      * @ORM\Column(name="folder_name", type="string", length=255)
      */
-    private $folderName;
+    protected $folderName;
 
     /**
      * Display order
@@ -42,12 +42,12 @@ abstract class Local extends Media
      *
      * @ORM\Column(name="position", type="integer", length=255)
      */
-    private $position;
+    protected $position;
 
     /**
      * @var File|UploadedFile
      */
-    private $file;
+    protected $file;
 
     public function getFullFileName()
     {

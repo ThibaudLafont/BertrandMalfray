@@ -57,14 +57,6 @@ class Project{
     private $summary;
 
     /**
-     * @var string
-     * Intent statement of project
-     *
-     * @ORM\Column(name="content", type="text")
-     */
-    private $content;
-
-    /**
      * Category of project
      *
      * @var Category
@@ -75,6 +67,15 @@ class Project{
      * )
      */
     private $category;
+
+    /**
+     * Main text content of project
+     *
+     * @var Explanation
+     *
+     * @ORM\OneToOne(targetEntity="\App\Entity\Project\Explanation\Explanation")
+     */
+    private $explanation;
 
     /**
      * @var mixed
@@ -142,26 +143,6 @@ class Project{
     public function setSummary(string $summary)
     {
         $this->summary = $summary;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     */
-    public function setContent(string $content)
-    {
-        $this->content = $content;
     }
 
     /**
@@ -237,6 +218,22 @@ class Project{
     public function setContributors($contributors)
     {
         $this->contributors = $contributors;
+    }
+
+    /**
+     * @return Explanation
+     */
+    public function getExplanation(): Explanation
+    {
+        return $this->explanation;
+    }
+
+    /**
+     * @param Explanation $explanation
+     */
+    public function setExplanation(Explanation $explanation)
+    {
+        $this->explanation = $explanation;
     }
 
 }

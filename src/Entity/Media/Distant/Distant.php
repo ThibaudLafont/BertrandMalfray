@@ -17,7 +17,7 @@ abstract class Distant extends Media
      *
      * @ORM\Column(name="src", type="string", length=255)
      */
-    private $src;
+    protected $src;
 
     /**
      * Set src.

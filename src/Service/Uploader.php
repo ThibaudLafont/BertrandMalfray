@@ -26,7 +26,6 @@ class Uploader
                 $targetDir,
                 $local->getFullFileName()
             );
-            // return bool for success
         }
 
     }
