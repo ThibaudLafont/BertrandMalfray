@@ -34,16 +34,6 @@ abstract class Local extends Media
      * @ORM\Column(name="folder_name", type="string", length=255)
      */
     protected $folderName;
-
-    /**
-     * Display order
-     *
-     * @var int
-     *
-     * @ORM\Column(name="position", type="integer", length=255)
-     */
-    protected $position;
-
     /**
      * @var File|UploadedFile
      */
@@ -144,21 +134,5 @@ abstract class Local extends Media
     public function setFile(File $file)
     {
         $this->file = $file;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPosition(): int
-    {
-        return $this->position;
-    }
-
-    /**
-     * @param int $position
-     */
-    public function setPosition(int $position)
-    {
-        $this->position = $position;
     }
 }

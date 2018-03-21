@@ -71,6 +71,15 @@ projects:
             alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
             extension: jpg
             folder_name: leveldesign
+        distant:
+          1:
+            name: Vidéo lambda
+            alt: Description
+            src: https://www.youtube.com/watch?v=h4jx9x-9NDI&list=RDh4jx9x-9NDI&index=1
+          2:
+            name: Vidéo bizarre
+            alt: Description
+            src: https://www.youtube.com/watch?v=qtP_PRMaUZc&list=RDh4jx9x-9NDI&index=2
     Arma 3: 
       init_date: 01-10-2016
       end_date: 01-03-2017

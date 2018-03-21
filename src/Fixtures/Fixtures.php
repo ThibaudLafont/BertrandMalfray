@@ -128,13 +128,28 @@ class Fixtures extends Fixture
             if(isset($v['medias'])) {
                 // Check if project has local medias
                 if(isset($v['medias']['local'])) {
-                    foreach($v['medias']['local'] as $k => $v) {
+                    foreach($v['medias']['local'] as $position => $datas) {
 
                         // Create Local and set Project
-                        $local = $this->createProjectLocal($k, $v);
+                        $local = $this->createProjectLocal($position, $datas);
                         $local->setProject($project);
 
+                        // Persist
                         $manager->persist($local);
+
+                    }
+                }
+                // Check if project has distant medias
+                if (isset($v['medias']['distant'])) {
+                    // Loop on every Distant medias
+                    foreach($v['medias']['distant'] as $position => $datas) {
+
+                        // Create Distant and set Project
+                        $distant = $this->createProjectDistant($position, $datas);
+                        $distant->setProject($project);
+
+                        // Persist
+                        $manager->persist($distant);
 
                     }
                 }
@@ -238,6 +253,19 @@ class Fixtures extends Fixture
         // Return object
         return $contributor;
 
+    }
+
+    private function createProjectDistant(int $position, array $datas)
+    {
+        // Create and hydrate Distant
+        $distant = new \App\Entity\Media\Distant\Project();
+        $distant->setName($datas['name']);
+        $distant->setAlt($datas['alt']);
+        $distant->setSrc($datas['src']);
+        $distant->setPosition($position);
+
+        // Return object
+        return $distant;
     }
 
     private function createProjectLocal(int $position, array $datas)

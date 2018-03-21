@@ -34,6 +34,15 @@ abstract class Media
      */
     private $alt;
 
+    /**
+     * Display order
+     *
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", length=255)
+     */
+    protected $position;
+
     // Traits
     use Hydrate;
 
@@ -94,5 +103,21 @@ abstract class Media
     public function getAlt()
     {
         return $this->alt;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
     }
 }
