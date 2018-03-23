@@ -17,15 +17,16 @@ class ProjectRepository extends ServiceEntityRepository
         $statement = "
             SELECT p
             FROM App:Project\Project p
-            JOIN App:Project\Category c
-            WHERE c.name = :cat_name
+            JOIN App:Project\Category cat
+            JOIN App:Project\Contributor cont
+            WHERE cat.name = :cat_name
         ";
 
         // Execute the query and store results
         $projects = $this->getEntityManager()
             ->createQuery($statement)
             ->setParameter('cat_name', $criteria['cat_name'])
-            ->getArrayResult();
+            ->execute();
 
         // Return result
         return $projects;

@@ -17,7 +17,7 @@ class ProjectController extends Controller
     public function listAction() {
 
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository('App:Project\Project')->findAll();
+        $projects = $em->getRepository(Project::class)->findAll();
 
         return $this->render(
             'project/list.html.twig',

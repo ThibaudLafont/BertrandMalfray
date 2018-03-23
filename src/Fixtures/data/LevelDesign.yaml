@@ -111,17 +111,17 @@ projects:
           level: 2
           content: Background
         7:
+          type: paragraph
+          content: Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
+            pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
+            installer une base dangereuse pour ses rivaux.
+        8:
           type: local
           name: Corpus_Image_2
           alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
           display: left
           extension: jpg
           folder_name: leveldesign
-        8:
-          type: paragraph
-          content: Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
-            pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
-            installer une base dangereuse pour ses rivaux.
         9:
           type: paragraph
           content: Pour éviter une crise planétaire, ces deux superpuissances travaillent avec des forces milicienne. Le NATO emploie l’AAF, un groupe d’Altis contraint d’exécuter les ordres des

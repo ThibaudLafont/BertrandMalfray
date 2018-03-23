@@ -3,6 +3,7 @@
 {% block body %}
     {% for project in projects %}
         <h2>{{ project.name }}</h2>
+        <p><em>{{ project.category.name }}</em></p>
         <span>Débuté le {{ project.initDate|date() }}</span><br/>
         <span>A duré {{ project.duration }}</span><br/>
         <span>{{ project.numberOfContributors }} collaborateurs</span><br/>
