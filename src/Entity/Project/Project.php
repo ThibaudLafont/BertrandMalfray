@@ -10,7 +10,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 /**
  * Class Project
  *
- * @ORM\Entity
+ * @ORM\Entity("App\Repository\Project\ProjectRepository")
  * @ORM\Table(name="project_project")
  */
 class Project{
@@ -83,11 +83,21 @@ class Project{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Project\Contributor",
-     *     mappedBy="projects",
+     *     mappedBy="project",
      *     cascade={"persist"}
      * )
      */
     private $contributors;
+
+    /**
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Media\Local\Project",
+     *     mappedBy="project"
+     * )
+     */
+    private $localMedias;
 
     // Traits
     use Hydrate;
@@ -235,6 +245,43 @@ class Project{
     public function setExplanation(Explanation $explanation)
     {
         $this->explanation = $explanation;
+    }
+
+    public function getDuration()
+    {
+        return $this->getInitDate()
+            ->diff(
+                $this->getEndDate(),
+                true
+            )
+            ->format('%a jours')
+        ;
+    }
+
+    public function getNumberOfContributors()
+    {
+        return $this->getContributors()->count();
+    }
+
+    public function getShowUrl()
+    {
+        return '/projects/' . $this->getId();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocalMedias()
+    {
+        return $this->localMedias;
+    }
+
+    /**
+     * @param mixed $localMedias
+     */
+    public function setLocalMedias($localMedias)
+    {
+        $this->localMedias = $localMedias;
     }
 
 }

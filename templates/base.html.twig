@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Title of the page -->
+    <!-- TODO : define the title in each page template -->
+    <title>{% block title %}Bertrand Malfray{% endblock %}</title>
+
+    <!-- Global stylesheets -->
+    {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+    {#<link rel="stylesheet" href="/css/main.css">#}
+
+</head>
+<body>
+
+<!-- Display of flash messages (if defined) -->
+{% for label, messages in app.flashes %}
+
+    <!-- Loop on every founded message -->
+    {% for message in messages %}
+
+        <!-- Create a div class with flash-message type for front-work -->
+        <div class="flash flash-{{ label }}">
+            {{ message|striptags("<a>")|raw }}
+        </div>
+
+    {% endfor %}
+
+{% endfor %}
+
+<!-- Nav links -->
+<a href="/">Home</a>
+<a href="/projects">Projets</a>
+<a href="/leveldesign/projects">Level Design</a>
+
+<!-- Here come the main content, define in children templates -->
+<section id="main_content">
+
+    <!-- Display of children's body block -->
+    {% block body %}{% endblock %}
+
+</section>
+
+</body>
+</html>

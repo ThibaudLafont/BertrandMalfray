@@ -78,7 +78,7 @@ class Title
      */
     public function getLevel(): int
     {
-        return $this->level;
+        return $this->level + 1;
     }
 
     /**

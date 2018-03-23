@@ -44,6 +44,11 @@ abstract class Local extends Media
         return $this->getSlugName() . '.' . $this->getExtension();
     }
 
+    public function getSrc()
+    {
+        return '/img/' . $this->getFolderName() . '/' . $this->getFullFileName();
+    }
+
     /**
      * Set slugName.
      *

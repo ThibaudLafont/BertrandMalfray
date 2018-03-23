@@ -17,7 +17,8 @@ class Project extends Local
      *
      * @ORM\ManyToOne(
      *     targetEntity="\App\Entity\Project\Project",
-     *     inversedBy="distantMedias")
+     *     inversedBy="localMedias"
+     * )
      */
     private $project;
 

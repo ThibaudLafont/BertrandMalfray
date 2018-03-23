@@ -40,7 +40,7 @@ class Explanation
      * @var mixed
      *
      * @ORM\OneToMany(
-     *     targetEntity="Title",
+     *     targetEntity="Paragraph",
      *     mappedBy="explanation"
      * )
      */
@@ -94,6 +94,53 @@ class Explanation
     public function getParagraphs()
     {
         return $this->paragraphs;
+    }
+
+    public function getContent()
+    {
+
+        $titles = $this->getTitles();
+        $paras = $this->getParagraphs();
+        $locals = $this->getLocals();
+
+        $return = [];
+
+        foreach($titles as $title) {
+            $return[$title->getPosition()] = [
+                'position' => $title->getPosition(),
+                'type'    => 'title',
+                'attr'    => [
+                    'level'   => $title->getLevel(),
+                    'content' => $title->getContent()
+                ],
+            ];
+        }
+
+        foreach($paras as $para)
+        {
+            $return[$para->getPosition()] = [
+                'position' => $para->getPosition(),
+                'type' => 'paragraph',
+                'attr' => [
+                    'content' => $para->getContent()
+                ]
+            ];
+        }
+
+        foreach($locals as $local)
+        {
+            $return[$local->getPosition()] = [
+                'position' => $local->getPosition(),
+                'type' => 'local',
+                'attr' => [
+                    'src' => $local->getSrc(),
+                    'alt' => $local->getAlt()
+                ]
+            ];
+        }
+        asort($return);
+        return $return;
+
     }
 
 }
