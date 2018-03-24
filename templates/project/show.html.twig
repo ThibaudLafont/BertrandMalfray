@@ -24,6 +24,9 @@
         {% for local in project.localMedias %}
             <img src="{{ local.src }}" alt="{{ local.alt }}" style="width: 150px">
         {% endfor %}
+        {% for distant in project.distantMedias %}
+            <iframe id="ytplayer" type="text/html" width="150" height="85" src="{{ distant.src }}" frameborder="0"></iframe>
+        {% endfor %}
     </section>
 
     {% for part in project.explanation.content %}

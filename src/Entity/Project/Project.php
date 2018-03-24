@@ -106,6 +106,16 @@ class Project{
      */
     private $localMedias;
 
+    /**
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Media\Distant\Project",
+     *     mappedBy="project"
+     * )
+     */
+    private $distantMedias;
+
     // Traits
     use Hydrate;
 
@@ -284,14 +294,6 @@ class Project{
     }
 
     /**
-     * @param mixed $localMedias
-     */
-    public function setLocalMedias($localMedias)
-    {
-        $this->localMedias = $localMedias;
-    }
-
-    /**
      * @return string
      */
     public function getSlugName(): string
@@ -305,6 +307,14 @@ class Project{
     public function setSlugName(string $slugName)
     {
         $this->slugName = $slugName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistantMedias()
+    {
+        return $this->distantMedias;
     }
 
 }
