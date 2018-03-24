@@ -31,6 +31,13 @@ class Category{
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="slug_name", type="string", length=255)
+     */
+    protected $slugName;
+
+    /**
+     * @var string
      * maxlength, striptags, isString
      * @ORM\Column(name="summary", type="text")
      */
@@ -122,6 +129,22 @@ class Category{
     public function setProjects($projects)
     {
         $this->projects = $projects;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlugName(): string
+    {
+        return $this->slugName;
+    }
+
+    /**
+     * @param string $slugName
+     */
+    public function setSlugName(string $slugName)
+    {
+        $this->slugName = $slugName;
     }
 
 }

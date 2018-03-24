@@ -32,7 +32,8 @@ class ProjectController extends Controller
      *
      * @Route(
      *     "/projects/{id}",
-     *     name="project_show"
+     *     name="project_show",
+     *     requirements={"id"="\d+"}
      * )
      */
     public function showAction($id) {
@@ -43,28 +44,6 @@ class ProjectController extends Controller
         return $this->render(
             'project/show.html.twig',
             ['project' => $project]
-        );
-
-    }
-
-    /**
-     * @param $category
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @Route(
-     *     "/{catName}/projects",
-     *     name="projects_by_category"
-     * )
-     */
-    public function listByCategoryAction($catName) {
-
-        $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository(Project::class)
-            ->findByNewTime(['cat_name' => $catName]);
-
-        return $this->render(
-            'project/list.html.twig',
-            ['projects' => $projects]
         );
 
     }

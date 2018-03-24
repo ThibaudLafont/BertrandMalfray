@@ -10,12 +10,24 @@ projects:
         summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-        content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        content:
+          1:
+            type: title
+            level: 1
+            content: Note d'intention
+          2:
+            type: local
+            name: Image_1_lalala
+            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+            display: center
+            extension: jpg
+            folder_name: gamedesign
+          3:
+            type: paragraph
+            content: Dans la campagne Arma, j’ai été en charge de la 4eme mission.
+          4:
+            type: paragraph
+            content: Dans cette mission, je voulais que les joueurs soient conscient du déroulement du scénario dans lequel ils évoluent.
         medias:
           local:
             1:

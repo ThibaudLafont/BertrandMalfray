@@ -51,8 +51,8 @@ class Fixtures extends Fixture
         $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
-//        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-//        $this->loadCategoryProjects($datas);
+        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
+        $this->loadCategoryProjects($datas);
 
         // Flush results
         $manager->flush();
@@ -208,6 +208,9 @@ class Fixtures extends Fixture
         // Create&Persist Category
         $category = new Category();
         $category->setName($datas['name']);
+        $category->setSlugName(
+            $this->getSluggifier()->sluggify($datas['name'])
+        );
         $category->setSummary($datas['summary']);
 
         // Return object
@@ -228,6 +231,9 @@ class Fixtures extends Fixture
         // Create&Hydrate Project
         $project = new Project();
         $project->setName($name);
+        $project->setSlugName(
+            $this->getSluggifier()->sluggify($name)
+        );
         $project->hydrate($datas);
 
         // Return object

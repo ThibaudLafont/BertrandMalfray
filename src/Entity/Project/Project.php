@@ -33,6 +33,13 @@ class Project{
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug_name", type="string", length=255)
+     */
+    protected $slugName;
+
+    /**
      * Date of project initialisation
      *
      * @var \DateTime
@@ -282,6 +289,22 @@ class Project{
     public function setLocalMedias($localMedias)
     {
         $this->localMedias = $localMedias;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlugName(): string
+    {
+        return $this->slugName;
+    }
+
+    /**
+     * @param string $slugName
+     */
+    public function setSlugName(string $slugName)
+    {
+        $this->slugName = $slugName;
     }
 
 }
