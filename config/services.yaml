@@ -23,5 +23,12 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    local_listener:
+        class: App\EventListener\Local
+        arguments: [ '@App\Service\Uploader' ]
+        tags:
+            - { name: doctrine.orm.entity_listener }
+            - { name: doctrine.orm.entity_listener, entity_manager: custom }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

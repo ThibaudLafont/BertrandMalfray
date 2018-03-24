@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ project.name }}</h2>
+    <p><em>{{ project.category.name }}</em></p>
+    <p>{{ project.summary|raw }}</p>
+    <span>Période: {{ project.initDate|date() }} au {{ project.endDate|date() }}</span><br/>
+    <span>Durée: {{ project.duration }}</span><br/>
+    <span>{{ project.numberOfContributors }} collaborateurs</span><br/>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Role</th>
+        </tr>
+        {% for contributor in project.contributors %}
+            <tr>
+                <td>{{ contributor.name }}</td>
+                <td>{{ contributor.role }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <section>
+        {% for local in project.localMedias %}
+            <img src="{{ local.src }}" alt="{{ local.alt }}" style="width: 150px">
+        {% endfor %}
+        {% for distant in project.distantMedias %}
+            <iframe id="ytplayer" type="text/html" width="150" height="85" src="{{ distant.src }}" frameborder="0"></iframe>
+        {% endfor %}
+    </section>
+
+    {% for part in project.explanation.content %}
+        {% if part.type is same as('title') %}
+            <h{{ part.attr.level }}>
+                {{ part.attr.content }}
+            </h{{ part.attr.level }}>
+        {% elseif part.type is same as('paragraph') %}
+            <p>{{ part.attr.content }}</p>
+        {% elseif part.type is same as('local') %}
+            <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}" style="width: 350px">
+        {% endif %}
+    {% endfor %}
+{% endblock %}

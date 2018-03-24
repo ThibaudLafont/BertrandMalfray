@@ -1,0 +1,152 @@
+category:
+    name: Level Design
+    summary: Dummy Text
+
+projects:
+    Map Unreal Tournament: 
+      init_date: 15-09-2016
+      end_date: 01-10-2016
+      roles: [Level Design, Game Design]
+      summary: <p>Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.</p>
+        <p>La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).</p>
+      content:
+        1:
+          type: title
+          level: 1
+          content: Note d'intention
+        2:
+          type: local
+          name: Test_Image
+          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+          display: right
+          extension: jpg
+          folder_name: leveldesign
+        3:
+          type: paragraph
+          content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range.
+            Mais cette zone est très ouverte, ce qui incite le joueur a utilisé des armes mi-distance, quand un ennemi est du même côté que le joueur.
+        4:
+          type: paragraph
+          content: Des couloirs font le tour, afin de récupérer armes/munitions/soins, ces couloirs sont des zones de corps à corps, et sont des zones plus sûres pour se régénérer.
+            Certains gardent une grande visibilité pour permettre d’utiliser aussi des armes mi-distance.
+        5:
+          type: paragraph
+          content: Il y a des wall dodge, wall slide, lift jump pour atteindre des bonus, mais ils restent toujours atteignable,
+            par d’autres chemins si le joueur ne maîtrise pas ces features.
+        6:
+          type: title
+          level: 1
+          content: Explication
+        7:
+          type: paragraph
+          content: Cette map est faite pour du Deathmatch, une autre contrainte, puisque les spawn des joueurs doivent être bien timé, pour ne pas favoriser un joueur.
+            Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
+        8:
+          type: paragraph
+          content: Dans Unreal Tournament, la verticalité est très utilisé, j’ai choisi de placer des “base jump” pour changer très rapidement d’étage, et ainsi ne pas casser le flow comme pourrait le faire des ascenseurs.
+        9:
+          type: paragraph
+          content: Le plus gros bonus, le “Berserker”, se situe au milieu de la map, dans le bâtiment central. Des couloirs font le tour de ce bâtiment, on y trouve armes/soin/munitions.
+        10:
+          type: paragraph
+          content: La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
+        11:
+          type: title
+          level: 1
+          content: Event
+        12:
+          type: paragraph
+          content: L’event de la map ”Brouillard” a été pensé pour réduire la visibilité du joueur et ainsi l’inciter à utiliser des armes corps à corps.
+            Au départ, le brouillard devait être empoisonné et retirer 1 point de vie par seconde pendant 50 secondes, afin de réduire de moitié la vie de tous les joueurs.
+            Mais les joueurs trouvaient cela frustrant alors l’empoisonnement a été enlevé.
+      medias:
+        local:
+          1:
+            name: UT-Spacebase41Map01
+            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+            extension: jpg
+            folder_name: leveldesign
+          2:
+            name: Planche-Rendu-Map
+            alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+            extension: jpg
+            folder_name: leveldesign
+        distant:
+          1:
+            name: Vidéo lambda
+            alt: Description
+            src: https://www.youtube.com/watch?v=h4jx9x-9NDI&list=RDh4jx9x-9NDI&index=1
+          2:
+            name: Vidéo bizarre
+            alt: Description
+            src: https://www.youtube.com/watch?v=qtP_PRMaUZc&list=RDh4jx9x-9NDI&index=2
+    Arma 3: 
+      init_date: 01-10-2016
+      end_date: 01-03-2017
+      summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
+      content:
+        1:
+          type: title
+          level: 1
+          content: Note d'intention
+        2:
+          type: local
+          name: Corpus_Image_1
+          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+          display: center
+          extension: jpg
+          folder_name: leveldesign
+        3:
+          type: paragraph
+          content: Dans la campagne Arma, j’ai été en charge de la 4eme mission.
+        4:
+          type: paragraph
+          content: Dans cette mission, je voulais que les joueurs soient conscient du déroulement du scénario dans lequel ils évoluent.
+        5:
+          type: title
+          level: 1
+          content: Story
+        6:
+          type: title
+          level: 2
+          content: Background
+        7:
+          type: paragraph
+          content: Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
+            pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
+            installer une base dangereuse pour ses rivaux.
+        8:
+          type: local
+          name: Corpus_Image_2
+          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+          display: left
+          extension: jpg
+          folder_name: leveldesign
+        9:
+          type: paragraph
+          content: Pour éviter une crise planétaire, ces deux superpuissances travaillent avec des forces milicienne. Le NATO emploie l’AAF, un groupe d’Altis contraint d’exécuter les ordres des
+            Nations Unies et envoyé pour asservir l’île. Le CSAT, eux, ont réussi à prendre le contrôle d’un groupe de rebelle indépendantiste de Tanoa, le Syndikat, qui lutte contre la prise de
+            pouvoir de NATO.
+        10:
+          type: title
+          level: 2
+          content: Scénario
+        11:
+          type: paragraph
+          content: L’escouade est envoyée en mission afin de trouver comment le Syndikat se fournit en armes afin d’aider l’AAF envoyé sur Tanoa. En s'apercevant que le CSAT fournit des armes aux
+            indépendantiste de Tanoa, le Blufor décide de faire exploser un entrepôt de munitions Opfor situé sur Altis.
+      medias:
+        local:
+          1:
+            name: Image_Bison
+            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+            extension: jpg
+            folder_name: leveldesign
+          2:
+            name: Image_Bison_2
+            alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+            extension: jpg
+            folder_name: leveldesign
+      ext_contributors:
+        Alex Mitard: Level Designer
+        John Doe: Créateur de textures
