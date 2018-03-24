@@ -112,4 +112,15 @@ class Paragraph
         $this->explanation = $explanation;
     }
 
+    public function normalize()
+    {
+        return [
+            'position' => $this->getPosition(),
+            'type' => 'paragraph',
+            'attr' => [
+                'content' => $this->getContent()
+            ]
+        ];
+    }
+
 }

@@ -34,7 +34,7 @@
         {% elseif part.type is same as('paragraph') %}
             <p>{{ part.attr.content }}</p>
         {% elseif part.type is same as('local') %}
-            <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" style="width: 350px">
+            <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}" style="width: 350px">
         {% endif %}
     {% endfor %}
 {% endblock %}

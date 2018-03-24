@@ -283,6 +283,9 @@ class Fixtures extends Fixture
         // Create Project Local
         $local = new \App\Entity\Media\Local\Explanation();
 
+        // Set display attr
+        $local->setDisplay($datas['display']);
+
         // Return hydrated Local
         return $this->createLocal($local, $position, $datas);
 

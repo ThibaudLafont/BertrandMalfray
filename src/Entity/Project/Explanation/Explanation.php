@@ -98,49 +98,35 @@ class Explanation
 
     public function getContent()
     {
-
-        $titles = $this->getTitles();
-        $paras = $this->getParagraphs();
-        $locals = $this->getLocals();
-
+        // init empty array
         $return = [];
 
-        foreach($titles as $title) {
-            $return[$title->getPosition()] = [
-                'position' => $title->getPosition(),
-                'type'    => 'title',
-                'attr'    => [
-                    'level'   => $title->getLevel(),
-                    'content' => $title->getContent()
-                ],
-            ];
+        // Normalize & Store each title
+        $titles = $this->getTitles();
+        foreach($titles as $title)
+        {
+            $return[$title->getPosition()] = $title->normalize();
         }
 
+        // Normalize & Store each paragraph
+        $paras = $this->getParagraphs();
         foreach($paras as $para)
         {
-            $return[$para->getPosition()] = [
-                'position' => $para->getPosition(),
-                'type' => 'paragraph',
-                'attr' => [
-                    'content' => $para->getContent()
-                ]
-            ];
+            $return[$para->getPosition()] = $para->normalize();
         }
 
+        // Normalize & Store each local
+        $locals = $this->getLocals();
         foreach($locals as $local)
         {
-            $return[$local->getPosition()] = [
-                'position' => $local->getPosition(),
-                'type' => 'local',
-                'attr' => [
-                    'src' => $local->getSrc(),
-                    'alt' => $local->getAlt()
-                ]
-            ];
+            $return[$local->getPosition()] = $local->normalize();
         }
-        asort($return);
-        return $return;
 
+        // Sort array by index
+        asort($return);
+
+        // Return result
+        return $return;
     }
 
 }

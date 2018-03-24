@@ -137,4 +137,16 @@ class Title
         $this->explanation = $explanation;
     }
 
+    public function normalize()
+    {
+        return [
+            'position' => $this->getPosition(),
+            'type'    => 'title',
+            'attr'    => [
+                'level'   => $this->getLevel(),
+                'content' => $this->getContent()
+            ]
+        ];
+    }
+
 }
