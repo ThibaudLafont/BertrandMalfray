@@ -1,0 +1,69 @@
+/*FONTS*/
+@font-face {
+    font-family: "aldrich";          /* Lato light */
+    src: url("font/aldrich-regular.ttf");
+}
+
+/*Universal*/
+h1, h2, h3, h4,
+p, span,
+a, button {
+    font-family: "aldrich";
+}
+
+.horizontal-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Homepage*/
+section#homepage-content {
+    background-color: blue;
+    color: white;
+}
+.homepage-row {
+    overflow: hidden;
+    clear: left;
+    display: flex;
+}
+.homepage-column {
+    float: left;
+    width: 46%;
+    padding: 2%;
+}
+.homepage-column h2{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.homepage-column p{
+    text-align: justify;
+}
+
+.homepage-column input,
+.homepage-column textarea
+{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+.homepage-column button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+}
+.homepage-column ul{
+    list-style-type: none;
+    padding: 0;
+}
+    .homepage-column li{
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+    }
+        .homepage-column li img{
+            margin-right: 0.5rem;
+        }
+img#homepage-fronpic {
+    width: 100%;
+}

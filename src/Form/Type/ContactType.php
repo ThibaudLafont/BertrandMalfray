@@ -38,7 +38,7 @@ class ContactType extends AbstractType
                     'label' => false,
                     'required' => true,
                     'attr' => [
-                        'placeholder' => 'Addresse mail'
+                        'placeholder' => 'Adresse mail'
                     ],
                     'constraints' => [
                         new NotBlank([
@@ -58,7 +58,8 @@ class ContactType extends AbstractType
                 [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => 'Contenu de votre message'
+                        'placeholder' => 'Contenu de votre message',
+                        'rows'=> 8
                     ],
                     'constraints' => [
                         new NotBlank([
