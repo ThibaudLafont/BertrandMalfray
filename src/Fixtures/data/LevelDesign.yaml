@@ -7,8 +7,8 @@ projects:
       init_date: 15-09-2016
       end_date: 01-10-2016
       roles: [Level Design, Game Design]
-      summary: <p>Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.</p>
-        <p>La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).</p>
+      summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.<br/>
+        La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
       content:
         1:
           type: title

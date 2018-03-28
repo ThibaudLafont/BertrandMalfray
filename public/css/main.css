@@ -12,7 +12,8 @@ a {
 
 h1, h2, h3, h4,
 p, span,
-a, button {
+a, button,
+li {
     font-family: "aldrich";
 }
 
@@ -119,4 +120,53 @@ section#homepage-content {
         }
 img#homepage-fronpic {
     width: 100%;
+}
+
+/*List Project*/
+section.project-item-parent {
+    background-color: blue;
+    overflow: hidden;
+    margin-top: 1rem;
+    min-height: 250px;
+}
+
+.list-column {
+    width: 46%;
+    float: left;
+    padding: 2%;
+}
+.list-column h2 {
+    margin-top: 1rem;
+}
+.list-column h2 a{
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.list-column h2 a:hover{
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+.list-column ul{
+    list-style-type: none;
+}
+.list-column li {
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+.list-column li img{
+    margin-right: 0.5rem;
+}
+.list-right-column {
+    background-color: blue;
+    min-height: 250px;
+}
+.list-right-column p {
+    text-align: justify;
+}
+.list-right-column a {
+    display: block;
+    background-color: black;
+    padding: 0.5rem;
+    text-decoration: none;
 }
