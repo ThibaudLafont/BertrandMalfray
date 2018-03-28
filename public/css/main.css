@@ -5,6 +5,11 @@
 }
 
 /*Universal*/
+header, body, footer,
+a {
+    color: white;
+}
+
 h1, h2, h3, h4,
 p, span,
 a, button {
@@ -15,6 +20,54 @@ a, button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.align-left {
+    float: left;
+}
+.align-right {
+    float: right;
+}
+
+/*HEADER*/
+header {
+    background-color: blue;
+
+    margin-bottom: 25px;
+}
+
+.header-row {
+    overflow: hidden;
+    clear: left;
+}
+.header-column {
+    padding: 0.5rem;
+}
+
+    /*Decoration*/
+.slash-right, .slash-left {
+    background-color: black;
+    width: 35px;
+    height: 35px;
+}
+#header-bottom-row .align-left.decorate,
+#header-bottom-row .align-right.decorate{
+    width: 8%;
+    border-top: double black 5px;
+}
+
+    /*Header top row*/
+#header-top-row {
+    margin: 0 35px;
+}
+.header-column
+{
+    border-bottom: double black 5px;
+}
+
+    /*Header bottom row*/
+#header-bottom-row {
+    margin-top: 50px;
 }
 
 /*Homepage*/
