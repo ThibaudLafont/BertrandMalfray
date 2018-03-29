@@ -29,7 +29,7 @@ class CategoryController extends Controller
         $projects = $cat->getProjects();
 
         return $this->render(
-            'project/list.html.twig',
+            'project/category.html.twig',
             ['projects' => $projects]
         );
 

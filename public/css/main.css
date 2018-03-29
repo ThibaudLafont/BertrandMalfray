@@ -9,6 +9,10 @@ header, body, footer,
 a {
     color: white;
 }
+#main_content {
+    max-width: 850px;
+    margin:auto;
+}
 
 h1, h2, h3, h4,
 p, span,
@@ -16,7 +20,15 @@ a, button,
 li {
     font-family: "aldrich";
 }
-
+p {
+    text-align: justify;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
 .horizontal-center {
     display: flex;
     flex-direction: column;
@@ -28,6 +40,29 @@ li {
 }
 .align-right {
     float: right;
+}
+
+/* Entity summary ul*/
+.homepage-column ul,
+.list-column ul,
+.category-detail-column ul,
+.project-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+.homepage-column li,
+.list-column li,
+.category-detail-column li,
+.project-column li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+.homepage-column li img,
+.list-column li img,
+.category-detail-column li img,
+.project-column li img{
+    margin-right: 0.5rem;
 }
 
 /*HEADER*/
@@ -71,6 +106,21 @@ header {
     margin-top: 50px;
 }
 
+/* Footer */
+footer {
+    margin: 1.5rem 0 0 0;
+    background-color: black;
+    padding: 2%;
+}
+footer ul {
+    margin: 0;
+    padding-left: 25px;
+}
+#footer-bottom-row {
+    text-align: right;
+    padding-top: 0.25rem;
+}
+
 /*Homepage*/
 section#homepage-content {
     background-color: blue;
@@ -90,9 +140,6 @@ section#homepage-content {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-.homepage-column p{
-    text-align: justify;
-}
 
 .homepage-column input,
 .homepage-column textarea
@@ -106,23 +153,21 @@ section#homepage-content {
     width: 100%;
     padding: 0.5rem;
 }
-.homepage-column ul{
-    list-style-type: none;
-    padding: 0;
-}
-    .homepage-column li{
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-    }
-        .homepage-column li img{
-            margin-right: 0.5rem;
-        }
 img#homepage-fronpic {
     width: 100%;
 }
 
 /*List Project*/
+section#category-detail {
+    background-color: blue;
+    overflow: hidden;
+}
+.category-detail-column {
+    width: 46%;
+    padding: 2%;
+    float : left;
+}
+
 section.project-item-parent {
     background-color: blue;
     overflow: hidden;
@@ -140,11 +185,6 @@ section.project-item-parent {
 }
 .list-column h2 a{
     margin-top: 1rem;
-    text-decoration: none;
-}
-.list-column h2 a:hover{
-    margin-top: 1rem;
-    text-decoration: underline;
 }
 .list-column ul{
     list-style-type: none;
@@ -161,12 +201,68 @@ section.project-item-parent {
     background-color: blue;
     min-height: 250px;
 }
-.list-right-column p {
-    text-align: justify;
-}
 .list-right-column a {
     display: block;
     background-color: black;
     padding: 0.5rem;
     text-decoration: none;
+}
+
+/* Project show */
+article#project {
+    background-color: blue;
+}
+#project-name {
+    padding: 2% 2% 0 2%;
+    margin:0;
+}
+.project-column ul {
+    margin: 0;
+}
+.project-row {
+    overflow: hidden;
+}
+.project-column {
+    width: 46%;
+    padding: 2%;
+    float: left;
+}
+.project-column p {
+    padding: 0;
+    margin: 0;
+}
+#project-gallery {
+    padding: 2%;
+}
+#project-gallery a{
+    margin-right: 0.5rem;
+}
+#project-gallery img,
+#project-gallery iframe{
+    width: 100%;
+}
+iframe {
+    background-color: black;
+}
+#project-content {
+    padding : 2%;
+}
+#project-content h2,
+#project-content h3,
+#project-content h4 {
+    clear: both;
+}
+img.center {
+    display: block;
+    margin: auto;
+}
+img.float-right {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+img.float-left{
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }

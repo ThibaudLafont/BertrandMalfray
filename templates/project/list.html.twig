@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <!-- If project list by category -->
+    {% block category_details %}{% endblock %}
+
     {% for project in projects %}
         <!-- Project item -->
         <section class="project-item-parent"

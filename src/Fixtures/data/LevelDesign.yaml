@@ -1,13 +1,18 @@
 category:
     name: Level Design
-    summary: Dummy Text
+    summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 projects:
     Map Unreal Tournament: 
       init_date: 15-09-2016
       end_date: 01-10-2016
       roles: [Level Design, Game Design]
-      summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.<br/>
+      summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.
         La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
       content:
         1:
@@ -75,11 +80,11 @@ projects:
           1:
             name: Vidéo lambda
             alt: Description
-            src: https://www.youtube.com/watch?v=h4jx9x-9NDI&list=RDh4jx9x-9NDI&index=1
+            src: https://www.youtube.com/watch?v=h4jx9x-9NDI
           2:
             name: Vidéo bizarre
             alt: Description
-            src: https://www.youtube.com/watch?v=qtP_PRMaUZc&list=RDh4jx9x-9NDI&index=2
+            src: https://www.youtube.com/watch?v=qtP_PRMaUZc
     Arma 3: 
       init_date: 01-10-2016
       end_date: 01-03-2017

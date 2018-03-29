@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
 
+    <!-- Specific stylesheets -->
+    {% block stylesheets %}{% endblock %}
+
 </head>
 <body>
 
@@ -34,7 +37,7 @@
 {% endfor %}
 
 <!-- Header -->
-{% include '_header.html.twig' %}
+<header>{% include '_header.html.twig' %}</header>
 
 <!-- Here come the main content, define in children templates -->
 <section id="main_content">
@@ -43,6 +46,11 @@
     {% block body %}{% endblock %}
 
 </section>
+
+<footer>{% include '_footer.html.twig' %}</footer>
+
+<!-- Specific js -->
+{% block javascripts %}{% endblock %}
 
 </body>
 </html>
