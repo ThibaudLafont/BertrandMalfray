@@ -15,15 +15,15 @@
         <ul>
             <li>
                 <img src="/img/picto/note.png" alt="Bloc note pictogram">
-                Nom
+                {{ projects.0.name }}
             </li>
             <li>
                 <img src="/img/picto/calendar.png" alt="Calendar pictogram">
-                Date
+                {{ projects.0.initDate|date }}
             </li>
             <li>
                 <img src="/img/picto/user.png" alt="User pictogram">
-                Collaborateurs
+                {{ projects.0.numberOfContributors }}
             </li>
         </ul>
     </div>

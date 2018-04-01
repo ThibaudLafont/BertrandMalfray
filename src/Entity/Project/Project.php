@@ -277,7 +277,10 @@ class Project{
 
     public function getNumberOfContributors()
     {
-        return $this->getContributors()->count();
+        $count = $this->getContributors()->count();
+        if($count === 0) return 'Aucun collaborateur';
+
+        return $count . ' collaborateurs';
     }
 
     public function getShowUrl()
