@@ -29,14 +29,6 @@
 
         <!-- Bottom row -->
         <div class="homepage-row">
-            <!-- Bottom right column -->
-            <div class="homepage-column">
-                <!-- Contact form -->
-                <h2>\ Contact</h2>
-                {% form_theme form 'bootstrap_3_layout.html.twig' %}
-                {{ form(form) }}
-            </div>
-
             <!-- Bottom left column -->
             <div class="homepage-column">
                 <!-- Work informations -->
@@ -56,6 +48,13 @@
                         06 00 00 00 00
                     </li>
                 </ul>
+            </div>
+            <!-- Bottom right column -->
+            <div class="homepage-column">
+                <!-- Contact form -->
+                <h2>\ Contact</h2>
+                {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                {{ form(form) }}
             </div>
         </div>
     </section>

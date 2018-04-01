@@ -12,6 +12,7 @@ a {
 #main_content {
     max-width: 970px;
     margin:auto;
+    padding: 0 1.5rem;
 }
 
 h1, h2, h3, h4,

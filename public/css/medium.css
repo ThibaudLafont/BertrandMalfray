@@ -1,0 +1,16 @@
+.homepage-row {
+    display: block;
+}
+.homepage-column,
+.category-detail-column,
+.list-column {
+    float: none;
+    width: 96%;
+    padding: 2%;
+}
+
+@media all and (max-width: 600px) {
+    #main_content {
+        padding: 0;
+    }
+}
