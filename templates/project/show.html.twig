@@ -10,48 +10,6 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
 {% endblock %}
 
-{% block javascripts %}
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-
-    <!-- Slick js -->
-    <script type="text/javascript" src="/vendor/slick/slick.min.js"></script>
-
-    <!-- Slick config -->
-    <script type="text/javascript">
-            $('.slick-container').slick({
-                arrow: true,
-                dots: true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                centerMode: true
-            });
-    </script>
-
-    <!-- Fancybox JS -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js">
-    </script>
-
-    <!-- Fancybox config -->
-    <script type="text/javascript">
-        // Options for the first group
-        $('[data-fancybox="images"]').fancybox({
-            protect: true,
-            loop: true,
-            buttons : [
-                'zoom',
-                'thumbs',
-                'share',
-                'close',
-            ]
-        });
-    </script>
-{% endblock %}
-
 {% block body %}
     <article id="project">
         <div class="project-row">
@@ -112,4 +70,22 @@
             {% endfor %}
         </section>
     </article>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!-- Slick js -->
+    <script type="text/javascript" src="/vendor/slick/slick.min.js"></script>
+
+    <!-- Fancybox JS -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js">
+    </script>
+
+    <!-- Config -->
+    <script type="text/javascript" src="/js/show-project-gallery"></script>
 {% endblock %}
