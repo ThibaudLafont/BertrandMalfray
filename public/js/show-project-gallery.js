@@ -5,7 +5,8 @@ $('.slick-container').slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 3,
-    centerMode: true
+    centerMode: true,
+    variableWidth: true
 });
 
 // Fancy Box config

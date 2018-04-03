@@ -229,7 +229,7 @@ article#project {
     float: left;
 }
 .project-column p {
-    padding: 0;
+    padding: 0.5rem;
     margin: 0;
 }
 #project-gallery {
@@ -240,7 +240,8 @@ article#project {
 }
 #project-gallery img,
 #project-gallery iframe{
-    width: 100%;
+    width: 25vw;
+    height: 14.06vw;
 }
 iframe {
     background-color: black;

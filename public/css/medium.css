@@ -1,9 +1,11 @@
-.homepage-row {
+.homepage-row,
+.project-row {
     display: block;
 }
 .homepage-column,
 .category-detail-column,
-.list-column {
+.list-column,
+.project-column {
     float: none;
     width: 96%;
     padding: 2%;
