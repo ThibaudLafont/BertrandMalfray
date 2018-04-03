@@ -23,7 +23,7 @@ projects:
           type: local
           name: Test_Image
           alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-          display: right
+          display: left
           extension: jpg
           folder_name: leveldesign
         3:
