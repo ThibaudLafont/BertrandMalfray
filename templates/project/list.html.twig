@@ -22,7 +22,8 @@
                        title="Détails sur le projet {{ project.name }}">
                         {{ project.name }}</a>
                     ,
-                    <small>{{ project.category.name }}</small></h2>
+                    <small>{{ project.category.name }}</small>
+                </h2>
             </div>
 
             <!-- Project left-column -->
@@ -58,4 +59,16 @@
             </div>
         </section>
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Toggle config -->
+    <script type="text/javascript" src="/js/list-projects-toggle.js"></script>
 {% endblock %}

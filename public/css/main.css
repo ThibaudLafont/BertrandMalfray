@@ -177,9 +177,10 @@ section.project-item-parent {
 }
 
 .list-column {
-    width: 46%;
+    width: 50%;
     float: left;
-    padding: 2%;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 .list-column h2 {
     margin-top: 1rem;
@@ -206,6 +207,7 @@ section.project-item-parent {
     display: block;
     background-color: black;
     padding: 0.5rem;
+    box-sizing: border-box;
     text-decoration: none;
 }
 
