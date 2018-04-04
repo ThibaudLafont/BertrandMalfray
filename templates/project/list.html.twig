@@ -4,6 +4,8 @@
     <!-- If project list by category -->
     {% block category_details %}{% endblock %}
 
+    <hr>
+
     {% for project in projects %}
         <!-- Project item -->
         <section class="project-item-parent"
@@ -12,17 +14,14 @@
                          background-size: cover;
                          background-position: center;
                          ">
-
             <!-- Project left column -->
             <div class="list-column list-left-column">
+                <img src="/img/slash.png" alt="Decoration element">
                 <!-- Title & Category -->
                 <h2>
-
                     <a href="{{ project.showUrl }}"
                        title="Détails sur le projet {{ project.name }}">
                         {{ project.name }}</a>
-                    ,
-                    <small>{{ project.category.name }}</small>
                 </h2>
             </div>
 
@@ -58,6 +57,9 @@
                     Lire {{ project.name }}</a>
             </div>
         </section>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
     {% endfor %}
 {% endblock %}
 
@@ -71,4 +73,7 @@
 
     <!-- Toggle config -->
     <script type="text/javascript" src="/js/list-projects-toggle.js"></script>
+
+    <!-- Slash config -->
+    <script type="text/javascript" src="/js/list-projects-slash-h2.js"></script>
 {% endblock %}
