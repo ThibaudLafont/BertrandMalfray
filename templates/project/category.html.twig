@@ -5,7 +5,7 @@
 <section id="category-detail">
     <div class="category-detail-column">
         <div class="category-title">
-            <img src="/img/slash.png" alt="Decoration element">
+            <img src="/img/slash-left-nobg.png" alt="Decoration element">
             <h2>
                 {{ projects.0.category.name }},
                 <small>{{ projects.count }} projets</small>
@@ -16,16 +16,18 @@
     <div class="category-detail-column">
         <div id="right-category-title" class="category-title">
             <h2>Dernier Projet</h2>
-            <img src="/img/slash.png" alt="Decoration element">
+            <img src="/img/slash-right-nobg.png" alt="Decoration element">
         </div>
         <ul>
             <li>
                 <img src="/img/picto/note.png" alt="Bloc note pictogram">
-                {{ projects.0.name }}
+                <a href="{{ projects.0.showUrl }}">
+                    {{ projects.0.name }}
+                </a>
             </li>
             <li>
                 <img src="/img/picto/calendar.png" alt="Calendar pictogram">
-                {{ projects.0.initDate|date }}
+                Terminé le {{ projects.0.endDate|date }}
             </li>
             <li>
                 <img src="/img/picto/user.png" alt="User pictogram">

@@ -17,5 +17,11 @@ function adaptSlashTitle(parent) {
     });
 }
 
-adaptSlashTitle('.list-left-column');
-adaptSlashTitle('.category-title');
+$(document).ready(function(){
+    adaptSlashTitle('.list-left-column');
+    adaptSlashTitle('.category-title');
+});
+$(window).resize(function(){
+    adaptSlashTitle('.list-left-column');
+    adaptSlashTitle('.category-title');
+})

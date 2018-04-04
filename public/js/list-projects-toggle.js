@@ -1,45 +1,91 @@
-function handleListToggle() {
-    // Keep right-column height as project-item height
-    $('.project-item-parent').each(
-        function(){
-            $(this).height(
-                $(this).outerHeight()
-            );
-        }
-    )
+function toggleDesktop() {
+    // Foreach
+    $('.project-item-parent').each(function(){
+        $(this).off();
+        // Store toggle-column
+        var toggle = $(this).children('.list-right-column');
 
-    // Close all toggles
-    $('.list-right-column').hide();
+        // Set toggle-column position
+        $(toggle).css({
+            'position' : 'relative',
+            'left'     : '50%',
+            'top'      : '0%'
+        });
 
-    // Case of desktop display
-    if(window.outerWidth > 780) {
-        $('.project-item-parent').hover(
-            function() {
-                $( this ).children('.list-right-column')
-                    .show("slide", { direction: "right" }, 500);
-            }
-        );
+        // Create hover event
+        $(this).hover(function(){
+            // On hover animate left decrease
+            $(toggle).animate({
+                left: "0%"
+            }, 600);
+        });
+    });
+}
 
-    // Case of mobile display
-    } else {
-        $('.project-item-parent').click(
-            function() {
-                // Store right-column
-                var div = $( this ).children('.list-right-column');
+function toggleMobile() {
+    // Foreach
+    $('.project-item-parent').each(function() {
+        // Store toggle column
+        var toggle = $(this).children('.list-right-column');
+        // Set item height to toggle height
+        $(this).height($(toggle).outerHeight());
 
-                // Case of non showed
-                if($(div).css('display') === 'none') {
-                    $(div)
-                        .show("slide", {direction: "down"}, 500);
+        // Set toggle position
+        $(toggle).css({
+            'position' : 'relative',
+            'top'     : '100%'
+        });
+        // Set Title position
+        $(this).children('.list-left-column').css({
+            'position' : 'relative',
+            'bottom'   : '0%',
+            'left'     : '0%'
+        });
 
-                    // Case of showed
-                } else {
-                    $(div)
-                        .hide("slide", {direction: "down"}, 500);
+        // Set click event
+        $(this).click(function(){
+            // Hide title
+            $(this).children('.list-left-column').animate(
+                {bottom:'100%'}, 400, 'swing',
+                function(){
+                    $(this).hide();
                 }
-            }
-        );
+            );
+            // Show toggle-column
+            $(toggle).animate({top: '0%'}, 600);
+        })
+    });
+}
+
+function reset() {
+    // Remove events
+    $('.project-item-parent').off();
+    // Reset height
+    $('.project-item-parent').css('height', 'auto');
+    // Reset list-columns jquery styles
+    $('.project-item-parent').children('.list-left-column').removeAttr('style');
+    $('.project-item-parent').children('.list-right-column').removeAttr('style');
+}
+
+function handleToggle() {
+    // Check window width
+    var width = $(window).outerWidth();
+
+    // Belong to it, do right stuff
+    if (width < 780) {
+        toggleMobile();
+    } else {
+        toggleDesktop();
     }
 }
 
-handleListToggle();
+$(document).ready(function() {
+    handleToggle();
+});
+
+$(window).resize(function(){
+    // Reset old config
+    reset();
+
+    handleToggle();
+});
