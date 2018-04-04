@@ -10,14 +10,15 @@
     <!-- TODO : define the title in each page template -->
     <title>{% block title %}Bertrand Malfray{% endblock %}</title>
 
+    <!-- Specific stylesheets -->
+    {% block stylesheets %}{% endblock %}
+
     <!-- Global stylesheets -->
     {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" media="(max-width: 780px)" href="/css/medium.css">
 
-    <!-- Specific stylesheets -->
-    {% block stylesheets %}{% endblock %}
 
 </head>
 <body>

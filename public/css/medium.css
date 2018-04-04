@@ -12,8 +12,13 @@
     box-sizing: border-box;
 }
 
-@media all and (max-width: 600px) {
-    #main_content {
-        padding: 0;
-    }
+.slick-prev,
+.slick-next {
+    display: none !important;
 }
+
+/*@media all and (max-width: 600px) {*/
+    /*#main_content {*/
+        /*padding: 0;*/
+    /*}*/
+/*}*/
