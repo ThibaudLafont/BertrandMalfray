@@ -51,7 +51,9 @@ hr {
 }
 /*blue-border*/
 hr,
-section#category-detail {
+section#category-detail,
+section#homepage-content,
+#project {
     border: 1px solid #3d8af7;
     box-shadow:
             inset 0 0 8px #3d8af7,
