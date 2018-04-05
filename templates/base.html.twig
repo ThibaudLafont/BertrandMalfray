@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" media="(max-width: 780px)" href="/css/medium.css">
 
-
 </head>
 <body>
 
@@ -51,6 +50,27 @@
 
 <footer>{% include '_footer.html.twig' %}</footer>
 
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+    // Hide navbar
+    $('navbar').hide();
+
+    // Add click event
+    $('#topheader-mobile img').click(function(){
+        // If navbar hidden
+        if($('navbar').css('display') === 'none') {
+            $('navbar').show();
+
+        // If navbar showed
+        } else {
+            $('navbar').hide();
+        }
+    });
+</script>
 <!-- Specific js -->
 {% block javascripts %}{% endblock %}
 
