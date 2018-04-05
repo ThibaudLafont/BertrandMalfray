@@ -20,7 +20,12 @@
             <div class="project-column">
                 <p>{{ project.summary|raw }}</p>
             </div>
-            <div class="project-column">
+            <div id="project-details" class="project-column">
+                <div id="project-details-title">
+                    <h2>Détails
+                        <img src="/img/arrow-down.png" alt="Arrow down pictogram">
+                    </h2>
+                </div>
                 <ul id="project-infos">
                     <li>
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
@@ -93,4 +98,8 @@
     <!-- Slash config -->
     <script type="text/javascript" src="/js/slash-ajust.js"></script>
     <script type="text/javascript" src="/js/show-slash-config.js"></script>
+
+    <!-- Toggle cat details -->
+    <script type="application/javascript" src="/js/toggle-details.js"></script>
+    <script type="application/javascript" src="/js/show-project-toggle-cat.js"></script>
 {% endblock %}

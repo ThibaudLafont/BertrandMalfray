@@ -1,8 +1,8 @@
 // After load
 $(document).ready(function(){
-    handleToggleCat('#right-cat-col');
+    handleToggleCat('#project-details');
 });
 // on resize
 $(window).resize(function(){
-    handleToggleCat('#right-cat-col');
+    handleToggleCat('#project-details');
 });

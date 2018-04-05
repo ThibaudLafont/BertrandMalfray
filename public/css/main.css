@@ -372,6 +372,9 @@ h1#project-name {
     padding: 2%;
     float: left;
 }
+#project-details-title {
+    display: none;
+}
 .project-column p {
     padding: 0.5rem;
     margin: 0;
