@@ -2,18 +2,61 @@
 
 {% block body %}
 
-    <img src="/img/infos/bertrand-malfray.png" alt="Photo de Bertrand Malfray">
-    <h2>Contact</h2>
-    <h2>Bio</h2>
-    <p>Biographie Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis debitis,
-        deserunt dignissimos doloribus dolorum earum id impedit magnam nam quis saepe totam ut. Explicabo
-        fugit harum laboriosam magnam porro.
-    </p>
-    <h2>Informations</h2>
-    <ul>
-        <li>School name</li>
-        <li>School address</li>
-        <li>Phone number</li>
-    </ul>
+    <!-- Homepage main content -->
+    <section id="homepage-content">
+        <!-- Top row -->
+        <div class="homepage-row">
+            <!-- Top right column -->
+            <div class="homepage-column horizontal-center">
+                <!-- Bertrand picture -->
+                <img id="homepage-fronpic"
+                     src="/img/infos/bertrand-malfray.jpg"
+                     alt="Photo de Bertrand Malfray">
+            </div>
+            <!-- Top left column -->
+            <div class="homepage-column">
+                <!-- Biography -->
+                <h2>\ Bio</h2>
+                <p>Biographie Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis debitis,
+                    deserunt dignissimos doloribus dolorum earum id impedit magnam nam quis saepe totam ut. Explicabo
+                    fugit harum laboriosam magnam porro.
+                    Biographie Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis debitis,
+                    deserunt dignissimos doloribus dolorum earum id impedit magnam nam quis saepe totam ut. Explicabo
+                    fugit harum laboriosam magnam porro.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom row -->
+        <div class="homepage-row">
+            <!-- Bottom left column -->
+            <div class="homepage-column">
+                <!-- Work informations -->
+                <h2>\ Informations</h2>
+                <ul>
+                    <li>
+                        <img src="/img/picto/phone.png" alt="Phone pictogram">
+                        Objectif 3D
+                    </li>
+                    <li>
+                        <img src="/img/picto/gps.png" alt="GPS pictogram">
+                        2214 Boulevard de la Lironde, <br/>
+                        34980 Montferrier-sur-Lez
+                    </li>
+                    <li>
+                        <img src="/img/picto/school.png" alt="School hat pictogram">
+                        06 00 00 00 00
+                    </li>
+                </ul>
+            </div>
+            <!-- Bottom right column -->
+            <div class="homepage-column">
+                <!-- Contact form -->
+                <h2>\ Contact</h2>
+                {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                {{ form(form) }}
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

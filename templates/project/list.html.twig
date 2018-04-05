@@ -1,13 +1,74 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <!-- If project list by category -->
+    {% block category_details %}{% endblock %}
+
     {% for project in projects %}
-        <h2>{{ project.name }}</h2>
-        <p><em>{{ project.category.name }}</em></p>
-        <span>Débuté le {{ project.initDate|date() }}</span><br/>
-        <span>A duré {{ project.duration }}</span><br/>
-        <span>{{ project.numberOfContributors }} collaborateurs</span><br/>
-        <p>{{ project.summary|raw }}</p>
-        <a href="{{ project.showUrl }}" title="Détails sur le projet {{ project.name }}">Voir</a>
+        <!-- Project item -->
+        <section class="project-item-parent"
+                 style="
+                         background-image: url('{{ project.localMedias.0.src }}');
+                         background-size: cover;
+                         background-position: center;
+                         ">
+            <!-- Project left column -->
+            <div class="list-column list-left-column">
+                <span class="slash slash-right"></span>
+                <span class="triangle-bg"></span>
+                <!-- Title & Category -->
+                <h2>
+                    <a href="{{ project.showUrl }}"
+                       title="Détails sur le projet {{ project.name }}">
+                        {{ project.name }}</a>
+                </h2>
+            </div>
+
+            <!-- Project left-column -->
+            <div class="list-column list-right-column">
+                <!-- Summary -->
+                <p>{{ project.summary|raw }}</p>
+
+                <!-- Project infos -->
+                <ul>
+                    <!-- Start date of Project -->
+                    <li>
+                        <img src="/img/picto/calendar.png" alt="Calendar pictogram">
+                        Débuté le {{ project.initDate|date() }}
+                    </li>
+
+                    <!-- Duration of project -->
+                    <li>
+                        <img src="/img/picto/date-interval.png" alt="Date interval pictogram">
+                        A duré {{ project.duration }}
+                    </li>
+
+                    <!-- Collaborators -->
+                    <li>
+                        <img src="/img/picto/user.png" alt="User pictogram">
+                        {{ project.numberOfContributors }}
+                    </li>
+                </ul>
+
+                <!-- Link to project show page -->
+                <a href="{{ project.showUrl }}"
+                   title="Détails sur le projet {{ project.name }}">
+                    Lire {{ project.name }}</a>
+            </div>
+        </section>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    <!-- Toggle config -->
+    <script type="text/javascript" src="/js/list-projects-toggle.js"></script>
+
+    <!-- Slash config -->
+    <script type="text/javascript" src="/js/slash-ajust.js"></script>
+    <script type="text/javascript" src="/js/list-slash-config.js"></script>
+
+    {% block catlistscripts %}{% endblock %}
 {% endblock %}

@@ -227,7 +227,6 @@ class Fixtures extends Fixture
      */
     private function createProject(string $name, array $datas)
     {
-
         // Create&Hydrate Project
         $project = new Project();
         $project->setName($name);

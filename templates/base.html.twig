@@ -10,9 +10,14 @@
     <!-- TODO : define the title in each page template -->
     <title>{% block title %}Bertrand Malfray{% endblock %}</title>
 
+    <!-- Specific stylesheets -->
+    {% block stylesheets %}{% endblock %}
+
     <!-- Global stylesheets -->
     {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
-    {#<link rel="stylesheet" href="/css/main.css">#}
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" media="(max-width: 780px)" href="/css/medium.css">
 
 </head>
 <body>
@@ -32,11 +37,8 @@
 
 {% endfor %}
 
-<!-- Nav links -->
-<a href="/">Home</a>
-<a href="/projects">Projets</a>
-<a href="/projects/level-design">Level Design</a>
-<a href="/projects/game-design">Game Design</a>
+<!-- Header -->
+<header>{% include '_header.html.twig' %}</header>
 
 <!-- Here come the main content, define in children templates -->
 <section id="main_content">
@@ -45,6 +47,32 @@
     {% block body %}{% endblock %}
 
 </section>
+
+<footer>{% include '_footer.html.twig' %}</footer>
+
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+    // Hide navbar
+    $('navbar').hide();
+
+    // Add click event
+    $('#topheader-mobile img').click(function(){
+        // If navbar hidden
+        if($('navbar').css('display') === 'none') {
+            $('navbar').show();
+
+        // If navbar showed
+        } else {
+            $('navbar').hide();
+        }
+    });
+</script>
+<!-- Specific js -->
+{% block javascripts %}{% endblock %}
 
 </body>
 </html>
