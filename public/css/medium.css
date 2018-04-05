@@ -17,6 +17,14 @@
     display: none !important;
 }
 
+.slash,
+.triangle-bg {
+    display: none;
+}
+h1#project-name {
+    text-align: center;
+}
+
 /*@media all and (max-width: 600px) {*/
     /*#main_content {*/
         /*padding: 0;*/

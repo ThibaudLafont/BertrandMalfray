@@ -12,7 +12,8 @@
 
 {% block body %}
     <article id="project">
-        <div class="project-row">
+        <div class="project-row project-title">
+            <span class="slash slash-right"></span>
             <h1 id="project-name">{{ project.name }}</h1>
         </div>
         <div class="project-row">
@@ -88,4 +89,8 @@
 
     <!-- Config -->
     <script type="text/javascript" src="/js/show-project-gallery"></script>
+
+    <!-- Slash config -->
+    <script type="text/javascript" src="/js/slash-ajust.js"></script>
+    <script type="text/javascript" src="/js/show-slash-config.js"></script>
 {% endblock %}
