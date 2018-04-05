@@ -253,6 +253,9 @@ section.project-item-parent {
     box-sizing: border-box;
     text-decoration: none;
 }
+.list-right-column p {
+    margin-top: 0;
+}
 
 /* Project show */
 article#project {
