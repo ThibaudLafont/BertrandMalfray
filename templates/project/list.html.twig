@@ -4,8 +4,6 @@
     <!-- If project list by category -->
     {% block category_details %}{% endblock %}
 
-    <hr>
-
     {% for project in projects %}
         <!-- Project item -->
         <section class="project-item-parent"
@@ -71,4 +69,6 @@
     <!-- Slash config -->
     <script type="text/javascript" src="/js/slash-ajust.js"></script>
     <script type="text/javascript" src="/js/list-slash-config.js"></script>
+
+    {% block catlistscripts %}{% endblock %}
 {% endblock %}

@@ -280,6 +280,9 @@ section#category-detail {
     margin : 1rem 0 0 0;
 }
 
+#category-detail h2 img{
+    display: none;
+}
 section.project-item-parent {
     overflow: hidden;
     min-height: 250px;
@@ -298,8 +301,7 @@ section.project-item-parent {
     align-items: flex-start;
     overflow: visible !important;
 }
-.list-left-column img,
-.category-title img{
+.list-left-column img{
     opacity: 0;
     height: 0;
 }

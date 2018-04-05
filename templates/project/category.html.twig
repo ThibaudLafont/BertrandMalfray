@@ -13,9 +13,11 @@
         </div>
         <p>{{ projects.0.category.summary }}</p>
     </div>
-    <div class="category-detail-column">
+    <div id="right-cat-col" class="category-detail-column">
         <div id="right-category-title" class="category-title">
-            <h2>Dernier Projet</h2>
+            <h2>Dernier Projet
+                <img src="/img/arrow-down.png" alt="Arrow down pictogram">
+            </h2>
             <span class="slash slash-left"></span>
         </div>
         <ul>
@@ -36,5 +38,13 @@
         </ul>
     </div>
 </section>
+
+    <hr>
+
+{% endblock %}
+
+{% block catlistscripts %}
+
+    <script type="application/javascript" src="/js/list-projects-toggle-cat.js"></script>
 
 {% endblock %}
