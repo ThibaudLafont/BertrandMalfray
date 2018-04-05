@@ -78,6 +78,8 @@ section#homepage-content,
     display: flex;
     align-items: center;
     padding: 0.5rem;
+    justify-content: space-between;
+    font-size: 18px;
 }
 .homepage-column li img,
 .list-column li img,
@@ -279,6 +281,10 @@ h1#project-name {
 #project-gallery {
     padding: 2% 0;
     overflow: visible;
+}
+.slick-dotted.slick-slider {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .slick-prev,
 .slick-next {
