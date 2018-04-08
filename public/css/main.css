@@ -133,7 +133,8 @@ header {
     margin-bottom: 25px;
 }
 #desktop-header {
-    /*margin-top: 35px;*/
+    margin-top: 25px;
+    margin-bottom: 100px;
 }
 .header-row {
     overflow: hidden;
@@ -252,6 +253,7 @@ header {
     /*Header bottom row*/
 #header-bottom-row {
     margin-top: 100px;
+    overflow: visible;
 }
 #header-bottom-row .header-column {
     width: 21%;
