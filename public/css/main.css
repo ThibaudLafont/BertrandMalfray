@@ -307,7 +307,10 @@ section#homepage-content {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-
+.homepage-column iframe {
+    width: 100%;
+    min-height: 200px;
+}
 .homepage-column input,
 .homepage-column textarea
 {
