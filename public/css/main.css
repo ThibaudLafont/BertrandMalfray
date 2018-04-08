@@ -128,7 +128,7 @@ section#homepage-content,
     display: none;
 }
 header {
-    /*background: url('/img/blue-background.png');*/
+    background: url('/img/blue-background.png');
 
     margin-bottom: 25px;
 }
@@ -174,14 +174,60 @@ header {
     overflow: visible;
 }
 #top-decoration .h-slash-left {
-    margin-right: 14px;
+    position: relative;
+    left: 14px;
 }
-#top-decoration .h-slash-right {
-    margin-left: 14px;
+#top-decoration .h-slash-right
+{
+    position: relative;
+    left: -14px;
 }
+#top-decoration .h-bg-right {
+    height: 100%;
+    border-right: 28px solid transparent;
+    border-top: 35px solid black;
+    border-bottom: 0px solid black;
+}
+#top-decoration .h-bg-left {
+    height: 100%;
+    border-left: 28px solid transparent;
+    border-top: 35px solid black;
+    border-bottom: 0px solid black;
+}
+#header-bottom-row .h-bg-right {
+    height: 100%;
+    border-right: 28px solid transparent;
+    border-left: 80px solid black;
+    border-bottom: 36px solid black;
+    border-top: 0px solid black;
+    position: relative;
+    left: -80px;
+}
+#header-bottom-row .h-bg-left {
+    height: 100%;
+    border-left: 28px solid transparent;
+    border-right: 80px solid black;
+    border-bottom: 36px solid black;
+    border-top: 0px solid black;
+    position: relative;
+    right: -80px;
+}
+#header-bottom-row .h-slash-left,
+#header-bottom-row .header-column.align-left
+{
+    position: relative;
+    left: -108px;
+}
+#header-bottom-row .h-slash-right,
+#header-bottom-row .header-column.align-right
+{
+    position: relative;
+    right: -108px;
+}
+
 #header-bottom-row .align-left.decorate,
 #header-bottom-row .align-right.decorate{
-    width: 8%;
+    width: 80px;
     border-top: solid #3d8af7 2px;
     position: relative;
     top: -2px;
@@ -193,6 +239,7 @@ header {
     /*Header top row*/
 #header-top-row {
     padding: 0 29px;
+    background-color: black;
 }
 .header-column
 {
@@ -207,7 +254,7 @@ header {
     margin-top: 100px;
 }
 #header-bottom-row .header-column {
-    width: 35%;
+    width: 21%;
 }
 #header-pic {
     height: 0;
