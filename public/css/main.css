@@ -528,3 +528,10 @@ img.float-left{
     margin-right: 1rem;
     margin-bottom: 1rem;
 }
+
+@media all and (min-width: 1200px) {
+    #project-gallery img, #project-gallery iframe {
+        width: 12.5vw;
+        height: 7.06vw;
+    }
+}
