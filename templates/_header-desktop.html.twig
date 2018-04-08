@@ -1,10 +1,10 @@
-<header>
+<div id="desktop-header">
     <!-- Header top row -->
     <div id="header-top-row" class="header-row">
         <!-- Header top left column -->
         <div class="header-column align-left">
             <!-- Owner name -->
-            <span>B. Malfray</span>
+            <span><a href="/">B. Malfray</a></span>
         </div>
 
         <!-- Header top right column -->
@@ -17,9 +17,11 @@
     </div>
 
     <!-- Sub top-row with slashes -->
-    <div class="header-row">
-        <div class="slash-right align-right"></div>
-        <div class="slash-left align-left"></div>
+    <div id="top-decoration" class="header-row">
+        <div class="h-bg-right align-left"></div>
+        <div class="h-slash-right align-left"></div>
+        <div class="h-bg-left align-right"></div>
+        <div class="h-slash-left align-right"></div>
     </div>
 
     <!-- Header bottom row -->
@@ -27,8 +29,10 @@
     <!-- Header bottom left column -->
         <!-- Decoration -->
         <div class="align-left decorate"></div>
+        <!-- BG -->
+        <div class="h-bg-right align-left"></div>
         <!-- Slash block -->
-        <div class="slash-left align-left"></div>
+        <div class="h-slash-left align-left"></div>
         <!-- Content -->
         <div class="header-column align-left">
             <!-- Link to Level Design projects -->
@@ -38,12 +42,20 @@
     <!-- Header bottom row right column -->
         <!-- Decoration -->
         <div class="align-right decorate"></div>
+        <!-- BG -->
+        <div class="h-bg-left align-right"></div>
         <!-- Slash block -->
-        <div class="slash-right align-right"></div>
+        <div class="h-slash-right align-right"></div>
         <!-- Content -->
         <div class="header-column align-right">
             <!-- Link to Game Design projects -->
             <a href="/projects/game-design">Game Design</a>
         </div>
     </div>
-</header>
+
+    <div id="header-pic" class="header-row">
+        <a href="/">
+            <img src="/img/infos/bertrand-malfray-crop.png" alt="Photo de Bertrand Malfray">
+        </a>
+    </div>
+</div>

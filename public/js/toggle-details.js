@@ -24,9 +24,6 @@ function handleToggleCat(ulParent) {
     // Check window width
     var width = $(window).outerWidth();
 
-    // Reset Jquery conf
-    resetCatDet(ulParent);
-
     // Belong to it, do right stuff
     if (width < 780) {
         toggleCatDetails(ulParent);

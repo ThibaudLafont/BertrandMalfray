@@ -1,3 +1,47 @@
+/*HEADER*/
+#desktop-header {
+    display: none;
+}
+#topheader-mobile {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    background: url('/img/blue-background.png');
+    padding: 0.25rem 1.5rem;
+    border: 1px solid #3d8af7;
+    box-shadow:
+            inset 0 0 6px #3d8af7,
+            0px 0px 6px #3d8af7;
+    border-radius: 1px;
+}
+#topheader-mobile img,
+#topheader-mobile span {
+    display: table-cell;
+    vertical-align: middle;
+}
+#topheader-mobile span {
+    text-align: right;
+}
+navbar {
+    display: block;
+    background-color: rgba(75, 75, 73, 0.75);
+}
+.navbar-block {
+    padding: 1rem 1.5rem;
+    border : 1px solid #3d8af7;
+    box-shadow:
+            inset 0 0 1px #3d8af7,
+            0px 0px 1px #3d8af7;
+}
+navbar h3 {
+    margin: 0;
+}
+navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
 .homepage-row,
 .project-row {
     display: block;
@@ -8,7 +52,7 @@
 .project-column {
     float: none;
     width: 100%;
-    padding: 2%;
+    padding: 1rem;
     box-sizing: border-box;
 }
 

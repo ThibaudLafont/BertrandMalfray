@@ -68,9 +68,6 @@ function reset() {
 }
 
 function handleToggle() {
-    // Check window width
-    var width = $(window).outerWidth();
-
     // Belong to it, do right stuff
     if (width < 780) {
         toggleMobile();
@@ -83,9 +80,16 @@ $(document).ready(function() {
     handleToggle();
 });
 
+var width = $(window).outerWidth();
 $(window).resize(function(){
-    // Reset old config
-    reset();
+    if($(this).outerWidth() !== width) {
+        // Store new width
+        width = $(this).outerWidth();
 
-    handleToggle();
+        // Reset old config
+        reset();
+
+        // Handle toggle
+        handleToggle();
+    }
 });
