@@ -3,6 +3,11 @@ $(document).ready(function(){
     handleToggleCat('#right-cat-col');
 });
 // on resize
+var width = $(window).outerWidth();
 $(window).resize(function(){
-    handleToggleCat('#right-cat-col');
+    if($(this).outerWidth() !== width) {
+        // Store new width
+        width = $(this).outerWidth();
+        handleToggleCat('#right-cat-col');
+    }
 });
