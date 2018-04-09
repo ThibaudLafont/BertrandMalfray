@@ -16,7 +16,7 @@ class DefaultController extends Controller
      *     name="homepage"
      * )
      */
-    public function listAction(Request $request, \Swift_Mailer $mailer) {
+    public function homeAction(Request $request, \Swift_Mailer $mailer) {
 
         $form = $this->createForm('App\Form\Type\ContactType');
 
@@ -40,6 +40,8 @@ Contenu: \"{$data['content']}\"
                     ");
 
                 $mailer->send($message);
+
+                $this->addFlash('success', 'Le mail a bien été envoyé');
 
                 return $this->redirectToRoute('homepage');
             }

@@ -30,7 +30,7 @@
 
         <!-- Create a div class with flash-message type for front-work -->
         <div class="flash flash-{{ label }}">
-            {{ message|striptags("<a>")|raw }}
+            {{ message }}
         </div>
 
     {% endfor %}
@@ -70,6 +70,9 @@
             $('navbar').hide();
         }
     });
+
+    // Detect and put a timer on flash-messages for hide them
+    $('.flash').delay(5000).fadeOut( 500 );
 </script>
 <!-- Specific js -->
 {% block javascripts %}{% endblock %}

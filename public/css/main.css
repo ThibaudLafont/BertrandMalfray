@@ -4,6 +4,28 @@
     src: url("font/aldrich-regular.ttf");
 }
 
+/*FLASH MESSAGES*/
+.flash{
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding : 1rem 0.75rem;
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    border : 2px solid white;
+    z-index: 105;
+}
+.flash-success
+{
+    background-color: #64cf77;
+}
+.flash-error
+{
+    background-color: red;
+}
+
 /*Universal*/
 header, body, footer,
 a {
