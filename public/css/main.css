@@ -71,6 +71,7 @@ hr {
 .align-right {
     float: right;
 }
+
 /*blue-border*/
 hr,
 section#category-detail,
@@ -78,7 +79,6 @@ section#homepage-content,
 #project,
 .slick-prev,
 .slick-next,
-/*.list-right-column,*/
 .list-right-column a,
 .homepage-column button[type="submit"] {
     border: 1px solid #3d8af7;
