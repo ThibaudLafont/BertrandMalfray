@@ -30,7 +30,7 @@ class DefaultController extends Controller
                 $message = (new \Swift_Message($data['name'] . ' cherche à te joindre'))
                     ->setSender($data['email'], $data['name'])
                     ->setReplyTo($data['email'], $data['name'])
-                    ->setTo(['thiblaf10@gmail.com' => 'Thibaud Lafont'])
+                    ->setTo(['contact@bertrandmalfray.fr' => 'Bertrand Malfray'])
                     ->setBody("
 Nom : {$data['name']} 
 Mail: {$data['email']}
