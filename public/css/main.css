@@ -553,7 +553,7 @@ img.float-left{
 
 @media all and (min-width: 1200px) {
     #project-gallery img, #project-gallery iframe {
-        width: 12.5vw;
-        height: 7.06vw;
+        width: 20.83vw;
+        height: 11.72vw;
     }
 }

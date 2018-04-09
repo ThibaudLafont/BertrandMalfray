@@ -8,58 +8,78 @@ category:
        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 projects:
-    Map Unreal Tournament: 
+    Map Unreal Tournament - DM Spacebase 41:
       init_date: 15-09-2016
       end_date: 01-10-2016
-      roles: [Level Design, Game Design]
+      role: Level Design
       summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.
         La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
       content:
         1:
           type: title
           level: 1
-          content: Note d'intention
+          content: Compétences utilisées
         2:
-          type: local
-          name: Test_Image
-          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-          display: left
-          extension: jpg
-          folder_name: leveldesign
+          type: paragraph
+          content: - Analyse du jeu Unreal Tournament
         3:
           type: paragraph
-          content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range.
-            Mais cette zone est très ouverte, ce qui incite le joueur a utilisé des armes mi-distance, quand un ennemi est du même côté que le joueur.
+          content: - Création de différents modules LD
         4:
           type: paragraph
-          content: Des couloirs font le tour, afin de récupérer armes/munitions/soins, ces couloirs sont des zones de corps à corps, et sont des zones plus sûres pour se régénérer.
-            Certains gardent une grande visibilité pour permettre d’utiliser aussi des armes mi-distance.
+          content: - Programmation Blueprint
         5:
           type: paragraph
-          content: Il y a des wall dodge, wall slide, lift jump pour atteindre des bonus, mais ils restent toujours atteignable,
-            par d’autres chemins si le joueur ne maîtrise pas ces features.
+          content: - Playtests et équilibrage
         6:
           type: title
           level: 1
-          content: Explication
+          content: Note d'intention
         7:
-          type: paragraph
-          content: Cette map est faite pour du Deathmatch, une autre contrainte, puisque les spawn des joueurs doivent être bien timé, pour ne pas favoriser un joueur.
-            Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
+          type: local
+          name: Planche-Rendu-Map
+          alt: Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+          display: right
+          extension: jpg
+          folder_name: leveldesign
         8:
           type: paragraph
-          content: Dans Unreal Tournament, la verticalité est très utilisé, j’ai choisi de placer des “base jump” pour changer très rapidement d’étage, et ainsi ne pas casser le flow comme pourrait le faire des ascenseurs.
+          content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range.
+            Mais cette zone est très ouverte, ce qui incite le joueur a utilisé des armes mi-distance, quand un ennemi est du même côté que le joueur.
         9:
           type: paragraph
-          content: Le plus gros bonus, le “Berserker”, se situe au milieu de la map, dans le bâtiment central. Des couloirs font le tour de ce bâtiment, on y trouve armes/soin/munitions.
+          content: Des couloirs font le tour, afin de récupérer armes/munitions/soins, ces couloirs sont des zones de corps à corps,
+            et sont des zones plus sûres pour se régénérer. Certains gardent une grande visibilité pour permettre d’utiliser aussi des armes mi-distance.
+            Il y a des wall dodge, wall slide, lift jump pour atteindre des bonus, mais ils restent toujours atteignable,
+            par d’autres chemins si le joueur ne maîtrise pas ces features.
         10:
-          type: paragraph
-          content: La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
+          type: title
+          level: 1
+          content: Explication
         11:
+          type: local
+          name: Planche_rendu_modules
+          alt: Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
+          display: left
+          extension: jpg
+          folder_name: leveldesign
+        12:
+          type: paragraph
+          content: Cette map est faite pour du Deathmatch, les spawn des joueurs doivent être bien timé, pour ne pas favoriser un joueur.
+            Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
+        13:
+          type: paragraph
+          content: Dans Unreal Tournament, la verticalité est très utilisé, j’ai choisi de placer des “base jump” pour changer très rapidement d’étage, et ainsi ne pas casser le flow comme pourrait le faire des ascenseurs.
+            Le plus gros bonus, le “Berserker”, se situe au milieu de la map, dans le bâtiment central.
+        14:
+          type: paragraph
+          content: Des couloirs font le tour de ce bâtiment, on y trouve armes/soin/munitions.
+            La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
+        15:
           type: title
           level: 1
           content: Event
-        12:
+        16:
           type: paragraph
           content: L’event de la map ”Brouillard” a été pensé pour réduire la visibilité du joueur et ainsi l’inciter à utiliser des armes corps à corps.
             Au départ, le brouillard devait être empoisonné et retirer 1 point de vie par seconde pendant 50 secondes, afin de réduire de moitié la vie de tous les joueurs.
@@ -67,91 +87,346 @@ projects:
       medias:
         local:
           1:
-            name: UT-Spacebase41Map01
-            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+              name: UT-Spacebase41Map01
+              alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+              extension: jpg
+              folder_name: leveldesign
+          2:
+            name: Planche_rendu_modules
+            alt: Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
             extension: jpg
             folder_name: leveldesign
-          2:
+          3:
             name: Planche-Rendu-Map
-            alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+            alt: Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
             extension: jpg
             folder_name: leveldesign
         distant:
           1:
-            name: Vidéo lambda
-            alt: Description
-            src: https://www.youtube.com/watch?v=h4jx9x-9NDI
+            name: Preview_Spacebase41
+            alt : Turn-around de DM Spacebase41 sur unreal tournament.
+            src: https://www.youtube.com/embed/U6FBfrNXjFU
           2:
-            name: Vidéo bizarre
-            alt: Description
-            src: https://www.youtube.com/watch?v=qtP_PRMaUZc
-    Arma 3: 
-      init_date: 01-10-2016
-      end_date: 01-03-2017
-      summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
-      content:
-        1:
-          type: title
-          level: 1
-          content: Note d'intention
-        2:
-          type: local
-          name: Corpus_Image_1
-          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-          display: center
-          extension: jpg
-          folder_name: leveldesign
-        3:
-          type: paragraph
-          content: Dans la campagne Arma, j’ai été en charge de la 4eme mission.
-        4:
-          type: paragraph
-          content: Dans cette mission, je voulais que les joueurs soient conscient du déroulement du scénario dans lequel ils évoluent.
-        5:
-          type: title
-          level: 1
-          content: Story
-        6:
-          type: title
-          level: 2
-          content: Background
-        7:
-          type: paragraph
-          content: Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
-            pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
-            installer une base dangereuse pour ses rivaux.
-        8:
-          type: local
-          name: Corpus_Image_2
-          alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-          display: left
-          extension: jpg
-          folder_name: leveldesign
-        9:
-          type: paragraph
-          content: Pour éviter une crise planétaire, ces deux superpuissances travaillent avec des forces milicienne. Le NATO emploie l’AAF, un groupe d’Altis contraint d’exécuter les ordres des
-            Nations Unies et envoyé pour asservir l’île. Le CSAT, eux, ont réussi à prendre le contrôle d’un groupe de rebelle indépendantiste de Tanoa, le Syndikat, qui lutte contre la prise de
-            pouvoir de NATO.
-        10:
-          type: title
-          level: 2
-          content: Scénario
-        11:
-          type: paragraph
-          content: L’escouade est envoyée en mission afin de trouver comment le Syndikat se fournit en armes afin d’aider l’AAF envoyé sur Tanoa. En s'apercevant que le CSAT fournit des armes aux
-            indépendantiste de Tanoa, le Blufor décide de faire exploser un entrepôt de munitions Opfor situé sur Altis.
-      medias:
-        local:
+            name: Gameplay_Spacebase41
+            alt : Présentation de l'obtention des différents pick-ups de DM Spacebase41 sur unreal tournament.
+            src: https://www.youtube.com/embed/oCVTXSKdPiA
+          3:
+            name: CheminCritique_Spacebase41
+            alt : Présentation du chemin principal de l'obtention de toutes les armes de DM Spacebase41 sur unreal tournament.
+            src: https://www.youtube.com/embed/b7WyVfzSLMM
+    Arma 3:
+        init_date: 01-10-2016
+        end_date: 01-03-2017
+        role: Mission Design
+        summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
+        content:
           1:
-            name: Image_Bison
-            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-            extension: jpg
-            folder_name: leveldesign
+            type: title
+            level: 1
+            content: Note d'intention
           2:
-            name: Image_Bison_2
-            alt : Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
+            type: local
+            name: MapGeneraleArma3
+            alt: Map générale du projet Arma 3 - Top view - player main path
+            display: left
             extension: jpg
             folder_name: leveldesign
-      ext_contributors:
-        Alex Mitard: Level Designer
-        John Doe: Créateur de textures
+          3:
+            type: paragraph
+            content: Dans la campagne Arma, j’ai été en charge de la 4eme mission.
+              Dans cette mission, je voulais que les joueurs soient conscient du déroulement du scénario dans lequel ils évoluent.
+              Etant un joueur qui aime jouer en assaut, j’ai voulu faire une mission avec beaucoup d’action pour cette classe, mais en laissant des spots pour qu’un sniper puisse s’amuser.
+          4:
+            type: paragraph
+            content: Les joueurs devaient constamment être sous pression à partir de la première zone d’action et rester ainsi tout le long de la mission.
+              Tanoa étant très forestière comparé à Altis, le joueur a plus de difficulté à détecter les ennemis, ce qui a aider à monter et garder ce stress.
+              Un timer a été mis en place après la première action et les joueurs doivent effectuer une activité avant la fin de celui-ci.
+              Juste le fait d’afficher un timer toutes les minutes laisse les joueurs en état de stress.
+          5:
+            type: paragraph
+            content: La mission est basée sur de la défense, il y en a deux, la première est une embuscade réalisé sur les joueurs par le Syndikat.
+              La deuxième, par contre ce sont les joueurs qui attendent que l’AAF passe à l’action. Ce sont deux approches différentes de défense pour avoir de la variété sur une même activité.
+              Il y a bien sûr plus d’ennemis à la deuxième défense, il faut que les joueurs se dépassent et travaillent leurs skills.
+          6:
+            type: title
+            level: 1
+            content: Story
+          7:
+            type: title
+            level: 2
+            content: Background
+          8:
+            type: local
+            name: 03_screenshot_DefenseCheckpoint
+            alt : Screenshot de la deuxième défense face aux membres de l'AAF.
+            extension: jpg
+            folder_name: leveldesign
+            display: right
+          9:
+            type: paragraph
+            content: Tanoa est une île indépendante située dans le pacifique où deux superpuissances s’affrontent pour son contrôle. Le NATO s’intéresse à Tanoa étant une île proche de leur
+              pays et ayant des ressources intéressante pour le commerce. Le CSAT, une force rivale de NATO, y voit un moyen de prendre l’île, afin de se rapprocher des Etats-Unis, et ainsi y
+              installer une base dangereuse pour ses rivaux.
+              Pour éviter une crise planétaire, ces deux superpuissances travaillent avec des forces milicienne. Le NATO emploie l’AAF, un groupe d’Altis contraint d’exécuter les ordres des
+              Nations Unies et envoyé pour asservir l’île. Le CSAT, eux, ont réussi à prendre le contrôle d’un groupe de rebelle indépendantiste de Tanoa, le Syndikat, qui lutte contre la prise de
+              pouvoir de NATO.
+          10:
+            type: title
+            level: 2
+            content: Scénario
+          11:
+            type: local
+            name: blackfox_timeline
+            alt: Diagramme des pourcentages des actions
+            display: left
+            extension: png
+            folder_name: leveldesign
+          12:
+            type: paragraph
+            content: L’escouade est envoyée en mission afin de trouver comment le Syndikat se fournit en armes afin d’aider l’AAF envoyé sur Tanoa. En s'apercevant que le CSAT fournit des armes aux
+              indépendantiste de Tanoa, le Blufor décide de faire exploser un entrepôt de munitions Opfor situé sur Altis.
+              Sur cette île, un commandant de la milice d’Altis envoie un ordre, détruire un convoi du Syndikat. Malheureusement, le commandant en question, se sert des Nations Unies pour
+              arriver à ces fins, prendre le contrôle de l’AAF afin de se libérer de l’emprise qu’a NATO sur Altis. L’un des passagers du convoi est le supérieur du commandant.
+              Suite à cette assassinat, un appel est envoyé, les Blufor établis sur Tanoa luttent contre l’AAF qui s’est rangé du côté du Syndikat et du CSAT
+          13:
+            type: title
+            level: 2
+            content: Ma mission
+          14:
+            type: paragraph
+            content: Arrivée sur l’île, en se dirigeant vers la base, l’escouade est pris en embuscade et est obligé de fuir jusqu’à la base pour rejoindre
+              leur commandant et ainsi établir un plan pour contrer les menaces de la fusion des groupes AAF et Syndikat.
+          15:
+            type: title
+            level: 2
+            content: Fin
+          16:
+            type: paragraph
+            content: Une fois que les Nations Unies ont établis leur ordre de priorité, elle envoie l’escouade tuer le chef Syndikat.
+              Enfin, le NATO débarque sur Georgestown afin d’anéantir les derniers traîtres AAF sur l’île, et ainsi obtenir la suprématie de Tanoa.
+        medias:
+          local:
+            1:
+              name: 01_screenshot_SyndikateAmbush
+              alt : Screenshot de la première défense, l'embuscade du Syndikat.
+              extension: jpg
+              folder_name: leveldesign
+            2:
+              name: 02_screenshot_recruit_center
+              alt : Screenshot de l'assaut sur un centre de recrutement ennemi.
+              extension: jpg
+              folder_name: leveldesign
+            3:
+              name: 03_screenshot_DefenseCheckpoint
+              alt : Screenshot de la deuxième défense face aux membres de l'AAF.
+              extension: jpg
+              folder_name: leveldesign
+            4:
+              name: 04_screenshot_Anderson
+              alt : Screenshot du commandant Anderson.
+              extension: jpg
+              folder_name: leveldesign
+            5:
+              name: blackfox_timeline
+              alt: Diagramme des pourcentages des actions
+              extension: png
+              folder_name: leveldesign
+            6:
+              name: MapGeneraleArma3
+              alt: Map générale du projet Arma 3 - Top view - player main path
+              extension: jpg
+              folder_name: leveldesign
+          distant:
+            1:
+              name: 01_VideoCampagneBlackFox
+              alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
+              src: https://www.youtube.com/embed/OqCEYGM6J_4
+    Blackrift VR:
+        init_date: 01-02-2017
+        end_date: 01-05-2017
+        role: Level Design
+        summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
+        content:
+          1:
+            type: title
+            level: 1
+            content: Compétences utilisées
+          2:
+            type: paragraph
+            content: - Analyse de gameplay et map VR
+          3:
+            type: paragraph
+            content: - Création de différents modules LD
+          4:
+            type: paragraph
+            content: - Programmation Blueprint
+          5:
+            type: paragraph
+            content: - Playtests et équilibrage
+          6:
+            type: title
+            level: 1
+            content: Plans de situations
+          7:
+            type: local
+            name: LD_Map_General
+            alt: Top view - player main path
+            display: left
+            extension: jpg
+            folder_name: leveldesign
+          8:
+            type: paragraph
+            content: Sur Black Rift VR, l'intention a été une ville western typique abandonnée,
+              le joueur arrive au début du jeu dans la ville puis en passant par divers lieux emblématiques comme le bureau du shérif, le saloon, la bank, et la gare.
+          9:
+            type: title
+            level: 2
+            content: Bank
+          10:
+            type: local
+            name: Bank_main_path
+            alt: Bank top view - player main path
+            display: right
+            extension: jpg
+            folder_name: leveldesign
+          11:
+            type: paragraph
+            content: J'ai été en charge du niveau Bank, le joueur doit fuir des monstres appelés wendigo, pour cela, il s'enferme dans la bank.
+              Il doit résoudre l'énigme du coffre-fort afin de pouvoir sortir de la bank et échapper au wendigo près de la porte.
+              Trois éléments du coffre-fort étant caché dans la bank, le joueur doit les récupérer, les placer dans la porte, et trouver le code présent devant la porte.
+              Au moment de l'ouverture du coffre-fort un ennemi jaillit du toit, le joueur doit être réactif pour le tuer et exploser le mur du fond en même temps afin de sortir de la bank et continuer sa progression.
+          12:
+            type: title
+            level: 2
+            content: Gare
+          13:
+            type: local
+            name: Station_main_path
+            alt: Station top view - player main path
+            display: right
+            extension: jpg
+            folder_name: leveldesign
+          14:
+            type: paragraph
+            content: La Gare a été un défi, j'ai voulu essayer de faire un Railshooter afin d'y comprendre les éléments de Motion Thickness et d'essayer au plus possible de les corriger.
+              Au départ, le joueur se plaçait sur un wagon, qui était seulement une planche. La motion thickness était très présente.
+              En affinant la vitesse et les courbes de virages, elle s'est légèrement atténué, mais certains joueurs le ressentait encore trop.
+              Pour faire disparaître cette effet, il a fallu enfermer beaucoup plus le joueur dans le wagon afin d'avoir un référentiel terrestre plus important
+              et concentrer la vision du joueur devant lui afin de lui éviter le plus possible de voir le sol se mouvoir sous ses pieds.
+        medias:
+          local:
+            1:
+              name: Black_Rift_Logo
+              alt : Black Rift Logo
+              extension: png
+              folder_name: leveldesign
+            2:
+              name: Bank_architect_map
+              alt : Bank dimensions
+              extension: jpg
+              folder_name: leveldesign
+          distant:
+            1:
+              name: Bank Gameplay
+              alt : Gameplay SafeDoor in Bank level
+              src: https://www.youtube.com/embed/PBt-sOLvamE
+            2:
+              name: Bank indoor creation
+              alt : Bank Indoor Creation level build BlackRift
+              src: https://www.youtube.com/embed/LhbLYpglE0Q
+            3:
+              name: Création de la map
+              alt : Blackrift map level build
+              src: https://www.youtube.com/embed/5jp8uYwUYTk
+            4:
+              name: Railshooter
+              alt : Gameplay gatling - Blackrift Railshooter
+              src: https://www.youtube.com/embed/TRFqgko7I_U
+            5:
+              name: Trailer Blackrift
+              alt : Trailer Blackrift VR
+              src: https://www.youtube.com/embed/PBt-sOLvamE
+    Map Unreal Tournament - CTF G420:
+        init_date: 15-09-2017
+        end_date: 01-10-2017
+        role: Level Design
+        summary: Création d'une map en mode capture de drapeau en team de 8 joueurs sur Unreal Tournament avec un event.
+          La map représente deux entrepot identique face à un champ de bataille.
+        content:
+          1:
+            type: title
+            level: 1
+            content: Compétences utilisées
+          2:
+            type: paragraph
+            content: - Analyse du jeu Unreal Tournament
+          3:
+            type: paragraph
+            content: - Création de différents modules LD
+          4:
+            type: paragraph
+            content: - Programmation Blueprint
+          5:
+            type: paragraph
+            content: - Playtests et équilibrage
+          6:
+            type: title
+            level: 1
+            content: Note d'intention
+          7:
+            type: local
+            name: CTF_G420_Exterior
+            alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
+            display: right
+            extension: png
+            folder_name: leveldesign
+          8:
+            type: paragraph
+            content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range, en hauteur sur les balcons.
+              La map oblige les joueurs a passé au milieu qui amène des séquences coopératives afin de faire avancer le drapeau si un allié le portant se fait tuer
+              Un sous-sol est présent pour couper légèrement cette zone dangereuse et de fournir des aspects sniper à la map.
+          9:
+            type: title
+            level: 1
+            content: Explication
+          10:
+            type: local
+            name: CTF_G420_BlueFlag
+            alt: BlueFlag spawn room
+            display: left
+            extension: png
+            folder_name: leveldesign
+          11:
+            type: paragraph
+            content: Cette map est faite pour du Capture the Flag, les spawn des joueurs doivent être près de la zone du drapeau à défendre mais aussi sur le chemin du drapeau adverse afin d'y parvenir rapidement et facilement.
+              Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
+          12:
+            type: title
+            level: 1
+            content: Event
+          13:
+            type: paragraph
+            content: L’event de la map ”Canon” a été pensé pour augmenter le danger sur le centre de la map, et ainsi perdre le drapeau sur une zone très dégagé pour aider le camp adverse à le récupérer plus facilement.
+              J'ai choisi un signe qui permet de prévoir quand le missile tombe et ainsi avoir le temps de l'esquiver grâce au dash de Unreal Tournament.
+        medias:
+          local:
+            1:
+              name: CTF_G420_Thumbnail
+              alt: CTF_G420 main screenshot
+              extension: png
+              folder_name: leveldesign
+            2:
+              name: CTF_G420_basement
+              alt: CTF_G420 basement sniper spot
+              extension: png
+              folder_name: leveldesign
+            3:
+              name: CTF_G420_Exterior
+              alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
+              extension: png
+              folder_name: leveldesign
+            4:
+              name: CTF_G420_BlueFlag
+              alt: BlueFlag spawn room
+              extension: png
+              folder_name: leveldesign

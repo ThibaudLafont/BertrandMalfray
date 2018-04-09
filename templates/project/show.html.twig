@@ -53,9 +53,10 @@
                 {% for distant in project.distantMedias %}
                     <a href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
                         <iframe id="ytplayer"
-                                type="text/html"
                                 src="{{ distant.src }}"
-                                frameborder="0">
+                                allow="autoplay; encrypted-media"
+                                frameborder="0"
+                                allowfullscreen>
                         </iframe>
                     </a>
                 {% endfor %}
