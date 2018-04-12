@@ -378,7 +378,7 @@ projects:
             name: CTF_G420_Exterior
             alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
             display: right
-            extension: png
+            extension: jpg
             folder_name: leveldesign
           8:
             type: paragraph
@@ -394,7 +394,7 @@ projects:
             name: CTF_G420_BlueFlag
             alt: BlueFlag spawn room
             display: left
-            extension: png
+            extension: jpg
             folder_name: leveldesign
           11:
             type: paragraph
@@ -413,20 +413,20 @@ projects:
             1:
               name: CTF_G420_Thumbnail
               alt: CTF_G420 main screenshot
-              extension: png
+              extension: jpg
               folder_name: leveldesign
             2:
               name: CTF_G420_basement
               alt: CTF_G420 basement sniper spot
-              extension: png
+              extension: jpg
               folder_name: leveldesign
             3:
               name: CTF_G420_Exterior
               alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
-              extension: png
+              extension: jpg
               folder_name: leveldesign
             4:
               name: CTF_G420_BlueFlag
               alt: BlueFlag spawn room
-              extension: png
+              extension: jpg
               folder_name: leveldesign
