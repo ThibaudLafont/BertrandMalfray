@@ -158,6 +158,9 @@ header {
     margin-top: 25px;
     margin-bottom: 100px;
 }
+#header-top-row span{
+    font-size: 20px;
+}
 .header-row {
     overflow: hidden;
     clear: left;
@@ -287,9 +290,8 @@ header {
 #header-pic img {
     display: block;
     margin: auto;
-    width: 150px;
     position: relative;
-    top: -103px;
+    top: -120px;
 }
 
 /* Footer */
