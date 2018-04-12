@@ -71,6 +71,7 @@ hr {
 .align-right {
     float: right;
 }
+
 /*blue-border*/
 hr,
 section#category-detail,
@@ -78,7 +79,6 @@ section#homepage-content,
 #project,
 .slick-prev,
 .slick-next,
-/*.list-right-column,*/
 .list-right-column a,
 .homepage-column button[type="submit"] {
     border: 1px solid #3d8af7;
@@ -157,6 +157,9 @@ header {
 #desktop-header {
     margin-top: 25px;
     margin-bottom: 100px;
+}
+#header-top-row span{
+    font-size: 20px;
 }
 .header-row {
     overflow: hidden;
@@ -287,9 +290,8 @@ header {
 #header-pic img {
     display: block;
     margin: auto;
-    width: 150px;
     position: relative;
-    top: -103px;
+    top: -120px;
 }
 
 /* Footer */
@@ -553,7 +555,7 @@ img.float-left{
 
 @media all and (min-width: 1200px) {
     #project-gallery img, #project-gallery iframe {
-        width: 12.5vw;
-        height: 7.06vw;
+        width: 20.83vw;
+        height: 11.72vw;
     }
 }

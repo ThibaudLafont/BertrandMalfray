@@ -29,7 +29,7 @@
                 <ul id="project-infos">
                     <li>
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
-                        Du {{ project.initDate|date() }} au {{ project.endDate|date() }}
+                        Terminé le {{ project.endDate|date() }}
                     </li>
                     <li>
                         <img src="/img/picto/date-interval.png" alt="Date interval pictogram">
@@ -53,9 +53,10 @@
                 {% for distant in project.distantMedias %}
                     <a href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
                         <iframe id="ytplayer"
-                                type="text/html"
                                 src="{{ distant.src }}"
-                                frameborder="0">
+                                allow="autoplay; encrypted-media"
+                                frameborder="0"
+                                allowfullscreen>
                         </iframe>
                     </a>
                 {% endfor %}
