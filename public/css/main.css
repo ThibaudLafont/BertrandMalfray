@@ -492,6 +492,7 @@ h1#project-name {
 }
 .project-column h4 {
     margin-bottom: 0.75rem;
+    padding: 0 0.75rem;
 }
 #project-gallery {
     padding: 2% 0;
