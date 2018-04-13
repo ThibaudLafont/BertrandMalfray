@@ -5,6 +5,7 @@
     {% block category_details %}{% endblock %}
 
     {% for project in projects %}
+
         <!-- Project item -->
         <section class="project-item-parent"
                  style="
@@ -31,6 +32,13 @@
 
                 <!-- Project infos -->
                 <ul>
+                    <!-- High Concept -->
+                    <li>
+                        <img src="/img/picto/info.png" alt="Interrogation point pictogram">
+                        {{ project.highConcept.type }} -
+                        {{ project.highConcept.gender }} -
+                        {{ project.highConcept.target }}
+                    </li>
                     <!-- Start date of Project -->
                     <li>
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
@@ -46,7 +54,7 @@
                     <!-- Collaborators -->
                     <li>
                         <img src="/img/picto/user.png" alt="User pictogram">
-                        {{ project.numberOfContributors }}
+                        {{ project.contributorsNbre }}
                     </li>
                 </ul>
 

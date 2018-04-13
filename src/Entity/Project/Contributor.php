@@ -36,17 +36,6 @@ class Contributor{
      */
     private $role;
 
-    /**
-     * @var Project
-     *
-     * @ORM\ManyToOne(
-     *     targetEntity="\App\Entity\Project\Project",
-     *     inversedBy="contributors",
-     *     cascade={"persist"}
-     * )
-     */
-    private $project;
-
     // Traits
     use Hydrate;
 

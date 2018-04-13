@@ -44,6 +44,16 @@ class Category{
     private $summary;
 
     /**
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Project\Lists\CategoryList",
+     *     mappedBy="category"
+     * )
+     */
+    private $skillListItems;
+
+    /**
      * Category's projects
      *
      * @var mixed
@@ -52,7 +62,7 @@ class Category{
      *     targetEntity="\App\Entity\Project\Project",
      *     mappedBy="category"
      * )
-     * @ORM\OrderBy({"initDate" = "ASC"})
+     * @ORM\OrderBy({"initDate" = "DESC"})
      */
     private $projects;
 
@@ -146,6 +156,14 @@ class Category{
     public function setSlugName(string $slugName)
     {
         $this->slugName = $slugName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSkillListItems()
+    {
+        return $this->skillListItems;
     }
 
 }

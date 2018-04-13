@@ -19,6 +19,12 @@ function toggleDesktop() {
                 left: "0%"
             }, 600);
         });
+
+        // Set click event
+        $(this).click(function(){
+            var link = $(this).children('.list-column').children("h2").children('a');
+            window.location = link.attr('href');
+        })
     });
 }
 
@@ -44,15 +50,8 @@ function toggleMobile() {
 
         // Set click event
         $(this).click(function(){
-            // Hide title
-            $(this).children('.list-left-column').animate(
-                {bottom:'100%'}, 400, 'swing',
-                function(){
-                    $(this).hide();
-                }
-            );
-            // Show toggle-column
-            $(toggle).animate({top: '0%'}, 600);
+            var link = $(this).children('.list-column').children("h2").children('a');
+            window.location = link.attr('href');
         })
     });
 }

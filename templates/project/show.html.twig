@@ -18,7 +18,12 @@
         </div>
         <div class="project-row">
             <div class="project-column">
-                <p>{{ project.summary|raw }}</p>
+                <h4>Compétences mobilisées</h4>
+                <ul id="skills-ul">
+                    {% for skill in project.skillListItems %}
+                        <li>+ {{ skill.content }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div id="project-details" class="project-column">
                 <div id="project-details-title">
@@ -27,6 +32,12 @@
                     </h2>
                 </div>
                 <ul id="project-infos">
+                    <li>
+                        <img src="/img/picto/info.png" alt="Interrogation point pictogram">
+                        {{ project.highConcept.type }} -
+                        {{ project.highConcept.gender }} -
+                        {{ project.highConcept.target }}
+                    </li>
                     <li>
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
                         Terminé le {{ project.endDate|date() }}
@@ -37,7 +48,7 @@
                     </li>
                     <li>
                         <img src="/img/picto/user.png" alt="User pictogram">
-                        {{ project.numberOfContributors }}
+                        {{ project.contributorsNbre }}
                     </li>
                 </ul>
             </div>
@@ -51,13 +62,8 @@
                     </a>
                 {% endfor %}
                 {% for distant in project.distantMedias %}
-                    <a href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
-                        <iframe id="ytplayer"
-                                src="{{ distant.src }}"
-                                allow="autoplay; encrypted-media"
-                                frameborder="0"
-                                allowfullscreen>
-                        </iframe>
+                    <a class="various fancybox" data-fancybox-type="iframe" href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
+                        <img src="{{ distant.imgSrc }}" alt="{{ distant.description }}">
                     </a>
                 {% endfor %}
             </div>
@@ -72,7 +78,9 @@
                 {% elseif part.type is same as('paragraph') %}
                     <p>{{ part.attr.content }}</p>
                 {% elseif part.type is same as('local') %}
-                    <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
+                    <a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">
+                        <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
+                    </a>
                 {% endif %}
             {% endfor %}
         </section>

@@ -6,80 +6,79 @@ category:
        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    skills:
+        - Analyse du jeu Unreal Tournament
+        - Création de différents modules LD
+        - Programmation Blueprint
+        - Playtests et équilibrage
 
 projects:
     Map Unreal Tournament - DM Spacebase 41:
       init_date: 15-09-2016
       end_date: 01-10-2016
       role: Level Design
+      contributorsNbre: 0
       summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.
         La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
+      skills:
+        - Analyse du jeu Unreal Tournament
+        - Création de différents modules LD
+        - Programmation Blueprint
+        - Playtests et équilibrage
+      concept:
+        type: Jeu PC
+        genre: FPS
+        target: Adulte
       content:
         1:
           type: title
           level: 1
-          content: Compétences utilisées
-        2:
-          type: paragraph
-          content: - Analyse du jeu Unreal Tournament
-        3:
-          type: paragraph
-          content: - Création de différents modules LD
-        4:
-          type: paragraph
-          content: - Programmation Blueprint
-        5:
-          type: paragraph
-          content: - Playtests et équilibrage
-        6:
-          type: title
-          level: 1
           content: Note d'intention
-        7:
+        2:
           type: local
           name: Planche-Rendu-Map
           alt: Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
           display: right
           extension: jpg
           folder_name: leveldesign
-        8:
+        3:
           type: paragraph
           content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range.
             Mais cette zone est très ouverte, ce qui incite le joueur a utilisé des armes mi-distance, quand un ennemi est du même côté que le joueur.
-        9:
+        4:
           type: paragraph
           content: Des couloirs font le tour, afin de récupérer armes/munitions/soins, ces couloirs sont des zones de corps à corps,
             et sont des zones plus sûres pour se régénérer. Certains gardent une grande visibilité pour permettre d’utiliser aussi des armes mi-distance.
             Il y a des wall dodge, wall slide, lift jump pour atteindre des bonus, mais ils restent toujours atteignable,
             par d’autres chemins si le joueur ne maîtrise pas ces features.
-        10:
+        5:
           type: title
           level: 1
           content: Explication
-        11:
+        6:
           type: local
           name: Planche_rendu_modules
           alt: Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
           display: left
           extension: jpg
           folder_name: leveldesign
-        12:
+        7:
           type: paragraph
           content: Cette map est faite pour du Deathmatch, les spawn des joueurs doivent être bien timé, pour ne pas favoriser un joueur.
             Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
-        13:
+        8:
           type: paragraph
           content: Dans Unreal Tournament, la verticalité est très utilisé, j’ai choisi de placer des “base jump” pour changer très rapidement d’étage, et ainsi ne pas casser le flow comme pourrait le faire des ascenseurs.
             Le plus gros bonus, le “Berserker”, se situe au milieu de la map, dans le bâtiment central.
-        14:
+        9:
           type: paragraph
           content: Des couloirs font le tour de ce bâtiment, on y trouve armes/soin/munitions.
             La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
-        15:
+        10:
           type: title
           level: 1
           content: Event
-        16:
+        11:
           type: paragraph
           content: L’event de la map ”Brouillard” a été pensé pour réduire la visibilité du joueur et ainsi l’inciter à utiliser des armes corps à corps.
             Au départ, le brouillard devait être empoisonné et retirer 1 point de vie par seconde pendant 50 secondes, afin de réduire de moitié la vie de tous les joueurs.
@@ -105,20 +104,30 @@ projects:
           1:
             name: Preview_Spacebase41
             alt : Turn-around de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/U6FBfrNXjFU
+            src: U6FBfrNXjFU
           2:
             name: Gameplay_Spacebase41
             alt : Présentation de l'obtention des différents pick-ups de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/oCVTXSKdPiA
+            src: oCVTXSKdPiA
           3:
             name: CheminCritique_Spacebase41
             alt : Présentation du chemin principal de l'obtention de toutes les armes de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/b7WyVfzSLMM
+            src: b7WyVfzSLMM
     Arma 3:
         init_date: 01-10-2016
         end_date: 01-03-2017
         role: Mission Design
+        contributorsNbre: 4
         summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
+        skills:
+          - Analyse du jeu Unreal Tournament
+          - Création de différents modules LD
+          - Programmation Blueprint
+          - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
@@ -240,73 +249,67 @@ projects:
             1:
               name: 01_VideoCampagneBlackFox
               alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
-              src: https://www.youtube.com/embed/OqCEYGM6J_4
+              src: OqCEYGM6J_4
     Blackrift VR:
         init_date: 01-02-2017
         end_date: 01-05-2017
         role: Level Design
+        contributorsNbre: 4
         summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
+        skills:
+          - Analyse de gameplay et map VR
+          - Création de différents modules LD
+          - Programmation Blueprint
+          - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
             level: 1
-            content: Compétences utilisées
-          2:
-            type: paragraph
-            content: - Analyse de gameplay et map VR
-          3:
-            type: paragraph
-            content: - Création de différents modules LD
-          4:
-            type: paragraph
-            content: - Programmation Blueprint
-          5:
-            type: paragraph
-            content: - Playtests et équilibrage
-          6:
-            type: title
-            level: 1
             content: Plans de situations
-          7:
+          2:
             type: local
             name: LD_Map_General
             alt: Top view - player main path
             display: left
             extension: jpg
             folder_name: leveldesign
-          8:
+          3:
             type: paragraph
             content: Sur Black Rift VR, l'intention a été une ville western typique abandonnée,
               le joueur arrive au début du jeu dans la ville puis en passant par divers lieux emblématiques comme le bureau du shérif, le saloon, la bank, et la gare.
-          9:
+          4:
             type: title
             level: 2
             content: Bank
-          10:
+          5:
             type: local
             name: Bank_main_path
             alt: Bank top view - player main path
             display: right
             extension: jpg
             folder_name: leveldesign
-          11:
+          6:
             type: paragraph
             content: J'ai été en charge du niveau Bank, le joueur doit fuir des monstres appelés wendigo, pour cela, il s'enferme dans la bank.
               Il doit résoudre l'énigme du coffre-fort afin de pouvoir sortir de la bank et échapper au wendigo près de la porte.
               Trois éléments du coffre-fort étant caché dans la bank, le joueur doit les récupérer, les placer dans la porte, et trouver le code présent devant la porte.
               Au moment de l'ouverture du coffre-fort un ennemi jaillit du toit, le joueur doit être réactif pour le tuer et exploser le mur du fond en même temps afin de sortir de la bank et continuer sa progression.
-          12:
+          7:
             type: title
             level: 2
             content: Gare
-          13:
+          8:
             type: local
             name: Station_main_path
             alt: Station top view - player main path
             display: right
             extension: jpg
             folder_name: leveldesign
-          14:
+          9:
             type: paragraph
             content: La Gare a été un défi, j'ai voulu essayer de faire un Railshooter afin d'y comprendre les éléments de Motion Thickness et d'essayer au plus possible de les corriger.
               Au départ, le joueur se plaçait sur un wagon, qui était seulement une planche. La motion thickness était très présente.
@@ -329,82 +332,76 @@ projects:
             1:
               name: Bank Gameplay
               alt : Gameplay SafeDoor in Bank level
-              src: https://www.youtube.com/embed/PBt-sOLvamE
+              src: PBt-sOLvamE
             2:
               name: Bank indoor creation
               alt : Bank Indoor Creation level build BlackRift
-              src: https://www.youtube.com/embed/LhbLYpglE0Q
+              src: LhbLYpglE0Q
             3:
               name: Création de la map
               alt : Blackrift map level build
-              src: https://www.youtube.com/embed/5jp8uYwUYTk
+              src: 5jp8uYwUYTk
             4:
               name: Railshooter
               alt : Gameplay gatling - Blackrift Railshooter
-              src: https://www.youtube.com/embed/TRFqgko7I_U
+              src: TRFqgko7I_U
             5:
               name: Trailer Blackrift
               alt : Trailer Blackrift VR
-              src: https://www.youtube.com/embed/PBt-sOLvamE
+              src: PBt-sOLvamE
     Map Unreal Tournament - CTF G420:
         init_date: 15-09-2017
         end_date: 01-10-2017
         role: Level Design
+        contributorsNbre: 4
         summary: Création d'une map en mode capture de drapeau en team de 8 joueurs sur Unreal Tournament avec un event.
           La map représente deux entrepot identique face à un champ de bataille.
+        skills:
+          - Analyse du jeu Unreal Tournament
+          - Création de différents modules LD
+          - Programmation Blueprint
+          - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
             level: 1
-            content: Compétences utilisées
-          2:
-            type: paragraph
-            content: - Analyse du jeu Unreal Tournament
-          3:
-            type: paragraph
-            content: - Création de différents modules LD
-          4:
-            type: paragraph
-            content: - Programmation Blueprint
-          5:
-            type: paragraph
-            content: - Playtests et équilibrage
-          6:
-            type: title
-            level: 1
             content: Note d'intention
-          7:
+          2:
             type: local
             name: CTF_G420_Exterior
             alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
             display: right
             extension: jpg
             folder_name: leveldesign
-          8:
+          3:
             type: paragraph
             content: La map permet d’avoir un visuel sur les ennemis de l’autre côté, c’est la zone long range, en hauteur sur les balcons.
               La map oblige les joueurs a passé au milieu qui amène des séquences coopératives afin de faire avancer le drapeau si un allié le portant se fait tuer
               Un sous-sol est présent pour couper légèrement cette zone dangereuse et de fournir des aspects sniper à la map.
-          9:
+          4:
             type: title
             level: 1
             content: Explication
-          10:
+          5:
             type: local
             name: CTF_G420_BlueFlag
             alt: BlueFlag spawn room
             display: left
             extension: jpg
             folder_name: leveldesign
-          11:
+          6:
             type: paragraph
             content: Cette map est faite pour du Capture the Flag, les spawn des joueurs doivent être près de la zone du drapeau à défendre mais aussi sur le chemin du drapeau adverse afin d'y parvenir rapidement et facilement.
               Ils se situent la plupart du temps dans un espace créé exprès qui permet de ne pas se faire tirer dans le dos ou sur les côtés quand on revient en jeu.
-          12:
+          7:
             type: title
             level: 1
             content: Event
-          13:
+          8:
             type: paragraph
             content: L’event de la map ”Canon” a été pensé pour augmenter le danger sur le centre de la map, et ainsi perdre le drapeau sur une zone très dégagé pour aider le camp adverse à le récupérer plus facilement.
               J'ai choisi un signe qui permet de prévoir quand le missile tombe et ainsi avoir le temps de l'esquiver grâce au dash de Unreal Tournament.

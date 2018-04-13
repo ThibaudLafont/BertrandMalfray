@@ -48,6 +48,7 @@ li {
 }
 p {
     text-align: justify;
+    font-size: 18px;
 }
 a{
     text-decoration: none;
@@ -111,11 +112,11 @@ section#homepage-content,
     tranform:skew(-33deg);
 }
 .list-column .slash-right {
-    margin-right: -24px;
+    margin-right: -20px;
 }
 .triangle-bg {
     height: 100%;
-    border-left: 28px solid transparent;
+    border-left: 27px solid transparent;
     border-top: 40px solid rgba(2, 31, 84, 0.75);
     border-bottom: 0px solid black;
 }
@@ -159,7 +160,7 @@ header {
     margin-bottom: 100px;
 }
 #header-top-row span{
-    font-size: 20px;
+    font-size: 18px;
 }
 .header-row {
     overflow: hidden;
@@ -169,7 +170,7 @@ header {
     padding: 0.45rem 1.5rem;
 }
 #header-top-row .header-column {
-    width: 30%;
+    width: 35%;
 }
 #header-bottom-row {
     padding-top: 8px;
@@ -358,7 +359,7 @@ img#homepage-fronpic {
     width: 100%;
 }
 
-/*List Project*/
+/*Lists Project*/
 section#category-detail {
     background-image: url('/img/blue-background.png');
     overflow: hidden;
@@ -381,10 +382,18 @@ section#category-detail {
 .category-detail-column ul {
     margin : 1rem 0 0 0;
 }
+#skills-ul {
+    margin: 0;
+}
+.category-detail-column h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
 
 #category-detail h2 img{
     display: none;
 }
+
 section.project-item-parent {
     overflow: hidden;
     min-height: 250px;
@@ -480,6 +489,10 @@ h1#project-name {
 .project-column p {
     padding: 0.5rem;
     margin: 0;
+}
+.project-column h4 {
+    margin-bottom: 0.75rem;
+    padding: 0 0.75rem;
 }
 #project-gallery {
     padding: 2% 0;

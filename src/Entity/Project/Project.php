@@ -65,6 +65,32 @@ class Project{
     private $summary;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="contributors_nbre", type="integer")
+     */
+    private $contributorsNbre;
+
+    /**
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Project\Lists\ProjectList",
+     *     mappedBy="project"
+     * )
+     */
+    private $skillListItems;
+
+    /**
+     * @var HighConcept
+     *
+     * @ORM\OneToOne(
+     *     targetEntity="HighConcept"
+     * )
+     */
+    private $highConcept;
+
+    /**
      * Category of project
      *
      * @var Category
@@ -84,17 +110,6 @@ class Project{
      * @ORM\OneToOne(targetEntity="\App\Entity\Project\Explanation\Explanation")
      */
     private $explanation;
-
-    /**
-     * @var mixed
-     *
-     * @ORM\OneToMany(
-     *     targetEntity="\App\Entity\Project\Contributor",
-     *     mappedBy="project",
-     *     cascade={"persist"}
-     * )
-     */
-    private $contributors;
 
     /**
      * @var mixed
@@ -233,22 +248,6 @@ class Project{
     }
 
     /**
-     * @return mixed
-     */
-    public function getContributors()
-    {
-        return $this->contributors;
-    }
-
-    /**
-     * @param mixed $contributors
-     */
-    public function setContributors($contributors)
-    {
-        $this->contributors = $contributors;
-    }
-
-    /**
      * @return Explanation
      */
     public function getExplanation(): Explanation
@@ -273,14 +272,6 @@ class Project{
             )
             ->format('%a jours')
         ;
-    }
-
-    public function getNumberOfContributors()
-    {
-        $count = $this->getContributors()->count();
-        if($count === 0) return 'Aucun collaborateur';
-
-        return $count . ' collaborateurs';
     }
 
     public function getShowUrl()
@@ -318,6 +309,48 @@ class Project{
     public function getDistantMedias()
     {
         return $this->distantMedias;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContributorsNbre() : string
+    {
+        $count = $this->contributorsNbre;
+        if($count === 0) return 'Aucun collaborateur';
+        return $count . ' collaborateurs';
+    }
+
+    /**
+     * @param int $contributorsNbre
+     */
+    public function setContributorsNbre(int $contributorsNbre)
+    {
+        $this->contributorsNbre = $contributorsNbre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSkillListItems()
+    {
+        return $this->skillListItems;
+    }
+
+    /**
+     * @return HighConcept
+     */
+    public function getHighConcept(): HighConcept
+    {
+        return $this->highConcept;
+    }
+
+    /**
+     * @param HighConcept $highConcept
+     */
+    public function setHighConcept(HighConcept $highConcept)
+    {
+        $this->highConcept = $highConcept;
     }
 
 }

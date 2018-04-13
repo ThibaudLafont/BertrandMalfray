@@ -105,6 +105,20 @@ h1#project-name {
 .project-column p{
     padding: 0 1.5rem;
 }
+
+.project-column h4 {
+    padding: 0 1.5rem;
+}
+
+#skills-ul {
+    padding: 0 1.5rem;
+}
+.category-detail-column #skills-ul {
+     padding: 0;
+ }
+#skills-ul li{
+    padding: 0.5rem 0;
+}
 /*@media all and (max-width: 600px) {*/
     /*#main_content {*/
         /*padding: 0;*/
