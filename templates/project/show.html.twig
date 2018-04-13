@@ -52,11 +52,6 @@
                 {% endfor %}
                 {% for distant in project.distantMedias %}
                     <a class="various fancybox" data-fancybox-type="iframe" href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
-                        {#<iframe class="ytplayer"#}
-                                {#src="{{ distant.src }}"#}
-                                {#frameborder="0"#}
-                                {#allowfullscreen>#}
-                        {#</iframe>#}
                         <img src="{{ distant.imgSrc }}" alt="{{ distant.description }}">
                     </a>
                 {% endfor %}
@@ -72,7 +67,9 @@
                 {% elseif part.type is same as('paragraph') %}
                     <p>{{ part.attr.content }}</p>
                 {% elseif part.type is same as('local') %}
-                    <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
+                    <a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">
+                        <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
+                    </a>
                 {% endif %}
             {% endfor %}
         </section>
