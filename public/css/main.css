@@ -112,11 +112,11 @@ section#homepage-content,
     tranform:skew(-33deg);
 }
 .list-column .slash-right {
-    margin-right: -24px;
+    margin-right: -20px;
 }
 .triangle-bg {
     height: 100%;
-    border-left: 28px solid transparent;
+    border-left: 27px solid transparent;
     border-top: 40px solid rgba(2, 31, 84, 0.75);
     border-bottom: 0px solid black;
 }
