@@ -51,8 +51,8 @@ class Fixtures extends Fixture
         $this->loadCategoryProjects($datas);
 
         // Load and parse GD YAML file
-        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
-        $this->loadCategoryProjects($datas);
+//        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
+//        $this->loadCategoryProjects($datas);
 
         // Flush results
         $manager->flush();

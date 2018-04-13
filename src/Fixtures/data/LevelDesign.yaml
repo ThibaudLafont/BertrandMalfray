@@ -12,6 +12,7 @@ projects:
       init_date: 15-09-2016
       end_date: 01-10-2016
       role: Level Design
+      contributorsNbre: 0
       summary: Création d'une map en mode deathmatch à 16 joueurs sur Unreal Tournament avec un event.
         La map est une base spatiale futuriste avec une ouverture en haut pour voir le ciel étoilé et deux planètes (les landmarks).
       content:
@@ -118,6 +119,7 @@ projects:
         init_date: 01-10-2016
         end_date: 01-03-2017
         role: Mission Design
+        contributorsNbre: 4
         summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
         content:
           1:
@@ -245,6 +247,7 @@ projects:
         init_date: 01-02-2017
         end_date: 01-05-2017
         role: Level Design
+        contributorsNbre: 4
         summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
         content:
           1:
@@ -350,6 +353,7 @@ projects:
         init_date: 15-09-2017
         end_date: 01-10-2017
         role: Level Design
+        contributorsNbre: 4
         summary: Création d'une map en mode capture de drapeau en team de 8 joueurs sur Unreal Tournament avec un event.
           La map représente deux entrepot identique face à un champ de bataille.
         content:
