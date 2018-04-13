@@ -105,15 +105,15 @@ projects:
           1:
             name: Preview_Spacebase41
             alt : Turn-around de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/U6FBfrNXjFU
+            src: U6FBfrNXjFU
           2:
             name: Gameplay_Spacebase41
             alt : Présentation de l'obtention des différents pick-ups de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/oCVTXSKdPiA
+            src: oCVTXSKdPiA
           3:
             name: CheminCritique_Spacebase41
             alt : Présentation du chemin principal de l'obtention de toutes les armes de DM Spacebase41 sur unreal tournament.
-            src: https://www.youtube.com/embed/b7WyVfzSLMM
+            src: b7WyVfzSLMM
     Arma 3:
         init_date: 01-10-2016
         end_date: 01-03-2017
@@ -240,7 +240,7 @@ projects:
             1:
               name: 01_VideoCampagneBlackFox
               alt : Vidéo de présentation de la campagne BlackFox Sur Arma3
-              src: https://www.youtube.com/embed/OqCEYGM6J_4
+              src: OqCEYGM6J_4
     Blackrift VR:
         init_date: 01-02-2017
         end_date: 01-05-2017
@@ -329,23 +329,23 @@ projects:
             1:
               name: Bank Gameplay
               alt : Gameplay SafeDoor in Bank level
-              src: https://www.youtube.com/embed/PBt-sOLvamE
+              src: PBt-sOLvamE
             2:
               name: Bank indoor creation
               alt : Bank Indoor Creation level build BlackRift
-              src: https://www.youtube.com/embed/LhbLYpglE0Q
+              src: LhbLYpglE0Q
             3:
               name: Création de la map
               alt : Blackrift map level build
-              src: https://www.youtube.com/embed/5jp8uYwUYTk
+              src: 5jp8uYwUYTk
             4:
               name: Railshooter
               alt : Gameplay gatling - Blackrift Railshooter
-              src: https://www.youtube.com/embed/TRFqgko7I_U
+              src: TRFqgko7I_U
             5:
               name: Trailer Blackrift
               alt : Trailer Blackrift VR
-              src: https://www.youtube.com/embed/PBt-sOLvamE
+              src: PBt-sOLvamE
     Map Unreal Tournament - CTF G420:
         init_date: 15-09-2017
         end_date: 01-10-2017

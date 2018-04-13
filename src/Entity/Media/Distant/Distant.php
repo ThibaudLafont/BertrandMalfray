@@ -40,6 +40,10 @@ abstract class Distant extends Media
      */
     public function getSrc()
     {
-        return str_replace('watch?v=', 'embed/', $this->src);
+        return "https://www.youtube.com/embed/" . $this->src;
+    }
+
+    public function getImgSrc() {
+        return "http://img.youtube.com/vi/" . $this->src . "/hqdefault.jpg";
     }
 }

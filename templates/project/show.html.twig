@@ -51,13 +51,13 @@
                     </a>
                 {% endfor %}
                 {% for distant in project.distantMedias %}
-                    <a href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
-                        <iframe id="ytplayer"
-                                src="{{ distant.src }}"
-                                allow="autoplay; encrypted-media"
-                                frameborder="0"
-                                allowfullscreen>
-                        </iframe>
+                    <a class="various fancybox" data-fancybox-type="iframe" href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
+                        {#<iframe class="ytplayer"#}
+                                {#src="{{ distant.src }}"#}
+                                {#frameborder="0"#}
+                                {#allowfullscreen>#}
+                        {#</iframe>#}
+                        <img src="{{ distant.imgSrc }}" alt="{{ distant.description }}">
                     </a>
                 {% endfor %}
             </div>
