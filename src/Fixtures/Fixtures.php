@@ -6,6 +6,7 @@ use App\Entity\Project\Category;
 use App\Entity\Project\Contributor;
 use App\Entity\Project\Explanation\Paragraph;
 use App\Entity\Project\Explanation\Title;
+use App\Entity\Project\HighConcept;
 use App\Entity\Project\Lists\ProjectList;
 use App\Entity\Project\Project;
 use App\Service\Sluggifier;
@@ -84,6 +85,7 @@ class Fixtures extends Fixture
             // Persist Project
             $manager->persist($project);
 
+            // Skills list
             $i=1;
             foreach($v['skills'] as $item) {
                 $skill = new ProjectList();
@@ -94,6 +96,15 @@ class Fixtures extends Fixture
                 $manager->persist($skill);
                 $i++;
             }
+
+            // HighConcept
+            $concept = new HighConcept();
+            $concept->setType($v['concept']['type']);
+            $concept->setGender($v['concept']['genre']);
+            $concept->setTarget($v['concept']['target']);
+            $manager->persist($concept);
+
+            $project->setHighConcept($concept);
 
             // Create Explanation
             $explanation = new \App\Entity\Project\Explanation\Explanation();

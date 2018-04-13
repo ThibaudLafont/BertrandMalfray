@@ -82,6 +82,15 @@ class Project{
     private $skillListItems;
 
     /**
+     * @var HighConcept
+     *
+     * @ORM\OneToOne(
+     *     targetEntity="HighConcept"
+     * )
+     */
+    private $highConcept;
+
+    /**
      * Category of project
      *
      * @var Category
@@ -326,6 +335,22 @@ class Project{
     public function getSkillListItems()
     {
         return $this->skillListItems;
+    }
+
+    /**
+     * @return HighConcept
+     */
+    public function getHighConcept(): HighConcept
+    {
+        return $this->highConcept;
+    }
+
+    /**
+     * @param HighConcept $highConcept
+     */
+    public function setHighConcept(HighConcept $highConcept)
+    {
+        $this->highConcept = $highConcept;
     }
 
 }

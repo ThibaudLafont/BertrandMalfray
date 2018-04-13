@@ -160,7 +160,7 @@ header {
     margin-bottom: 100px;
 }
 #header-top-row span{
-    font-size: 20px;
+    font-size: 18px;
 }
 .header-row {
     overflow: hidden;
@@ -170,7 +170,7 @@ header {
     padding: 0.45rem 1.5rem;
 }
 #header-top-row .header-column {
-    width: 30%;
+    width: 35%;
 }
 #header-bottom-row {
     padding-top: 8px;

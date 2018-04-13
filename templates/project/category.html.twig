@@ -27,6 +27,13 @@
                     {{ projects.0.name }}
                 </a>
             </li>
+            <!-- High Concept -->
+            <li>
+                <img src="/img/picto/info.png" alt="Interrogation point pictogram">
+                {{ projects.0.highConcept.type }} -
+                {{ projects.0.highConcept.gender }} -
+                {{ projects.0.highConcept.target }}
+            </li>
             <li>
                 <img src="/img/picto/calendar.png" alt="Calendar pictogram">
                 Terminé le {{ projects.0.endDate|date }}

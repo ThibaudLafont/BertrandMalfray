@@ -20,6 +20,10 @@ projects:
         - Création de différents modules LD
         - Programmation Blueprint
         - Playtests et équilibrage
+      concept:
+        type: Jeu PC
+        genre: FPS
+        target: Adulte
       content:
         1:
           type: title
@@ -115,6 +119,10 @@ projects:
           - Création de différents modules LD
           - Programmation Blueprint
           - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
@@ -248,6 +256,10 @@ projects:
           - Création de différents modules LD
           - Programmation Blueprint
           - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
@@ -344,6 +356,10 @@ projects:
           - Création de différents modules LD
           - Programmation Blueprint
           - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: FPS
+          target: Adulte
         content:
           1:
             type: title
