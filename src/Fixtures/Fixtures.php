@@ -7,6 +7,7 @@ use App\Entity\Project\Contributor;
 use App\Entity\Project\Explanation\Paragraph;
 use App\Entity\Project\Explanation\Title;
 use App\Entity\Project\HighConcept;
+use App\Entity\Project\Lists\CategoryList;
 use App\Entity\Project\Lists\ProjectList;
 use App\Entity\Project\Project;
 use App\Service\Sluggifier;
@@ -235,6 +236,17 @@ class Fixtures extends Fixture
             $this->getSluggifier()->sluggify($datas['name'])
         );
         $category->setSummary($datas['summary']);
+
+        $i=1;
+        foreach ($datas['skills'] as $item) {
+            $skill = new CategoryList();
+            $skill->setPosition($i);
+            $skill->setContent($item);
+            $skill->setCategory($category);
+
+            $this->getManager()->persist($skill);
+            $i++;
+        }
 
         // Return object
         return $category;

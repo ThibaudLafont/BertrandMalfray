@@ -11,7 +11,12 @@
                 <small>{{ projects.count }} projets</small>
             </h2>
         </div>
-        <p>{{ projects.0.category.summary }}</p>
+        <h4>Compétences mobilisées</h4>
+        <ul id="skills-ul">
+            {% for skill in projects.0.category.skillListItems %}
+                <li>+ {{ skill.content }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div id="right-cat-col" class="category-detail-column">
         <div id="right-category-title" class="category-title">

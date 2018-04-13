@@ -382,6 +382,13 @@ section#category-detail {
 .category-detail-column ul {
     margin : 1rem 0 0 0;
 }
+#skills-ul {
+    margin: 0;
+}
+.category-detail-column h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
 
 #category-detail h2 img{
     display: none;
@@ -482,6 +489,9 @@ h1#project-name {
 .project-column p {
     padding: 0.5rem;
     margin: 0;
+}
+.project-column h4 {
+    margin-bottom: 0.75rem;
 }
 #project-gallery {
     padding: 2% 0;

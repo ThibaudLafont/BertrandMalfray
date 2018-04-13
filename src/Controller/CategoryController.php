@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Entity\Project\Category;
+use App\Entity\Project\Lists\CategoryList;
+use App\Entity\Project\Lists\ProjectList;
 use App\Entity\Project\Project;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
