@@ -6,6 +6,7 @@ use App\Entity\Project\Category;
 use App\Entity\Project\Contributor;
 use App\Entity\Project\Explanation\Paragraph;
 use App\Entity\Project\Explanation\Title;
+use App\Entity\Project\Lists\ProjectList;
 use App\Entity\Project\Project;
 use App\Service\Sluggifier;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -82,6 +83,17 @@ class Fixtures extends Fixture
             $project->setCategory($category);
             // Persist Project
             $manager->persist($project);
+
+            $i=1;
+            foreach($v['skills'] as $item) {
+                $skill = new ProjectList();
+                $skill->setContent($item);
+                $skill->setPosition($i);
+                $skill->setProject($project);
+
+                $manager->persist($skill);
+                $i++;
+            }
 
             // Create Explanation
             $explanation = new \App\Entity\Project\Explanation\Explanation();

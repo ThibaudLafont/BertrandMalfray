@@ -18,7 +18,11 @@
         </div>
         <div class="project-row">
             <div class="project-column">
-                <p>{{ project.summary|raw }}</p>
+                <ul id="skills-ul">
+                    {% for skill in project.skillListItems %}
+                        <li>+ {{ skill.content }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div id="project-details" class="project-column">
                 <div id="project-details-title">
@@ -37,7 +41,7 @@
                     </li>
                     <li>
                         <img src="/img/picto/user.png" alt="User pictogram">
-                        {{ project.numberOfContributors }}
+                        {{ project.contributorsNbre }}
                     </li>
                 </ul>
             </div>

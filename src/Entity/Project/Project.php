@@ -72,6 +72,16 @@ class Project{
     private $contributorsNbre;
 
     /**
+     * @var mixed
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="\App\Entity\Project\Lists\ProjectList",
+     *     mappedBy="project"
+     * )
+     */
+    private $skillListItems;
+
+    /**
      * Category of project
      *
      * @var Category
@@ -308,6 +318,14 @@ class Project{
     public function setContributorsNbre(int $contributorsNbre)
     {
         $this->contributorsNbre = $contributorsNbre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSkillListItems()
+    {
+        return $this->skillListItems;
     }
 
 }

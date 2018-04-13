@@ -105,6 +105,10 @@ h1#project-name {
 .project-column p{
     padding: 0 1.5rem;
 }
+
+#skills-ul {
+    padding: 0 1.5rem;
+}
 /*@media all and (max-width: 600px) {*/
     /*#main_content {*/
         /*padding: 0;*/
