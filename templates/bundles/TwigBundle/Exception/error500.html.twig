@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>
-        Aucun projet mis en ligne pour le moment
-    </h1>
+
+    <h1>Erreur 500</h1>
+    <p>Erreur serveur</p>
+
 {% endblock %}
 
 {% block javascripts %}
     <script>
-        $("h1").css('text-align', 'center');
         $('footer').hide();
     </script>
 {% endblock %}

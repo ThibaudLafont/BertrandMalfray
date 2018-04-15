@@ -7,10 +7,12 @@ category:
        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     skills:
-        - Analyse du jeu Unreal Tournament
+        - Analyse de jeux
+        - Création de scénario (Narrative design)
+        - RLD - LD Patterns
+        - Gabarisation - Timeline
         - Création de différents modules LD
-        - Programmation Blueprint
-        - Playtests et équilibrage
+        - Programmation Blueprint(UE4) et .sqf
 
 projects:
     Map Unreal Tournament - DM Spacebase 41:
@@ -254,7 +256,7 @@ projects:
         init_date: 01-02-2017
         end_date: 01-05-2017
         role: Level Design
-        contributorsNbre: 4
+        contributorsNbre: 15
         summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
         skills:
           - Analyse de gameplay et map VR
@@ -262,8 +264,8 @@ projects:
           - Programmation Blueprint
           - Playtests et équilibrage
         concept:
-          type: Jeu PC
-          genre: FPS
+          type: Jeu VR
+          genre: Horreur
           target: Adulte
         content:
           1:

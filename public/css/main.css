@@ -31,8 +31,11 @@ header, body, footer,
 a {
     color: white;
 }
-body {
+html {
     background: black;
+}
+body {
+    /*background: url('/img/body-background.png');*/
 }
 #main_content {
     max-width: 970px;
@@ -151,13 +154,14 @@ section#homepage-content,
     display: none;
 }
 header {
-    background: url('/img/blue-background.png');
+    background-color: black;
 
     margin-bottom: 25px;
 }
 #desktop-header {
     margin-top: 25px;
     margin-bottom: 100px;
+    background: url('/img/blue-background.png');
 }
 #header-top-row span{
     font-size: 18px;
@@ -571,4 +575,31 @@ img.float-left{
         width: 20.83vw;
         height: 11.72vw;
     }
+}
+
+/* Admin edit projects */
+#edit-projects {
+    background: url('/img/blue-background.png');
+    padding: 1.5rem;
+}
+#edit-projects h1 {
+    margin-top: 0;
+}
+#edit-projects table {
+    margin: auto;
+}
+#edit-projects th {
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 18px;
+}
+#edit-projects td {
+    padding: 0.5rem;
+}
+#edit-projects td a{
+    display: block;
+}
+#edit-projects td a img {
+    margin: auto;
+    display: block;
 }
