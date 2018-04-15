@@ -256,7 +256,7 @@ projects:
         init_date: 01-02-2017
         end_date: 01-05-2017
         role: Level Design
-        contributorsNbre: 4
+        contributorsNbre: 15
         summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
         skills:
           - Analyse de gameplay et map VR
