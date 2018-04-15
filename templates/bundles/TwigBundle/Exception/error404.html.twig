@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Erreur 404</h1>
+    <p>Aucune resource ici</p>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $("h1").css('text-align', 'center');
+        $('footer').hide();
+    </script>
+{% endblock %}
