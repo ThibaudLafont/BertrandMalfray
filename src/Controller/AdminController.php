@@ -10,6 +10,10 @@ class AdminController extends Controller
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Route(
+     *     "/bm-admin/dashboard"
+     * )
      */
     public function dashboardAction() {
 
@@ -19,6 +23,10 @@ class AdminController extends Controller
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Route(
+     *     "/bm-admin/projects"
+     * )
      */
     public function listProjectsAction() {
 
