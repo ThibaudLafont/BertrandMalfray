@@ -31,8 +31,11 @@ header, body, footer,
 a {
     color: white;
 }
-body {
+html {
     background: black;
+}
+body {
+    /*background: url('/img/body-background.png');*/
 }
 #main_content {
     max-width: 970px;
@@ -151,13 +154,14 @@ section#homepage-content,
     display: none;
 }
 header {
-    background: url('/img/blue-background.png');
+    background-color: black;
 
     margin-bottom: 25px;
 }
 #desktop-header {
     margin-top: 25px;
     margin-bottom: 100px;
+    background: url('/img/blue-background.png');
 }
 #header-top-row span{
     font-size: 18px;
