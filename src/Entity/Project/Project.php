@@ -103,15 +103,6 @@ class Project{
     private $category;
 
     /**
-     * Main text content of project
-     *
-     * @var Explanation
-     *
-     * @ORM\OneToOne(targetEntity="\App\Entity\Project\Explanation\Explanation")
-     */
-    private $explanation;
-
-    /**
      * @var mixed
      *
      * @ORM\OneToMany(
@@ -245,22 +236,6 @@ class Project{
         elseif(!($endDate instanceof \DateTime)) throw new InvalidTypeException("EndDate is not string or datetime");
 
         $this->endDate = $endDate;
-    }
-
-    /**
-     * @return Explanation
-     */
-    public function getExplanation(): Explanation
-    {
-        return $this->explanation;
-    }
-
-    /**
-     * @param Explanation $explanation
-     */
-    public function setExplanation(Explanation $explanation)
-    {
-        $this->explanation = $explanation;
     }
 
     public function getDuration()
