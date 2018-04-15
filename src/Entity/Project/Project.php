@@ -12,9 +12,9 @@ use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
  *
  * @ORM\Entity("App\Repository\Project\ProjectRepository")
  * @ORM\Table(name="project_project")
+ * @ORM\EntityListeners({"App\EventListener\Project"})
  */
 class Project{
-
 
     /**
      * @var int
@@ -276,7 +276,7 @@ class Project{
 
     public function getShowUrl()
     {
-        return '/projects/' . $this->getId();
+        return '/project/' . $this->getSlugName();
     }
 
     /**

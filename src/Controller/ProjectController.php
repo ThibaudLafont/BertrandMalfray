@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Project\Project;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProjectController extends Controller
@@ -32,15 +33,20 @@ class ProjectController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @Route(
-     *     "/projects/{id}",
+     *     "/project/{slugName}",
      *     name="project_show",
-     *     requirements={"id"="\d+"}
+     *     requirements={"slugName"="(.+|-)+"}
      * )
      */
-    public function showAction($id) {
+    public function showAction($slugName) {
 
         $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository('App:Project\Project')->find($id);
+        $project = $em->getRepository('App:Project\Project')
+            ->findOneBy(['slugName' => $slugName]);
+
+        if(is_null($project)) {
+            throw new NotFoundHttpException('Aucun projet ici...');
+        }
 
         return $this->render(
             'project/show.html.twig',
