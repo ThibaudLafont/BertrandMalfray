@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1973bc4d816bcd204d25370f1ac949fe",
+    "content-hash": "1a2ddc68d502bb32349c4e77deb72ffa",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1095,6 +1095,39 @@
                 "sql"
             ],
             "time": "2014-01-12T16:20:24+00:00"
+        },
+        {
+            "name": "ninsuo/symfony-collection",
+            "version": "2.1.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ninsuo/symfony-collection.git",
+                "reference": "fe14cd39233d57413380ac67a546375e3789da01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ninsuo/symfony-collection/zipball/fe14cd39233d57413380ac67a546375e3789da01",
+                "reference": "fe14cd39233d57413380ac67a546375e3789da01",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "ScriptHandler.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Tiemblo",
+                    "email": "ninsuo@gmail.com"
+                }
+            ],
+            "description": "A jQuery plugin that manages adding, deleting and moving elements from a Symfony collection",
+            "time": "2018-04-06T09:17:08+00:00"
         },
         {
             "name": "ocramius/package-versions",

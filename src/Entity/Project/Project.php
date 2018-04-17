@@ -2,6 +2,7 @@
 namespace App\Entity\Project;
 
 use App\Entity\Project\Explanation\Explanation;
+use App\Entity\Project\Lists\ProjectList;
 use App\Traits\Entity\Hydrate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -83,7 +84,8 @@ class Project{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Project\Lists\ProjectList",
-     *     mappedBy="project"
+     *     mappedBy="project",
+     *     cascade={"persist"}
      * )
      */
     private $skillListItems;
@@ -92,7 +94,8 @@ class Project{
      * @var HighConcept
      *
      * @ORM\OneToOne(
-     *     targetEntity="HighConcept"
+     *     targetEntity="HighConcept",
+     *     cascade={"persist"}
      * )
      */
     private $highConcept;
@@ -134,7 +137,7 @@ class Project{
 
     public function __construct()
     {
-        $this->contributors = new ArrayCollection();
+        $this->skillListItems = new ArrayCollection();
     }
 
     /**
@@ -317,6 +320,18 @@ class Project{
     public function getSkillListItems()
     {
         return $this->skillListItems;
+    }
+
+    public function setSkillListItems(array $skills) {
+
+        foreach ($skills as $skill) {
+            if($skill instanceof ProjectList) {
+                $this->skillListItems->add($skill);
+
+                $skill->setProject($this);
+            }
+        }
+        
     }
 
     /**

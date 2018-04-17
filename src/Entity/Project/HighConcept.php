@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +42,9 @@ class HighConcept
      */
     private $target;
 
+    // Traits
+    use Hydrate;
+
     /**
      * @return int
      */
@@ -52,7 +56,7 @@ class HighConcept
     /**
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->type;
     }
@@ -68,7 +72,7 @@ class HighConcept
     /**
      * @return string
      */
-    public function getGender(): string
+    public function getGender()
     {
         return $this->gender;
     }
@@ -84,7 +88,7 @@ class HighConcept
     /**
      * @return string
      */
-    public function getTarget(): string
+    public function getTarget()
     {
         return $this->target;
     }

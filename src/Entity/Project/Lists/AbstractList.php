@@ -45,7 +45,7 @@ abstract class AbstractList
     /**
      * @return string
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->content;
     }
@@ -61,7 +61,7 @@ abstract class AbstractList
     /**
      * @return int
      */
-    public function getPosition(): int
+    public function getPosition()
     {
         return $this->position;
     }
