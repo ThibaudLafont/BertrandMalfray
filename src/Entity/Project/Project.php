@@ -134,7 +134,8 @@ class Project{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Media\Distant\Project",
-     *     mappedBy="project"
+     *     mappedBy="project",
+     *     cascade={"persist"}
      * )
      */
     private $distantMedias;
@@ -313,6 +314,16 @@ class Project{
     public function getDistantMedias()
     {
         return $this->distantMedias;
+    }
+
+    public function setDistantMedias(array $medias) {
+        foreach ($medias as $media) {
+            if($media instanceof \App\Entity\Media\Distant\Project) {
+                $this->distantMedias->add($media);
+
+                $media->setProject($this);
+            }
+        }
     }
 
     /**

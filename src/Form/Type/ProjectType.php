@@ -77,6 +77,23 @@ class ProjectType extends AbstractType
                 ]
             )
             ->add(
+                'distantMedias',
+                CollectionType::class,
+                [
+                    'entry_type' => DistantType::class,  // Use the defined custom type for images
+                    'allow_add' => true,               // Allow the form user to add new images
+                    'allow_delete' => true,            // Allow the form user to delete existent images
+                    'prototype' => true,
+                    'attr' => [
+                        'class' => 'distant-collection',
+                        'id' => 'distant'
+                    ],
+                    'entry_options' => [
+                        'label' => false
+                    ]
+                ]
+            )
+            ->add(
                 'content',
                 CKEditorType::class
             )
