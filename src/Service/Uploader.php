@@ -18,10 +18,11 @@ class Uploader
             $local instanceof Explanation
         ) {
             // Path generation
-            $targetDir = "/var/www/html/public/img/" . $local->getFolderName() . '/';
-            // Create folder if inexistent
+            $targetDir = "/var/www/html/public/img/" . $local->getFolderName() . "/";
+
             // Get File from local object
             $file = $local->getFile();
+
             // Move file from temp to web server
             $file->move(
                 $targetDir,

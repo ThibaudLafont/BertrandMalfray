@@ -2,22 +2,16 @@
 namespace App\Form\Type;
 
 use App\Entity\Project\Category;
-use App\Entity\Project\HighConcept;
-use Doctrine\ORM\Mapping\Entity;
 use Hillrange\CKEditor\Form\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Email;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ProjectType extends AbstractType
 {
@@ -37,10 +31,6 @@ class ProjectType extends AbstractType
                 ]
             )
             ->add(
-                'highConcept',
-                HighConceptType::class
-            )
-            ->add(
                 'initDate',
                 DateType::class
             )
@@ -49,8 +39,8 @@ class ProjectType extends AbstractType
                 DateType::class
             )
             ->add(
-                'contributorsNbre',
-                IntegerType::class
+                'highConcept',
+                HighConceptType::class
             )
             ->add(
                 'skillListItems',
@@ -70,12 +60,33 @@ class ProjectType extends AbstractType
                 ]
             )
             ->add(
-                'summary',
-                TextareaType::class
+                'localMedias',
+                CollectionType::class,
+                [
+                    'entry_type' => LocalType::class,  // Use the defined custom type for images
+                    'allow_add' => true,               // Allow the form user to add new images
+                    'allow_delete' => true,            // Allow the form user to delete existent images
+                    'prototype' => true,
+                    'attr' => [
+                        'class' => 'local-collection',
+                        'id' => 'local'
+                    ],
+                    'entry_options' => [
+                        'label' => false
+                    ]
+                ]
             )
             ->add(
                 'content',
                 CKEditorType::class
+            )
+            ->add(
+                'contributorsNbre',
+                IntegerType::class
+            )
+            ->add(
+                'summary',
+                TextareaType::class
             )
             ->add(
                 'submit',

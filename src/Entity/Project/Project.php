@@ -7,6 +7,7 @@ use App\Traits\Entity\Hydrate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Class Project
@@ -14,6 +15,11 @@ use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
  * @ORM\Entity("App\Repository\Project\ProjectRepository")
  * @ORM\Table(name="project_project")
  * @ORM\EntityListeners({"App\EventListener\Project"})
+ *
+ * @UniqueEntity(
+ *     "name",
+ *     message="Un projet portant le même nom est déjà en ligne"
+ * )
  */
 class Project{
 
@@ -117,7 +123,8 @@ class Project{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Media\Local\Project",
-     *     mappedBy="project"
+     *     mappedBy="project",
+     *     cascade={"persist"}
      * )
      */
     private $localMedias;
@@ -138,6 +145,8 @@ class Project{
     public function __construct()
     {
         $this->skillListItems = new ArrayCollection();
+        $this->localMedias = new ArrayCollection();
+        $this->distantMedias = new ArrayCollection();
     }
 
     /**
@@ -272,6 +281,16 @@ class Project{
         return $this->localMedias;
     }
 
+    public function setLocalMedias(array $medias) {
+        foreach ($medias as $media) {
+            if($media instanceof \App\Entity\Media\Local\Project) {
+                $this->localMedias->add($media);
+
+                $media->setProject($this);
+            }
+        }
+    }
+
     /**
      * @return string
      */
@@ -331,7 +350,7 @@ class Project{
                 $skill->setProject($this);
             }
         }
-        
+
     }
 
     /**

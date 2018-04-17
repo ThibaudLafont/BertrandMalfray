@@ -126,7 +126,7 @@ abstract class Local extends Media
      *
      * @return File|UploadedFile
      */
-    public function getFile() : File
+    public function getFile()
     {
         return $this->file;
     }

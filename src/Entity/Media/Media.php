@@ -108,7 +108,7 @@ abstract class Media
     /**
      * @return int
      */
-    public function getPosition(): int
+    public function getPosition()
     {
         return $this->position;
     }

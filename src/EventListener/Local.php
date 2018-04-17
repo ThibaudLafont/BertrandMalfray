@@ -3,6 +3,7 @@ namespace App\EventListener;
 
 use App\Entity\Media\Local\Explanation;
 use App\Entity\Media\Local\Project;
+use App\Service\Sluggifier;
 use App\Service\Uploader;
 
 /**
@@ -19,9 +20,15 @@ class Local
      */
     private $uploader;
 
-    public function __construct(Uploader $uploader)
+    /**
+     * @var Sluggifier
+     */
+    private $sluggifier;
+
+    public function __construct(Uploader $uploader, Sluggifier $sluggifier)
     {
         $this->setUploader($uploader);
+        $this->setSluggifier($sluggifier);
     }
 
     /**
@@ -31,12 +38,52 @@ class Local
      */
     public function prePersist($local)
     {
+
         // Ask upload if Object is right type
         if(
             $local instanceof Project ||
             $local instanceof Explanation
-        ) $this->getUploader()->uploadToWebServer($local);
+        ){
+            // Set slug name
+            $local->setSlugName(
+                $this->getSluggifier()
+                    ->sluggify($local->getName())
+            );
 
+            // Set Extension
+            $local->setExtension($local->getFile()->getExtension());
+
+            // TODO : to change
+            $local->setFolderName(
+                $local->getProject()
+                    ->getCategory()->getSlugName()
+            );
+
+            // Upload
+            $this->getUploader()->uploadToWebServer($local);
+        }
+
+    }
+
+
+    /**
+     * Get Sluggifier
+     *
+     * @return Sluggifier
+     */
+    public function getSluggifier(): Sluggifier
+    {
+        return $this->sluggifier;
+    }
+
+    /**
+     * Set Sluggifier
+     *
+     * @param Sluggifier $sluggifier
+     */
+    public function setSluggifier(Sluggifier $sluggifier)
+    {
+        $this->sluggifier = $sluggifier;
     }
 
     /**
