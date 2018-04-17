@@ -1,0 +1,18 @@
+{% block HighConceptType_widget %}
+
+    <div>
+        {{ form_label(form.type) }} :<br/>
+        {{ form_widget(form.type) }}
+    </div>
+
+    <div>
+        {{ form_label(form.gender) }} :<br/>
+        {{ form_widget(form.gender) }}
+    </div>
+
+    <div>
+        {{ form_label(form.target) }} :<br/>
+        {{ form_widget(form.target) }}
+    </div>
+
+{% endblock %}

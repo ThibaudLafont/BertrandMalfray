@@ -1,0 +1,163 @@
+{% block ProjectType_widget %}
+
+    {#<table>#}
+        {#<tr class="project-create-row">#}
+            {#<!-- Project Name -->#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_label(form.name) }}#}
+
+            {#</td>#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_widget(form.name) }}#}
+
+            {#</td>#}
+
+            {#<td class="project-create-col">#}
+                {#<td>#}
+                    {#{{ form_label(form.initDate) }}#}
+                {#</td>#}
+                {#<td>#}
+                    {#{{ form_widget(form.initDate) }}#}
+                {#</td>#}
+            {#</td>#}
+        {#</tr>#}
+
+        {#<!-- Project Category -->#}
+        {#<tr class="project-create-row">#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_label(form.category) }}#}
+
+            {#</td>#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_widget(form.category) }}#}
+
+            {#</td>#}
+
+            {#<td class="project-create-col">#}
+            {#<td>#}
+                {#{{ form_label(form.endDate) }}#}
+            {#</td>#}
+            {#<td>#}
+                {#{{ form_widget(form.endDate) }}#}
+            {#</td>#}
+            {#</td>#}
+        {#</tr>#}
+
+        {#<!-- Project Category -->#}
+        {#<tr class="project-create-row">#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_label(form.summary) }}#}
+
+            {#</td>#}
+            {#<td class="project-create-col">#}
+
+                {#{{ form_widget(form.summary) }}#}
+
+            {#</td>#}
+
+            {#<td class="project-create-col">#}
+                {#<td>#}
+                    {#{{ form_label(form.contributorsNbre) }}#}
+                {#</td>#}
+                {#<td>#}
+                    {#{{ form_widget(form.contributorsNbre) }}#}
+                {#</td>#}
+            {#</td>#}
+        {#</tr>#}
+
+        {#<!-- Project Category -->#}
+        {#<tr class="project-create-row">#}
+            {#<td>#}
+                {#{{ form_label(form.highConcept.type) }}#}
+            {#</td>#}
+            {#<td>#}
+                {#{{ form_widget(form.highConcept.type) }}#}
+            {#</td>#}
+        {#</tr>#}
+
+        {#<!-- Project Category -->#}
+        {#<tr class="project-create-row">#}
+            {#<td>#}
+                {#{{ form_label(form.highConcept.gender) }}#}
+            {#</td>#}
+            {#<td>#}
+                {#{{ form_widget(form.highConcept.gender) }}#}
+            {#</td>#}
+        {#</tr>#}
+
+        {#<!-- Project Category -->#}
+        {#<tr class="project-create-row">#}
+            {#<td>#}
+                {#{{ form_label(form.highConcept.target) }}#}
+            {#</td>#}
+            {#<td>#}
+                {#{{ form_widget(form.highConcept.target) }}#}
+            {#</td>#}
+        {#</tr>#}
+    {#</table>#}
+    <article id="project">
+        <div class="project-row project-title">
+            <span class="slash slash-right"></span>
+            <h1 id="project-name">{{ form_widget(form.name) }}</h1>
+        </div>
+        <div class="project-row">
+            <div class="project-column">
+                <h4>{{ form_label(form.category) }}</h4>
+                {{ form_widget(form.category) }}
+                <h4>Compétences mobilisées</h4>
+                {{ form_widget(form.skillListItems) }}
+                <h4>{{ form_label(form.summary) }}</h4>
+                {{ form_widget(form.summary) }}
+            </div>
+            <div id="project-details" class="project-column">
+                <div id="project-details-title">
+                    <h2>Détails
+                        <img src="/img/arrow-down.png" alt="Arrow down pictogram">
+                    </h2>
+                </div>
+                <ul id="project-infos">
+                    <li>
+                        <img src="/img/picto/info.png" alt="Interrogation point pictogram">
+                        {{ form_widget(form.highConcept) }}
+                    </li>
+                    <li>
+                        <img src="/img/picto/calendar.png" alt="Calendar pictogram">
+                        Débuté le {{ form_widget(form.initDate) }}
+                    </li>
+                    <li>
+                        <img src="/img/picto/date-interval.png" alt="Date interval pictogram">
+                        Terminé le {{ form_widget(form.endDate) }}
+                    </li>
+                    <li>
+                        <img src="/img/picto/user.png" alt="User pictogram">
+                        Collaborateurs {{ form_widget(form.contributorsNbre) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <section id="project-content" class="project-row">
+            {{ form_widget(form.content) }}
+        </section>
+
+        <section class="project-row">
+            {{ form_widget(form.submit) }}
+        </section>
+    </article>
+
+    <section id="locals-create" class="media-project-create">
+        <h2>{{ form_label(form.localMedias) }}</h2>
+        {{ form_widget(form.localMedias) }}
+    </section>
+
+    <section id="locals-create" class="media-project-create">
+        <h2>{{ form_label(form.distantMedias) }}</h2>
+        {{ form_widget(form.distantMedias) }}
+    </section>
+
+{% endblock %}

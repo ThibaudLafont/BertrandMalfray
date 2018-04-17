@@ -111,4 +111,9 @@ class ProjectType extends AbstractType
             )
         ;
     }
+
+    public function getBlockPrefix()
+    {
+        return 'ProjectType';
+    }
 }

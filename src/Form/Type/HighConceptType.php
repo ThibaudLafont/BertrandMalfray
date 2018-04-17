@@ -48,4 +48,9 @@ class HighConceptType extends AbstractType
             'data_class' => 'App\Entity\Project\HighConcept',
         ));
     }
+
+    public function getBlockPrefix()
+    {
+        return 'HighConceptType';
+    }
 }

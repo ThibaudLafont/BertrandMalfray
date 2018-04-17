@@ -80,7 +80,8 @@ hr {
 hr,
 section#category-detail,
 section#homepage-content,
-#project,
+section#project,
+form[name='project'],
 .slick-prev,
 .slick-next,
 .list-right-column a,
@@ -602,4 +603,36 @@ img.float-left{
 #edit-projects td a img {
     margin: auto;
     display: block;
+}
+
+/* Create project */
+form[name='ProjectType'] h4 {
+    padding: 0;
+}
+form[name='ProjectType'] #ProjectType_submit {
+    margin: 0 1rem 1rem 1rem;
+    float: right;
+}
+table#ProjectType_highConcept{
+    width: 100%;
+    box-sizing: border-box;
+}
+form[name='ProjectType'] select#ProjectType_category{
+    width: 100%;
+    box-sizing: border-box;
+}
+table#ProjectType_highConcept input{
+    width: 85%;
+}
+#ProjectType_summary {
+    width: 100%;
+}
+section.media-project-create {
+    background: url('/img/blue-background.png');
+    padding: 1rem;
+    box-sizing: border-box;
+    margin: 1rem 0;
+}
+section.media-project-create h2{
+    margin-top: 0;
 }

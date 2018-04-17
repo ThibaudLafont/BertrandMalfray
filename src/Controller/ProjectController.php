@@ -79,7 +79,7 @@ class ProjectController extends Controller
         }
 
         return $this->render(
-            "admin/project-create.html.twig",
+            "admin/project/create.html.twig",
             ['form' => $form->createView()]
         );
 
