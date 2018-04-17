@@ -65,6 +65,13 @@ class Project{
     private $summary;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="contributors_nbre", type="integer")
@@ -182,7 +189,7 @@ class Project{
     /**
      * @return Category
      */
-    public function getCategory(): Category
+    public function getCategory()
     {
         return $this->category;
     }
@@ -326,6 +333,22 @@ class Project{
     public function setHighConcept(HighConcept $highConcept)
     {
         $this->highConcept = $highConcept;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content)
+    {
+        $this->content = $content;
     }
 
 }

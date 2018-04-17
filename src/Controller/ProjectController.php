@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Project\Project;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,9 +30,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * @param int $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
      * @Route(
      *     "/project/{slugName}",
      *     name="project_show",
@@ -51,6 +49,37 @@ class ProjectController extends Controller
         return $this->render(
             'project/show.html.twig',
             ['project' => $project]
+        );
+
+    }
+
+    /**
+     * @Route(
+     *     "/bm-admin/project/create",
+     *     name="project_create"
+     * )
+     */
+    public function createAction(Request $request) {
+
+        $form = $this->createForm('App\Form\Type\ProjectType');
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+
+                $project = new Project();
+
+                $project->hydrate($form->getData());
+
+                $this->getDoctrine()->getManager()->persist($project);
+                $this->getDoctrine()->getManager()->flush();
+            }
+        }
+
+        return $this->render(
+            "admin/project-create.html.twig",
+            ['form' => $form->createView()]
         );
 
     }
