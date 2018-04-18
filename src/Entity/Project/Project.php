@@ -329,7 +329,15 @@ class Project{
     /**
      * @return string
      */
-    public function getContributorsNbre() : string
+    public function getContributorsNbre()
+    {
+        return $this->contributorsNbre;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContributorsNbreDisplay() : string
     {
         $count = $this->contributorsNbre;
         if($count === 0) return 'Aucun collaborateur';
@@ -362,6 +370,14 @@ class Project{
             }
         }
 
+    }
+
+    public function addSkillListItem(ProjectList $skill) {
+        $this->skillListItems->add($skill);
+    }
+
+    public function removeSkillListItem(ProjectList $skill) {
+        $this->skillListItems->remove($skill);
     }
 
     /**

@@ -68,15 +68,35 @@ class ProjectController extends Controller
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-
                 $project = new Project();
-
                 $project->hydrate($form->getData());
 
-                $this->getDoctrine()->getManager()->persist($project);
-                $this->getDoctrine()->getManager()->flush();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($project);
+                $em->flush();
             }
         }
+
+        return $this->render(
+            "admin/project/create.html.twig",
+            ['form' => $form->createView()]
+        );
+
+    }
+
+    /**
+     * @Route(
+     *     "/bm-admin/project/edit/{id}",
+     *     name="project_edit"
+     * )
+     */
+    public function editAction($id) {
+
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository('App:Project\Project')
+            ->find($id);
+
+        $form = $this->createForm('App\Form\Type\ProjectType', $project);
 
         return $this->render(
             "admin/project/create.html.twig",

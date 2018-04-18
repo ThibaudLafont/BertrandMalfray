@@ -24,26 +24,29 @@
         $('.skill-collection').collection({
             min: 0,
             position_field_selector: '.skill-position',
+            allow_add: true,
+            allow_up: true,
+            allow_down: true,
             allow_remove: true,
             elements_selector: '> tr'
         });
-        $('.local-collection').collection({
-            min: 0,
-            position_field_selector: '.local-position',
-            allow_remove: true,
-            elements_selector: '> tr'
-        });
-        $('.distant-collection').collection({
-            min: 0,
-            position_field_selector: '.distant-position',
-            allow_remove: true,
-            elements_selector: '> tr'
-        });
+//        $('.local-collection').collection({
+//            min: 0,
+//            position_field_selector: '.local-position',
+//            allow_remove: true,
+//            elements_selector: '> tr'
+//        });
+//        $('.distant-collection').collection({
+//            min: 0,
+//            position_field_selector: '.distant-position',
+//            allow_remove: true,
+//            elements_selector: '> tr'
+//        });
     </script>
 
     <!-- Slick js -->
-    <script type="text/javascript" src="/vendor/slick/slick.min.js"></script>
+    {#<script type="text/javascript" src="/vendor/slick/slick.min.js"></script>#}
 
-    <!-- Config -->
-    <script type="text/javascript" src="/js/show-project-gallery.js"></script>
+    {#<!-- Config -->#}
+    {#<script type="text/javascript" src="/js/show-project-gallery.js"></script>#}
 {% endblock %}

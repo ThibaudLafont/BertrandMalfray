@@ -61,6 +61,7 @@ class ProjectType extends AbstractType
                     'allow_add' => true,               // Allow the form user to add new images
                     'allow_delete' => true,            // Allow the form user to delete existent images
                     'prototype' => true,
+                    'by_reference' => false,
                     'attr' => [
                         'class' => 'skill-collection',
                         'id' => 'skills'
