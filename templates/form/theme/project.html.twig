@@ -24,7 +24,13 @@
                 </table>
 
                 <!-- Project summary -->
-                <h4>{{ form_label(form.summary) }}</h4>
+                <h4>
+                    {#{% if form_errors(form.summary) %}#}
+                        {{ form_errors(form.summary) }}
+                    {#{% else %}#}
+                        {{ form_label(form.summary) }}
+                    {#{% endif %}#}
+                </h4>
                 {{ form_widget(form.summary) }}
             </div>
 
@@ -76,15 +82,13 @@
     <!-- Local medias -->
     <section id="locals-create" class="media-project-create">
         <h2>{{ form_label(form.localMedias) }}</h2>
-        {#<table>#}
             {{ form_widget(form.localMedias) }}
-        {#</table>#}
     </section>
 
     <!-- Distant medias -->
     <section id="locals-create" class="media-project-create">
         <h2>{{ form_label(form.distantMedias) }}</h2>
-        {{ form_widget(form.distantMedias) }}
+            {{ form_widget(form.distantMedias) }}
     </section>
 
 {% endblock %}

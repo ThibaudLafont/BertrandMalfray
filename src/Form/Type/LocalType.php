@@ -28,14 +28,20 @@ class LocalType extends AbstractType
                 'name',
                 TextType::class,
                 [
-                    'label' => 'Nom'
+                    'label' => 'Nom',
+                    'attr' => [
+                        'placeholder' => 'Nom'
+                    ]
                 ]
             )
             ->add(
                 'alt',
                 TextType::class,
                 [
-                    'label' => 'Description'
+                    'label' => 'Description',
+                    'attr' => [
+                        'placeholder' => 'Description'
+                    ]
                 ]
             )
             ->add(  // Set a file field

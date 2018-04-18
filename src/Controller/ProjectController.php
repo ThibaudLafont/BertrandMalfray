@@ -90,13 +90,25 @@ class ProjectController extends Controller
      *     name="project_edit"
      * )
      */
-    public function editAction($id) {
+    public function editAction($id, Request $request) {
 
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository('App:Project\Project')
             ->find($id);
 
         $form = $this->createForm('App\Form\Type\ProjectType', $project);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $project->hydrate($form->getData());
+
+                $em = $this->getDoctrine()->getManager();
+//                $em->persist($project);
+                $em->flush();
+            }
+        }
 
         return $this->render(
             "admin/project/create.html.twig",

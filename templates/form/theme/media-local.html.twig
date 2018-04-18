@@ -14,16 +14,17 @@
         </td>
 
         <!-- Media name -->
-        <td>
-            {{ form(form.name) }}
-            {{ form(form.alt) }}
+        <td class="local-name-inputs">
+            {{ form_widget(form.name) }}
         </td>
 
         <!-- Media Description -->
-        {#<td>{{ form(form.alt) }}</td>#}
+        <td>{{ form_widget(form.alt) }}</td>
 
         <!-- Media File -->
-        <td>{{ form(form.file) }}</td>
+        <td class="local-file-input">{{ form_widget(form.file) }}</td>
+
+        {{ form_widget(form.position) }}
     </tr>
 
 {% endblock %}

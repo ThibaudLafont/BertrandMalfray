@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ProjectType extends AbstractType
 {
@@ -24,6 +26,11 @@ class ProjectType extends AbstractType
                 [
                     'attr' => [
                         'placeholder' => 'Titre du projet'
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Le nom est obligatoire'
+                        ])
                     ]
                 ]
             )
@@ -31,6 +38,7 @@ class ProjectType extends AbstractType
                 'category',
                 EntityType::class,
                 [
+                    'label' => 'Catégorie',
                     'class' => Category::class,
                     'choice_label' => 'name'
                 ]
@@ -57,6 +65,7 @@ class ProjectType extends AbstractType
                 'skillListItems',
                 CollectionType::class,
                 [
+                    'label' => 'Compétences mobilisées',
                     'entry_type' => SkillType::class,  // Use the defined custom type for images
                     'allow_add' => true,               // Allow the form user to add new images
                     'allow_delete' => true,            // Allow the form user to delete existent images
@@ -127,6 +136,15 @@ class ProjectType extends AbstractType
                     'attr' => [
                         'placeholder' => 'Résumé de 200 caractères environ',
                         'rows' => 4
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Le nom est obligatoire'
+                        ]),
+                        new Length([
+                            'min' => 100,
+                            'minMessage' => 'Au moins {{limit}} caractères'
+                        ])
                     ]
                 ]
             )

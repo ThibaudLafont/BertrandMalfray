@@ -654,14 +654,26 @@ table#ProjectType_skillListItems div.ProjectType_skillListItems-collection-actio
 }
 input[type="number"] {
     width: 46px;
+    margin-left: 134px;
 }
-table.local-collection {
+table.local-collection,
+table.distant-collection {
     width : 100%;
+    border-collapse: collapse;
+}
+table.local-collection input,
+table.distant-collection input{
+    width : 100%;
+}
+table.local-collection td,
+table.distant-collection td {
+    padding: 0.5rem;
 }
 .media-local img,
 .media-distant img {
-    max-width: 100px;
+    width: 100px;
 }
-.ProjectType_localMedias-collection-actions {
-    text-align: right;
+.ProjectType_localMedias-collection-actions,
+.ProjectType_distantMedias-collection-actions {
+    text-align: center;
 }

@@ -28,21 +28,30 @@ class DistantType extends AbstractType
                 'name',
                 TextType::class,
                 [
-                    'label' => 'Nom'
+                    'label' => 'Nom',
+                    'attr' => [
+                        'placeholder' => 'Nom'
+                    ]
                 ]
             )
             ->add(
                 'alt',
                 TextType::class,
                 [
-                    'label' => 'Description'
+                    'label' => 'Description',
+                    'attr' => [
+                        'placeholder' => 'Description'
+                    ]
                 ]
             )
             ->add(  // Set a file field
                 'src',
                 TextType::class,
                 [
-                    'label' => 'Source'
+                    'label' => 'Source',
+                    'attr' => [
+                        'placeholder' => 'Source'
+                    ]
                 ]
             )
             ->add(  // Set a hidden position field, witch is used in trick display

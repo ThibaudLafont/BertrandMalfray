@@ -13,13 +13,15 @@
         </td>
 
         <!-- Distant name -->
-        <td>{{ form(form.name) }}</td>
+        <td>{{ form_widget(form.name) }}</td>
 
         <!-- Distant Description -->
-        <td>{{ form(form.alt) }}</td>
+        <td>{{ form_widget(form.alt) }}</td>
 
         <!-- Distant Source -->
-        <td>{{ form(form.src) }}</td>
+        <td>{{ form_widget(form.src) }}</td>
+
+        {{ form_widget(form.position) }}
     </tr>
 
 {% endblock %}
