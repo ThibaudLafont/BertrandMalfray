@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class LocalType extends AbstractType
 {
@@ -31,6 +32,9 @@ class LocalType extends AbstractType
                     'label' => 'Nom',
                     'attr' => [
                         'placeholder' => 'Nom'
+                    ],
+                    'constraints' => [
+                        new NotNull(['message' => 'Le nom est obligatoire'])
                     ]
                 ]
             )
@@ -41,6 +45,9 @@ class LocalType extends AbstractType
                     'label' => 'Description',
                     'attr' => [
                         'placeholder' => 'Description'
+                    ],
+                    'constraints' => [
+                        new NotNull(['message' => 'La description est obligatoire'])
                     ]
                 ]
             )
@@ -48,7 +55,10 @@ class LocalType extends AbstractType
                 'file',
                 FileType::class,
                 [
-                    'label' => 'Fichier'
+                    'label' => 'Fichier',
+                    'constraints' => [
+                        new NotNull(['message' => 'Le fichier est obligatoire'])
+                    ]
                 ]
             )
             ->add(  // Set a hidden position field, witch is used in trick display

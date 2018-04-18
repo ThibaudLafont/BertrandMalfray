@@ -51,7 +51,11 @@ class Fixtures extends Fixture
 
         // Load and parse LD YAML file
         $datas = Yaml::parse(file_get_contents(__DIR__ . '/data/LevelDesign.yaml'));
-        $this->loadCategoryProjects($datas);
+//        $this->loadCategoryProjects($datas);
+
+        // Create&Persist Category
+        $category = $this->createCategory($datas['category']);
+        $manager->persist($category);
 
         // Load and parse GD YAML file
 //        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));

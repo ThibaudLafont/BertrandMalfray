@@ -606,6 +606,9 @@ img.float-left{
 }
 
 /* Create project */
+.error-form {
+    color: red;
+}
 form[name='ProjectType'] h4 {
     padding: 0;
 }

@@ -26,9 +26,14 @@ class HighConceptType extends AbstractType
                 'type',
                 TextType::class,
                 [
-                    'label' => 'Genre',
+                    'label' => 'Type',
                     'attr' => [
                         'placeholder' => 'ex: VR'
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Le type est obligatoire'
+                        ])
                     ]
                 ]
             )
@@ -39,6 +44,11 @@ class HighConceptType extends AbstractType
                     'label' => 'Genre',
                     'attr' => [
                         'placeholder' => 'ex: FPS'
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Le genre est obligatoire'
+                        ])
                     ]
                 ]
             )
@@ -49,6 +59,11 @@ class HighConceptType extends AbstractType
                     'label' => 'Cible',
                     'attr' => [
                         'placeholder' => 'ex: Adulte'
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'La cible est obligatoire'
+                        ])
                     ]
                 ]
             )
@@ -64,6 +79,7 @@ class HighConceptType extends AbstractType
         $resolver->setDefaults(array(
             // Define the target entity
             'data_class' => 'App\Entity\Project\HighConcept',
+            'error_bubbling' => true
         ));
     }
 

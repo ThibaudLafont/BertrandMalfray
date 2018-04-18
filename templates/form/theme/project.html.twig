@@ -13,35 +13,38 @@
             <!-- Top left -->
             <div class="project-column">
                 <!-- Catégorie -->
-                <h4>{{ form_label(form.category) }}</h4>
+                <h4>
+                    {% if form_errors(form.category) %}
+                        <!-- Summary errors -->
+                        <span class="error-form">{{ form_errors(form.category) }}</span>
+                    {% else %}
+                        <!-- Summary Label -->
+                        {{ form_label(form.category) }}
+                    {% endif %}
+                </h4>
                 {{ form_widget(form.category) }}
 
                 <!-- Skills -->
                 <h4>{{ form_label(form.skillListItems) }}</h4>
-                <table>
-                    <!-- Skill Widgets -->
-                    {{ form_widget(form.skillListItems) }}
-                </table>
+                <!-- Skill Widgets -->
+                {{ form_widget(form.skillListItems) }}
 
                 <!-- Project summary -->
                 <h4>
-                    {#{% if form_errors(form.summary) %}#}
-                        {{ form_errors(form.summary) }}
-                    {#{% else %}#}
+                    {% if form_errors(form.summary) %}
+                        <!-- Summary errors -->
+                        <span class="error-form">{{ form_errors(form.summary) }}</span>
+                    {% else %}
+                        <!-- Summary Label -->
                         {{ form_label(form.summary) }}
-                    {#{% endif %}#}
+                    {% endif %}
                 </h4>
+                <!-- Summary Widget -->
                 {{ form_widget(form.summary) }}
             </div>
 
             <!-- Top right -->
             <div id="project-details" class="project-column">
-                <div id="project-details-title">
-                    <h2>Détails
-                        <img src="/img/arrow-down.png" alt="Arrow down pictogram">
-                    </h2>
-                </div>
-
                 <!-- Infos projet -->
                 <ul id="project-infos">
                     <li>
@@ -64,12 +67,21 @@
                         <img src="/img/picto/user.png" alt="User pictogram">
                         {{ form_label(form.contributorsNbre) }} {{ form_widget(form.contributorsNbre) }}
                     </li>
+                    {% if form_errors(form.contributorsNbre) %}
+                        <!-- HighConcept errors -->
+                        <li class="error-form">{{ form_errors(form.contributorsNbre) }}</li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
 
         <!-- Project Content -->
         <section id="project-content" class="project-row">
+            {% if form_errors(form.content) %}
+                <!-- Content errors -->
+                <h4 class="error-form">{{ form_errors(form.content) }}</h4>
+            {% endif %}
+
             {{ form_widget(form.content) }}
         </section>
 
@@ -81,7 +93,15 @@
 
     <!-- Local medias -->
     <section id="locals-create" class="media-project-create">
-        <h2>{{ form_label(form.localMedias) }}</h2>
+        <h2>
+            {% if form_errors(form.localMedias) %}
+                <!-- Summary errors -->
+                <span class="error-form">{{ form_errors(form.localMedias) }}</span>
+            {% else %}
+                <!-- Summary Label -->
+                {{ form_label(form.localMedias) }}
+            {% endif %}
+        </h2>
             {{ form_widget(form.localMedias) }}
     </section>
 

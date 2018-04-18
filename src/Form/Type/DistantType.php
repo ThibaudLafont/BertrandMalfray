@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class DistantType extends AbstractType
 {
@@ -31,6 +32,9 @@ class DistantType extends AbstractType
                     'label' => 'Nom',
                     'attr' => [
                         'placeholder' => 'Nom'
+                    ],
+                    'constraints' => [
+                        new NotNull(['message' => 'Le nom est obligatoire'])
                     ]
                 ]
             )
@@ -41,6 +45,9 @@ class DistantType extends AbstractType
                     'label' => 'Description',
                     'attr' => [
                         'placeholder' => 'Description'
+                    ],
+                    'constraints' => [
+                        new NotNull(['message' => 'La description est obligatoire'])
                     ]
                 ]
             )
@@ -51,6 +58,9 @@ class DistantType extends AbstractType
                     'label' => 'Source',
                     'attr' => [
                         'placeholder' => 'Source'
+                    ],
+                    'constraints' => [
+                        new NotNull(['message' => 'La source est obligatoire'])
                     ]
                 ]
             )

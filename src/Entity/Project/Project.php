@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 /**
  * Class Project
@@ -91,7 +92,7 @@ class Project{
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Project\Lists\ProjectList",
      *     mappedBy="project",
-     *     cascade={"persist"}
+     *     cascade={"persist", "remove", "refresh"}
      * )
      */
     private $skillListItems;
@@ -373,11 +374,12 @@ class Project{
     }
 
     public function addSkillListItem(ProjectList $skill) {
+        $skill->setProject($this);
         $this->skillListItems->add($skill);
     }
 
     public function removeSkillListItem(ProjectList $skill) {
-        $this->skillListItems->remove($skill);
+        $this->skillListItems->remove($skill->getId());
     }
 
     /**

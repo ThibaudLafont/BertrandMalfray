@@ -12,8 +12,11 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Validator\Constraints\Range;
 
 class ProjectType extends AbstractType
 {
@@ -40,7 +43,10 @@ class ProjectType extends AbstractType
                 [
                     'label' => 'Catégorie',
                     'class' => Category::class,
-                    'choice_label' => 'name'
+                    'choice_label' => 'name',
+                    'constraints' => [
+                        new NotNull(['message' => 'La catégorie est obligatoire'])
+                    ]
                 ]
             )
             ->add(
@@ -116,7 +122,12 @@ class ProjectType extends AbstractType
             )
             ->add(
                 'content',
-                CKEditorType::class
+                CKEditorType::class,
+                [
+                    'constraints' => [
+                        new NotBlank(['message' => 'Le contenu est obligatoire'])
+                    ]
+                ]
             )
             ->add(
                 'contributorsNbre',
@@ -125,6 +136,12 @@ class ProjectType extends AbstractType
                     'label' => 'Contributeurs',
                     'attr' => [
                         'placeholder' => '0'
+                    ],
+                    'constraints' => [
+                        new Range([
+                            'min' => 0,
+                            'minMessage' => 'Le nombre doit être positif --\'. Je rigole d\'avance si tu l\'as activée ahahahahah'
+                        ])
                     ]
                 ]
             )
@@ -143,7 +160,7 @@ class ProjectType extends AbstractType
                         ]),
                         new Length([
                             'min' => 100,
-                            'minMessage' => 'Au moins {{limit}} caractères'
+                            'minMessage' => "! Au moins {{ limit }} caractères"
                         ])
                     ]
                 ]

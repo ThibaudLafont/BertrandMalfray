@@ -102,9 +102,8 @@ class ProjectController extends Controller
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $project->hydrate($form->getData());
+//                $project->hydrate($form->getData());
 
-                $em = $this->getDoctrine()->getManager();
 //                $em->persist($project);
                 $em->flush();
             }

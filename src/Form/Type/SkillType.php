@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class SkillType extends AbstractType
 {
@@ -28,7 +29,10 @@ class SkillType extends AbstractType
                 'content',
                 TextType::class,
                 [
-                    'label' => false
+                    'label' => false,
+                    'constraints' => [
+                        new NotNull(['message' => 'Ce champ est obligatoire'])
+                    ]
                 ]
             )
             ->add(  // Set a hidden position field, witch is used in trick display
@@ -49,7 +53,7 @@ class SkillType extends AbstractType
     {
         $resolver->setDefaults(array(
             // Define the target entity
-            'data_class' => ProjectList::class,
+            'data_class' => 'App\Entity\Project\Lists\ProjectList',
         ));
     }
 
