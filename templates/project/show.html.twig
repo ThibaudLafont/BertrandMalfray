@@ -70,19 +70,7 @@
         </section>
 
         <section id="project-content" class="project-row">
-            {% for part in project.explanation.content %}
-                {% if part.type is same as('title') %}
-                    <h{{ part.attr.level }}>
-                        {{ part.attr.content }}
-                    </h{{ part.attr.level }}>
-                {% elseif part.type is same as('paragraph') %}
-                    <p>{{ part.attr.content }}</p>
-                {% elseif part.type is same as('local') %}
-                    <a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">
-                        <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
-                    </a>
-                {% endif %}
-            {% endfor %}
+            {{ project.content|raw }}
         </section>
     </article>
 {% endblock %}

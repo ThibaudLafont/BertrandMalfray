@@ -636,3 +636,19 @@ section.media-project-create {
 section.media-project-create h2{
     margin-top: 0;
 }
+.ProjectType_localMedias-collection-actions,
+.ProjectType_skillListItems-collection-actions,
+.ProjectType_distantMedias-collection-actions {
+    display: table-cell;
+    vertical-align: middle;
+}
+table#ProjectType_skillListItems {
+    width: 100%;
+}
+table#ProjectType_skillListItems table,
+table#ProjectType_skillListItems input {
+    width: 100%;
+}
+table#ProjectType_skillListItems div.ProjectType_skillListItems-collection-actions {
+    text-align: right;
+}
