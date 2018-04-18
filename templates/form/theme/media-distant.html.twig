@@ -1,0 +1,25 @@
+{% block DistantType_widget %}
+
+    <tr class="media-distant">
+        <!-- Display image -->
+        <td>
+            <!-- If edit -->
+            {% if form.vars.value.src is not null %}
+                <img src="{{ form.vars.value.imgSrc }}" alt="{{ form.vars.value.alt }}">
+                <!-- If create -->
+            {% else %}
+                <img src="/img/picto/delete.png" alt="">
+            {% endif %}
+        </td>
+
+        <!-- Distant name -->
+        <td>{{ form(form.name) }}</td>
+
+        <!-- Distant Description -->
+        <td>{{ form(form.alt) }}</td>
+
+        <!-- Distant Source -->
+        <td>{{ form(form.src) }}</td>
+    </tr>
+
+{% endblock %}

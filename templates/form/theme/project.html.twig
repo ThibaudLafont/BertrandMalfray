@@ -1,38 +1,60 @@
 {% block ProjectType_widget %}
     <article id="project">
+
+        <!-- Project Title -->
         <div class="project-row project-title">
             <span class="slash slash-right"></span>
             <h1 id="project-name">{{ form_widget(form.name) }}</h1>
         </div>
+
+        <!-- Project infos & content -->
         <div class="project-row">
+
+            <!-- Top left -->
             <div class="project-column">
+                <!-- Catégorie -->
                 <h4>{{ form_label(form.category) }}</h4>
                 {{ form_widget(form.category) }}
-                <h4>Compétences mobilisées</h4>
-                {{ form_widget(form.skillListItems) }}
+
+                <!-- Skills -->
+                <h4>{{ form_label(form.skillListItems) }}</h4>
+                <table>
+                    <!-- Skill Widgets -->
+                    {{ form_widget(form.skillListItems) }}
+                </table>
+
+                <!-- Project summary -->
                 <h4>{{ form_label(form.summary) }}</h4>
                 {{ form_widget(form.summary) }}
             </div>
+
+            <!-- Top right -->
             <div id="project-details" class="project-column">
                 <div id="project-details-title">
                     <h2>Détails
                         <img src="/img/arrow-down.png" alt="Arrow down pictogram">
                     </h2>
                 </div>
+
+                <!-- Infos projet -->
                 <ul id="project-infos">
                     <li>
+                        <!-- High Concept -->
                         <img src="/img/picto/info.png" alt="Interrogation point pictogram">
                         {{ form_widget(form.highConcept) }}
                     </li>
                     <li>
+                        <!-- Init Date -->
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
                         {{ form_label(form.initDate) }} {{ form_widget(form.initDate) }}
                     </li>
                     <li>
+                        <!-- End Date -->
                         <img src="/img/picto/date-interval.png" alt="Date interval pictogram">
                         {{ form_label(form.endDate) }} {{ form_widget(form.endDate) }}
                     </li>
                     <li>
+                        <!-- Contributors -->
                         <img src="/img/picto/user.png" alt="User pictogram">
                         {{ form_label(form.contributorsNbre) }} {{ form_widget(form.contributorsNbre) }}
                     </li>
@@ -40,20 +62,26 @@
             </div>
         </div>
 
+        <!-- Project Content -->
         <section id="project-content" class="project-row">
             {{ form_widget(form.content) }}
         </section>
 
+        <!-- Submit -->
         <section class="project-row">
             {{ form_widget(form.submit) }}
         </section>
     </article>
 
+    <!-- Local medias -->
     <section id="locals-create" class="media-project-create">
         <h2>{{ form_label(form.localMedias) }}</h2>
-        {{ form_widget(form.localMedias) }}
+        {#<table>#}
+            {{ form_widget(form.localMedias) }}
+        {#</table>#}
     </section>
 
+    <!-- Distant medias -->
     <section id="locals-create" class="media-project-create">
         <h2>{{ form_label(form.distantMedias) }}</h2>
         {{ form_widget(form.distantMedias) }}

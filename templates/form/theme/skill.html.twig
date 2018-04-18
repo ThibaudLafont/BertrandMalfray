@@ -1,8 +1,9 @@
 {% block SkillType_widget %}
 
-    <div clas="">
-        {{ form_label(form.content) }} :<br/>
-        {{ form_widget(form.content) }}
-    </div>
+    <!-- Content & Position -->
+    <tr class="skill-item">
+        <td>{{ form(form.content) }}</td>
+        <td>{{ form_widget(form.position) }}</td>
+    </tr>
 
 {% endblock %}

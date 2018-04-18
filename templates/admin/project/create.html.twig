@@ -11,6 +11,9 @@
     {% form_theme form
         'form_table_layout.html.twig'
         'form/theme/project.html.twig'
+        'form/theme/skill.html.twig'
+        'form/theme/media-local.html.twig'
+        'form/theme/media-distant.html.twig'
         'jquery.collection.html.twig'
     %}
     {{ form(form) }}
@@ -28,20 +31,20 @@
             allow_up: true,
             allow_down: true,
             allow_remove: true,
-            elements_selector: '> tr'
+            elements_selector: 'tr.skill-item'
         });
-//        $('.local-collection').collection({
-//            min: 0,
-//            position_field_selector: '.local-position',
-//            allow_remove: true,
-//            elements_selector: '> tr'
-//        });
-//        $('.distant-collection').collection({
-//            min: 0,
-//            position_field_selector: '.distant-position',
-//            allow_remove: true,
-//            elements_selector: '> tr'
-//        });
+        $('.local-collection').collection({
+            min: 0,
+            position_field_selector: '.local-position',
+            allow_remove: true,
+            elements_selector: 'tr.media-local'
+        });
+        $('.distant-collection').collection({
+            min: 0,
+            position_field_selector: '.distant-position',
+            allow_remove: true,
+            elements_selector: 'tr.media-distant'
+        });
     </script>
 
     <!-- Slick js -->

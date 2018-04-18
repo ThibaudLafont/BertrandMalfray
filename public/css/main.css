@@ -655,3 +655,13 @@ table#ProjectType_skillListItems div.ProjectType_skillListItems-collection-actio
 input[type="number"] {
     width: 46px;
 }
+table.local-collection {
+    width : 100%;
+}
+.media-local img,
+.media-distant img {
+    max-width: 100px;
+}
+.ProjectType_localMedias-collection-actions {
+    text-align: right;
+}

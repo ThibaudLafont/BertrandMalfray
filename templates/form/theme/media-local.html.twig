@@ -1,0 +1,29 @@
+{% block LocalType_widget %}
+
+    <!-- Local collection -->
+    <tr class="media-local">
+        <!-- Display image -->
+        <td>
+            <!-- If edit -->
+            {% if form.vars.value.src is not null %}
+                <img src="{{ form.vars.value.src }}" alt="{{ form.vars.value.alt }}">
+            <!-- If create -->
+            {% else %}
+                <img src="/img/picto/delete.png" alt="">
+            {% endif %}
+        </td>
+
+        <!-- Media name -->
+        <td>
+            {{ form(form.name) }}
+            {{ form(form.alt) }}
+        </td>
+
+        <!-- Media Description -->
+        {#<td>{{ form(form.alt) }}</td>#}
+
+        <!-- Media File -->
+        <td>{{ form(form.file) }}</td>
+    </tr>
+
+{% endblock %}
