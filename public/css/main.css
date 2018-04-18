@@ -652,3 +652,6 @@ table#ProjectType_skillListItems input {
 table#ProjectType_skillListItems div.ProjectType_skillListItems-collection-actions {
     text-align: right;
 }
+input[type="number"] {
+    width: 46px;
+}

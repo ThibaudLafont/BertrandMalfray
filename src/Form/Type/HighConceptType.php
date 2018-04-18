@@ -24,15 +24,33 @@ class HighConceptType extends AbstractType
         $builder
             ->add(
                 'type',
-                TextType::class
+                TextType::class,
+                [
+                    'label' => 'Genre',
+                    'attr' => [
+                        'placeholder' => 'ex: VR'
+                    ]
+                ]
             )
             ->add(
                 'gender',
-                TextType::class
+                TextType::class,
+                [
+                    'label' => 'Genre',
+                    'attr' => [
+                        'placeholder' => 'ex: FPS'
+                    ]
+                ]
             )
             ->add(
                 'target',
-                TextType::class
+                TextType::class,
+                [
+                    'label' => 'Cible',
+                    'attr' => [
+                        'placeholder' => 'ex: Adulte'
+                    ]
+                ]
             )
         ;
     }

@@ -20,7 +20,12 @@ class ProjectType extends AbstractType
         $builder
             ->add(
                 'name',
-                TextType::class
+                TextType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Titre du projet'
+                    ]
+                ]
             )
             ->add(
                 'category',
@@ -32,11 +37,17 @@ class ProjectType extends AbstractType
             )
             ->add(
                 'initDate',
-                DateType::class
+                DateType::class,
+                [
+                    'label' => 'Débuté le'
+                ]
             )
             ->add(
                 'endDate',
-                DateType::class
+                DateType::class,
+                [
+                    'label' => 'Terminé le'
+                ]
             )
             ->add(
                 'highConcept',
@@ -99,15 +110,31 @@ class ProjectType extends AbstractType
             )
             ->add(
                 'contributorsNbre',
-                IntegerType::class
+                IntegerType::class,
+                [
+                    'label' => 'Contributeurs',
+                    'attr' => [
+                        'placeholder' => '0'
+                    ]
+                ]
             )
             ->add(
                 'summary',
-                TextareaType::class
+                TextareaType::class,
+                [
+                    'label' => 'Résumé',
+                    'attr' => [
+                        'placeholder' => 'Résumé de 200 caractères environ',
+                        'rows' => 4
+                    ]
+                ]
             )
             ->add(
                 'submit',
-                SubmitType::class
+                SubmitType::class,
+                [
+                    'label' => 'Publier'
+                ]
             )
         ;
     }
