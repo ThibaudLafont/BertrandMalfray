@@ -20,15 +20,9 @@ class Local
      */
     private $uploader;
 
-    /**
-     * @var Sluggifier
-     */
-    private $sluggifier;
-
     public function __construct(Uploader $uploader, Sluggifier $sluggifier)
     {
         $this->setUploader($uploader);
-        $this->setSluggifier($sluggifier);
     }
 
     /**
@@ -40,12 +34,12 @@ class Local
     {
         // Ask upload if Object is right type
         if(
-            $local instanceof Project ||
-            $local instanceof Explanation
+            $local instanceof Project
         ){
             // Set Extension
             $local->setExtension($local->getFile()->getExtension());
 
+            // Folder Name
             $local->setFolderName(
                 $local->getProject()
                     ->getCategory()->getSlugName()
@@ -55,27 +49,6 @@ class Local
             $this->getUploader()->uploadToWebServer($local);
         }
 
-    }
-
-
-    /**
-     * Get Sluggifier
-     *
-     * @return Sluggifier
-     */
-    public function getSluggifier(): Sluggifier
-    {
-        return $this->sluggifier;
-    }
-
-    /**
-     * Set Sluggifier
-     *
-     * @param Sluggifier $sluggifier
-     */
-    public function setSluggifier(Sluggifier $sluggifier)
-    {
-        $this->sluggifier = $sluggifier;
     }
 
     /**

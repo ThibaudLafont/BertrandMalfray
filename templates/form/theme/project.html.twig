@@ -7,6 +7,10 @@
             <h1 id="project-name">{{ form_widget(form.name) }}</h1>
         </div>
 
+        <div class="project-row">
+            <span class="error-form">{{ form_errors(form) }}</span>
+        </div>
+
         <!-- Project infos & content -->
         <div class="project-row">
 
