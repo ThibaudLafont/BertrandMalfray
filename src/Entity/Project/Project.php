@@ -20,7 +20,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * )
  * @UniqueEntity(
  *     fields="slugName",
- *     message="Le titre génère {{ value }}, le même slug-name qu'un autre projet"
+ *     message="Le titre doit être modifié, il génère {{ value }} ; le même slug-name qu'un autre projet"
  * )
  */
 class Project

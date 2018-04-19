@@ -13,13 +13,28 @@
         </td>
 
         <!-- Distant name -->
-        <td>{{ form_widget(form.name) }}</td>
+        <td>
+            {% if form_errors(form.name) %}
+                <span class="error-form">{{ form_errors(form.name) }}</span>
+            {% endif %}
+            {{ form_widget(form.name) }}
+        </td>
 
         <!-- Distant Description -->
-        <td>{{ form_widget(form.alt) }}</td>
+        <td>
+            {% if form_errors(form.alt) %}
+                <span class="error-form">{{ form_errors(form.alt) }}</span>
+            {% endif %}
+            {{ form_widget(form.alt) }}
+        </td>
 
         <!-- Distant Source -->
-        <td>{{ form_widget(form.src) }}</td>
+        <td>
+            {% if form_errors(form.src) %}
+                <span class="error-form">{{ form_errors(form.src) }}</span>
+            {% endif %}
+            {{ form_widget(form.src) }}
+        </td>
 
         {{ form_widget(form.position) }}
     </tr>

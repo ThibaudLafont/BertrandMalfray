@@ -5,7 +5,7 @@
         <!-- Display image -->
         <td>
             <!-- If edit -->
-            {% if form.vars.value.src is not null %}
+            {% if form.vars.value.extension is not null %}
                 <img src="{{ form.vars.value.src }}" alt="{{ form.vars.value.alt }}">
             <!-- If create -->
             {% else %}
