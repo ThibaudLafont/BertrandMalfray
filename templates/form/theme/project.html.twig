@@ -7,9 +7,11 @@
             <h1 id="project-name">{{ form_widget(form.name) }}</h1>
         </div>
 
-        <div class="project-row">
-            <span class="error-form">{{ form_errors(form) }}</span>
-        </div>
+        {#{% if form_errors(form), form_errors(form.name) %}#}
+            <div class="project-row">
+                <span class="error-form">{{ form_errors(form) }}{{ form_errors(form.name) }}</span>
+            </div>
+        {#{% endif %}#}
 
         <!-- Project infos & content -->
         <div class="project-row">

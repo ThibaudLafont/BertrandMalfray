@@ -68,8 +68,7 @@ class ProjectController extends Controller
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $project = new Project();
-                $project->hydrate($form->getData());
+                $project = $form->getData();
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($project);

@@ -15,15 +15,27 @@
 
         <!-- Media name -->
         <td class="local-name-inputs">
-            {{ form_errors(form.name) }}
+            {% if form_errors(form.name) %}
+                <span class="error-form">{{ form_errors(form.name) }}</span>
+            {% endif %}
             {{ form_widget(form.name) }}
         </td>
 
         <!-- Media Description -->
-        <td>{{ form_errors(form.alt) }}{{ form_widget(form.alt) }}</td>
+        <td>
+            {% if form_errors(form.alt) %}
+                <span class="error-form">{{ form_errors(form.alt) }}</span>
+            {% endif %}
+            {{ form_widget(form.alt) }}
+        </td>
 
         <!-- Media File -->
-        <td class="local-file-input">{{ form_errors(form.file) }}{{ form_widget(form.file) }}</td>
+        <td class="local-file-input">
+            {% if form_errors(form.file) %}
+                <span class="error-form">{{ form_errors(form.file) }}</span>
+            {% endif %}
+            {{ form_widget(form.file) }}
+        </td>
 
         <td>{{ form_widget(form.position) }}</td>
     </tr>

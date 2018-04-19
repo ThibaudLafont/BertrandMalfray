@@ -1,28 +1,30 @@
 <?php
 namespace App\Entity\Project;
 
-use App\Entity\Project\Explanation\Explanation;
 use App\Entity\Project\Lists\ProjectList;
 use App\Traits\Entity\Hydrate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints\IsTrue;
 
 /**
  * Class Project
  *
  * @ORM\Entity("App\Repository\Project\ProjectRepository")
  * @ORM\Table(name="project_project")
- * @ORM\EntityListeners({"App\EventListener\Project"})
  *
  * @UniqueEntity(
- *     "name",
- *     message="Un projet portant le même nom est déjà en ligne"
+ *     fields="name",
+ *     message="{{ value }} est déjà le titre d'un projet"
+ * )
+ * @UniqueEntity(
+ *     fields="slugName",
+ *     message="Le titre génère {{ value }}, le même slug-name qu'un autre projet"
  * )
  */
-class Project{
+class Project
+{
 
     /**
      * @var int
@@ -36,14 +38,14 @@ class Project{
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=75)
+     * @ORM\Column(name="name", type="string", length=75, unique=true)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="slug_name", type="string", length=255)
+     * @ORM\Column(name="slug_name", type="string", length=255, unique=true)
      */
     protected $slugName;
 
@@ -219,7 +221,7 @@ class Project{
     /**
      * @return \DateTime
      */
-    public function getInitDate(): \DateTime
+    public function getInitDate()
     {
         return $this->initDate;
     }
@@ -243,7 +245,7 @@ class Project{
     /**
      * @return \DateTime
      */
-    public function getEndDate(): \DateTime
+    public function getEndDate()
     {
         return $this->endDate;
     }
@@ -296,7 +298,7 @@ class Project{
     /**
      * @return string
      */
-    public function getSlugName(): string
+    public function getSlugName()
     {
         return $this->slugName;
     }
@@ -385,7 +387,7 @@ class Project{
     /**
      * @return HighConcept
      */
-    public function getHighConcept(): HighConcept
+    public function getHighConcept()
     {
         return $this->highConcept;
     }
@@ -401,7 +403,7 @@ class Project{
     /**
      * @return string
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->content;
     }

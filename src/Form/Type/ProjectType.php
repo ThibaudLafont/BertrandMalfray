@@ -2,8 +2,11 @@
 namespace App\Form\Type;
 
 use App\Entity\Project\Category;
+use App\Entity\Project\Project;
+use App\Service\Sluggifier;
 use Hillrange\CKEditor\Form\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -12,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Count;
 use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\Length;
@@ -179,7 +183,20 @@ class ProjectType extends AbstractType
                     'label' => 'Publier'
                 ]
             )
+            ->addEventSubscriber(new \App\EventSubscriber\Project(new Sluggifier()))
         ;
+    }
+    /**
+     * Configure options to this form type
+     *
+     * @param OptionsResolver $resolver
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            // Define the target entity
+            'data_class' => 'App\Entity\Project\Project',
+        ));
     }
 
     public function getBlockPrefix()
