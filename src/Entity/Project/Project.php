@@ -379,7 +379,7 @@ class Project{
     }
 
     public function removeSkillListItem(ProjectList $skill) {
-        $this->skillListItems->remove($skill->getId());
+        $this->skillListItems->removeElement($skill);
     }
 
     /**

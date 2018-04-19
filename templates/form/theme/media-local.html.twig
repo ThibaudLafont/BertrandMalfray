@@ -15,16 +15,17 @@
 
         <!-- Media name -->
         <td class="local-name-inputs">
+            {{ form_errors(form.name) }}
             {{ form_widget(form.name) }}
         </td>
 
         <!-- Media Description -->
-        <td>{{ form_widget(form.alt) }}</td>
+        <td>{{ form_errors(form.alt) }}{{ form_widget(form.alt) }}</td>
 
         <!-- Media File -->
-        <td class="local-file-input">{{ form_widget(form.file) }}</td>
+        <td class="local-file-input">{{ form_errors(form.file) }}{{ form_widget(form.file) }}</td>
 
-        {{ form_widget(form.position) }}
+        <td>{{ form_widget(form.position) }}</td>
     </tr>
 
 {% endblock %}

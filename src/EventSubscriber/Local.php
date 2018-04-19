@@ -1,6 +1,7 @@
 <?php
 namespace App\EventSubscriber;
 
+use App\Entity\Media\Local\Project;
 use App\Service\Sluggifier;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvent;
@@ -22,7 +23,7 @@ class Local implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            FormEvents::PRE_SUBMIT => 'sluggifyLocalName'
+            FormEvents::POST_SUBMIT => 'sluggifyLocalName'
         ];
     }
 

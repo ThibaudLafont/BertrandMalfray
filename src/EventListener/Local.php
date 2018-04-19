@@ -38,22 +38,14 @@ class Local
      */
     public function prePersist($local)
     {
-
         // Ask upload if Object is right type
         if(
             $local instanceof Project ||
             $local instanceof Explanation
         ){
-            // Set slug name
-            $local->setSlugName(
-                $this->getSluggifier()
-                    ->sluggify($local->getName())
-            );
-
             // Set Extension
             $local->setExtension($local->getFile()->getExtension());
 
-            // TODO : to change
             $local->setFolderName(
                 $local->getProject()
                     ->getCategory()->getSlugName()

@@ -3,6 +3,8 @@ namespace App\Form\Type;
 
 use App\Entity\Project\Category;
 use App\Entity\Project\HighConcept;
+use App\EventSubscriber\Local;
+use App\Service\Sluggifier;
 use Hillrange\CKEditor\Form\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -68,6 +70,7 @@ class LocalType extends AbstractType
                     'attr' => ['class' => 'local-position']
                 ]
             )
+            ->addEventSubscriber(new Local(new Sluggifier()))
         ;
     }
 
