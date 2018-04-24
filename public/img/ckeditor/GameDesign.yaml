@@ -1,0 +1,94 @@
+Game Design: 
+    summary: Dummy text
+
+Projects: 
+    Black Rift VR:
+        init_date: 01-02-2017
+        end_date: 01-05-2017
+        role: Level Design        
+        summary: <p>- Jeu VR</br>
+          - Enigme - Horreur</br>
+          - 15 personnes </p>          
+
+        content:
+          1:
+            type: title
+            level: 1
+            content: Compétences utilisées
+          2:
+            type: paragraph
+            content: <p>- Analyse de gameplay et map VR </br>
+              - Création de différents features </br>
+              - Programmation Blueprint </br>
+              - Playtests et équilibrage </br>
+          3:
+            type: title
+            level: 1
+            content: Note d'intention
+          4:
+            type: paragraph
+            content: <p> A travers ce jeu, voici les expériensces que nous volions faire vivre au joueur
+              - Survivre face à des monstres puissants
+              - Interactions fortes avec son environnement
+              - Enigmes
+              - Choix stratégiques quant à l’utilisation de ses ressources </p>
+
+                      <p> Et les émotions que nous voulons faire ressentir au joueur
+              - Stress, sensation de ne jamais être en sécurité
+              - Surprise, événements inattendus
+              - Angoisse, présence pesante sur la ville et ambiance dérangeante </p>
+          5:
+            type: title
+            level: 1
+            content: LD Patterns
+          6:
+            type: local
+            name: Screen LD Patterns
+            alt:
+            display: left
+            extension:
+            folder_name:
+          7:
+            type: paragraph
+            content: Ci-joint, les différentes LD Patterns utilisées dans le jeu.
+
+
+        # Est optionnel, tu peux supprimer ou ajouter des items comme tu veux
+        medias: 
+              # Les images/vidéos locales, à placer dans le dossier medias/gamedesign
+              local:
+                  1: # Index gérant l'ordre d'affichage
+                      name: 
+                      alt : Map Unreal Tournament, Projet Solo, schema et screenshots
+                      extension: jpg 
+              # Les images/vidéos distantes
+              distant:
+                  1: # Index gérant l'ordre d'affichage
+                      src: # Url vers le média
+                      name: # Nom du média, doit correspondre au nom du fichier sans extension
+                      alt : # Description courte et pertinente du média
+        # Est optionnel, tu peux supprimer ou ajouter des items comme tu veux
+        contributors: # À compléter, pattern => Prénom Nom : Role dans le projet
+            Bertrand Malfray: Level Designer
+            
+    Fusion: 
+        init_date: 01-10-2017
+        end_date: 15-04-2018
+        role: Level Design        
+        summary: <p>- Jeu PC</br>
+          - TPS - Coopération deux joueurs</br>
+          - 30 personnes </p>
+
+        content:
+          1:
+            type: title
+            level: 1
+            content: Compétences utilisées
+          2:
+            type: paragraph
+            content: <p>- Analyse de gameplay TPS</br>
+              - Création de différentes features et ennemis </br>
+              - Prototypage pour équilibrer les déplacements </br>
+              - Prototypage afin d'équilibrer les ennemis </br>
+              - Programmation Blueprint </br>
+              - Playtests et équilibrage </p>

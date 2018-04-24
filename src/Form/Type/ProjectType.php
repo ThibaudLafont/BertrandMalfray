@@ -135,6 +135,9 @@ class ProjectType extends AbstractType
                 'content',
                 CKEditorType::class,
                 [
+                    'config' => [
+                        'height' => '500px'
+                    ],
                     'constraints' => [
                         new NotBlank(['message' => 'Le contenu est obligatoire'])
                     ]

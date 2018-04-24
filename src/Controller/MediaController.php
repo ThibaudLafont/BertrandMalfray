@@ -13,7 +13,7 @@ class MediaController extends Controller
     /**
      * @param Request $request
      *
-     * @Route("/upload", name="upload_ck")
+     * @Route("/ck_upload", name="ck_img_upload")
      * @return JsonResponse
      */
     public function uploadAction(Request $request)
@@ -21,19 +21,32 @@ class MediaController extends Controller
         // Get file
         $file = $request->files->get('upload');
 
+        // Init resp
+        $resp = [];
 
         // Move file
         if($file instanceof UploadedFile) {
-            $file = $file->move('/var/www/html/public/img/ckeditor', $file->getClientOriginalName());
+            // Check if image
+            if(in_array($file->getClientOriginalExtension(), ['jpg', 'jpeg', 'png'])) {
+                // Move file
+                $file = $file->move('/var/www/html/public/img/ckeditor', $file->getClientOriginalName());
+
+                // Build resp
+                $resp = [
+                    'uploaded' => 1,
+                    'fileName' => $file->getFilename(),
+                    'url' => '/img/ckeditor/' . $file->getFilename()
+                ];
+            } else {
+                // Build resp
+                $resp = [
+                    'uploaded' => 0,
+                    'error' => ["message" => "Les seules extensions autorisées sont jpg, jpeg et png"]
+                ];
+            }
         }
 
         // Prepare Response
-        $resp = [
-            'uploaded' => 1,
-            'fileName' => $file->getFilename(),
-            'url' => '/img/ckeditor/' . $file->getFilename()
-        ];
-
         return new JsonResponse($resp);
     }
 

@@ -2,15 +2,22 @@ hillrange_ck_editor:
     default_config: normal
     configs:
         normal:
+            extraPlugins: image2
+            image_prefillDimensions: false
+            image2_prefillDimensions: false
+            image2_alignClasses:
+                - align-left
+                - align-right
+                - center
             toolbar:
-                - ['Styles','Format','Font','FontSize']
+                - ['Styles','Format','FontSize']
                 - '/'
-                - ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste','PasteText','Find','Replace','-','Outdent','Indent','-','Print','-','Maximize']
+                - ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','PasteText','Find','Replace','-','Outdent','Indent','-','Maximize']
                 - '/'
                 - ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']
-                - ['Image','Table','-','Link','Flash','Smiley','TextColor','BGColor','Source']
+                - ['Image','Table','-','Link','TextColor','BGColor','Smiley','Source']
             uiColor: "ddcccc"
-            filebrowserUploadRoute: upload_ck
+            filebrowserUploadRoute: ck_img_upload
         simple_toolbar:
             toolbar:
                 - ['Bold', 'Italic', 'Strike', 'Link']
