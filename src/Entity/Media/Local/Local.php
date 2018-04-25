@@ -46,7 +46,9 @@ abstract class Local extends Media
 
     public function getSrc()
     {
-        return '/img/' . $this->getFolderName() . '/' . $this->getFullFileName();
+        if($this->getId() !== null) {
+            return '/img/' . $this->getFolderName() . '/' . $this->getFullFileName();
+        }
     }
 
     /**

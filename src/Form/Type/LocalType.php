@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotNull;
 
@@ -59,7 +60,16 @@ class LocalType extends AbstractType
                 [
                     'label' => 'Fichier',
                     'constraints' => [
-                        new NotNull(['message' => 'Le fichier est obligatoire'])
+                        new NotNull(['message' => 'Le fichier est obligatoire']),
+                        new Image([
+                            'allowSquare' => false,
+                            'allowPortrait' => false,
+                            'allowLandscape' => true,
+                            'minRatio' => '1.4',
+                            'allowSquareMessage' => 'Une image au format paysage est demandée',
+                            'allowPortraitMessage' => 'Une image au format paysage est demandée',
+                            'minRatioMessage' => 'Votre image s\'approche trop d\'un carré (ratio min L/H : 1.4)'
+                        ])
                     ]
                 ]
             )

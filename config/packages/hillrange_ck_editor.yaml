@@ -2,13 +2,6 @@ hillrange_ck_editor:
     default_config: normal
     configs:
         normal:
-            extraPlugins: image2
-            image_prefillDimensions: false
-            image2_prefillDimensions: false
-            image2_alignClasses:
-                - align-left
-                - align-right
-                - center
             toolbar:
                 - ['Styles','Format','FontSize']
                 - '/'
@@ -18,6 +11,17 @@ hillrange_ck_editor:
                 - ['Image','Table','-','Link','TextColor','BGColor','Smiley','Source']
             uiColor: "ddcccc"
             filebrowserUploadRoute: ck_img_upload
+            extraPlugins: image2
+            image2_altRequired: true
+            image_prefillDimensions: false
+            image2_prefillDimensions: false
+            image2_alignClasses:
+                - align-left
+                - align-right
+                - center
+            height: 500px
+            entities: false
+            basicEntities: false
         simple_toolbar:
             toolbar:
                 - ['Bold', 'Italic', 'Strike', 'Link']
