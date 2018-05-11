@@ -3,15 +3,15 @@ hillrange_ck_editor:
     configs:
         normal:
             toolbar:
-                - ['Styles','Format','FontSize']
+                - ['Undo','Redo','-','Source','-','PasteText','-','Maximize']
                 - '/'
-                - ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','PasteText','Find','Replace','-','Outdent','Indent','-','Maximize']
-                - '/'
-                - ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']
-                - ['Image','Table','-','Link','TextColor','BGColor','Smiley','Source']
+                - ['Styles','Format']
+                - ['Bold','Italic','Underline','StrikeThrough','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']
+                - ['NumberedList','BulletedList']
+                - ['Image','-','Link']
             uiColor: "ddcccc"
             filebrowserUploadRoute: ck_img_upload
-            extraPlugins: image2
+            extraPlugins: image2,templates
             image2_altRequired: true
             image_prefillDimensions: false
             image2_prefillDimensions: false
@@ -20,11 +20,10 @@ hillrange_ck_editor:
                 - align-right
                 - center
             height: 500px
-            entities: false
-            basicEntities: false
-        simple_toolbar:
-            toolbar:
-                - ['Bold', 'Italic', 'Strike', 'Link']
-                - ['BulletedList', 'NumberedList', '-', 'Outdent', 'Indent']
-                - ['Copy', 'Paste', 'PasteFromWord', '-', 'Undo', 'Redo']
-                - ['Source']
+            disableResizer: true
+#    styles:
+#        test:
+#        - { name: "Blue Title", element: "h2", styles: { color: "Blue" }}
+#            - { name: "CSS Style", element: "span", attributes: { class: "my_style" }}
+#            - { name: "Widget Style", type: widget, widget: "my_widget", attributes: { class: "my_widget_style" }}
+

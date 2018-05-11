@@ -104,7 +104,7 @@ class ProjectController extends Controller
 //                $project->hydrate($form->getData());
 
 //                $em->persist($project);
-                var_dump($project->getContent()); die;
+//                var_dump($project->getContent()); die;
                 $em->flush();
             }
         }

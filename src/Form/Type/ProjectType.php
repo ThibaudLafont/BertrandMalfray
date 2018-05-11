@@ -135,6 +135,21 @@ class ProjectType extends AbstractType
                 'content',
                 CKEditorType::class,
                 [
+                    'config' => [
+                        'stylesSet' => 'custom_style'
+                    ],
+                    'styles' => [
+                        'custom_style' => [
+                            [
+                                'name' => 'right-img',
+                                'element' => 'widget',
+                                'widget' => 'image',
+                                'attributes' => [
+                                    'class' => 'align-right'
+                                ]
+                            ]
+                        ]
+                    ],
                     'constraints' => [
                         new NotBlank(['message' => 'Le contenu est obligatoire'])
                     ]
