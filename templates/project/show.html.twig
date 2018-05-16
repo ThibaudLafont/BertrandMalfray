@@ -76,7 +76,7 @@
                         {{ part.attr.content }}
                     </h{{ part.attr.level }}>
                 {% elseif part.type is same as('paragraph') %}
-                    <p>{{ part.attr.content }}</p>
+                    <p>{{ part.attr.content|raw }}</p>
                 {% elseif part.type is same as('local') %}
                     <a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">
                         <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">

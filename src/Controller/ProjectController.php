@@ -19,7 +19,7 @@ class ProjectController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projects = $em->getRepository(Project::class)
-            ->findBy([], ['initDate' => 'DESC']);
+            ->findBy([], ['endDate' => 'DESC']);
 
         return $this->render(
             'project/list.html.twig',

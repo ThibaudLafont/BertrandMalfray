@@ -88,16 +88,21 @@ projects:
       medias:
         local:
           1:
-              name: UT-Spacebase41Map01
-              alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
-              extension: jpg
-              folder_name: leveldesign
+            name: unreal-turnament-logo
+            alt: Logo Unreal Turnament
+            extension: jpg
+            folder_name: leveldesign
           2:
+            name: UT-Spacebase41Map01
+            alt : Image de présentation du projet DM Spacebase41 sur unreal tournament.
+            extension: jpg
+            folder_name: leveldesign
+          3:
             name: Planche_rendu_modules
             alt: Planche de rendu des modules utilisés pour la création de DM Spacebase41 sur unreal tournament.
             extension: jpg
             folder_name: leveldesign
-          3:
+          4:
             name: Planche-Rendu-Map
             alt: Planche de rendu d'une création de map multijoueur 16 joueurs sur unreal tournament.
             extension: jpg
@@ -119,12 +124,12 @@ projects:
         init_date: 01-10-2016
         end_date: 01-03-2017
         role: Mission Design
-        contributorsNbre: 4
+        contributorsNbre: 6
         summary: Création d'une mission coopérative de 3 joueurs compris dans une campagne de 6 missions, pour une durée totale de 6h de jeu.
         skills:
-          - Analyse du jeu Unreal Tournament
-          - Création de différents modules LD
-          - Programmation Blueprint
+          - Analyse du jeu Arma 3
+          - Création d’un document de mission design
+          - Programmation .sqf
           - Playtests et équilibrage
         concept:
           type: Jeu PC
@@ -218,31 +223,36 @@ projects:
         medias:
           local:
             1:
+              name: blackfox-logo
+              alt : Logo de BlackFox
+              extension: png
+              folder_name: leveldesign
+            2:
               name: 01_screenshot_SyndikateAmbush
               alt : Screenshot de la première défense, l'embuscade du Syndikat.
               extension: jpg
               folder_name: leveldesign
-            2:
+            3:
               name: 02_screenshot_recruit_center
               alt : Screenshot de l'assaut sur un centre de recrutement ennemi.
               extension: jpg
               folder_name: leveldesign
-            3:
+            4:
               name: 03_screenshot_DefenseCheckpoint
               alt : Screenshot de la deuxième défense face aux membres de l'AAF.
               extension: jpg
               folder_name: leveldesign
-            4:
+            5:
               name: 04_screenshot_Anderson
               alt : Screenshot du commandant Anderson.
               extension: jpg
               folder_name: leveldesign
-            5:
+            6:
               name: blackfox_timeline
               alt: Diagramme des pourcentages des actions
               extension: png
               folder_name: leveldesign
-            6:
+            7:
               name: MapGeneraleArma3
               alt: Map générale du projet Arma 3 - Top view - player main path
               extension: jpg
@@ -257,7 +267,7 @@ projects:
         end_date: 01-05-2017
         role: Level Design
         contributorsNbre: 15
-        summary: Jeu en VR, sur un thème horreur vous résovlez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
+        summary: Jeu en VR, sur un thème horreur vous résolvez des énigmes pour avancer. Ce projet a réuni une large équipe de 15 personnes.
         skills:
           - Analyse de gameplay et map VR
           - Création de différents modules LD
@@ -355,7 +365,7 @@ projects:
         init_date: 15-09-2017
         end_date: 01-10-2017
         role: Level Design
-        contributorsNbre: 4
+        contributorsNbre: 0
         summary: Création d'une map en mode capture de drapeau en team de 8 joueurs sur Unreal Tournament avec un event.
           La map représente deux entrepot identique face à un champ de bataille.
         skills:
@@ -410,22 +420,97 @@ projects:
         medias:
           local:
             1:
+              name: unreal-turnament-logo
+              alt: Logo Unreal Turnament
+              extension: jpg
+              folder_name: leveldesign
+            2:
               name: CTF_G420_Thumbnail
               alt: CTF_G420 main screenshot
               extension: jpg
               folder_name: leveldesign
-            2:
+            3:
               name: CTF_G420_basement
               alt: CTF_G420 basement sniper spot
               extension: jpg
               folder_name: leveldesign
-            3:
+            4:
               name: CTF_G420_Exterior
               alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
               extension: jpg
               folder_name: leveldesign
-            4:
+            5:
               name: CTF_G420_BlueFlag
               alt: BlueFlag spawn room
               extension: jpg
               folder_name: leveldesign
+    Fusion:
+        init_date: 01-09-2017
+        end_date: 30-04-2018
+        contributorsNbre: 49
+        summary: "L’humanité a détruit la planète. Pour changer les choses, les hommes décident de créer 
+          une entité artificielle intelligente capable de régénérer la nature : K.A.L.I
+          Mais cette dernière se retourne contre ses créateurs en fabriquant des êtres qui déciment l’humanité.
+          Les joueurs jouent une de ces créatures et vivent les derniers moments de l’humanité."
+        skills:
+          - Analyse de gameplay TPS
+          - Création de différents modules LD
+          - Utilisation de l'outil landscape pour le block-out LD pour permettre une forme plus organique
+          - Programmation Blueprint
+          - Playtests et équilibrage
+        concept:
+          type: Jeu PC
+          genre: TPS - Shooter - Cooperation
+          target: Adulte
+        content:
+          1:
+            type: title
+            level: 1
+            content: Note d'intention
+          2:
+            type: local
+            name: CTF_G420_Exterior
+            alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
+            display: right
+            extension: jpg
+            folder_name: leveldesign
+          3:
+            type: paragraph
+            content: J'ai été en charge du niveau tuto, qui très vite a été orienté en map ouverte, afin d'avoir un sentiment de liberté sur la map.
+              Divers landmarks ont été placés sur la map afin d'aider le joueur à se repérer dans l'espace. Ainsi que des nivelés différents entre chaque zones d'activités.
+          4:
+            type: title
+            level: 1
+            content: Explication
+          5:
+            type: local
+            name: CTF_G420_BlueFlag
+            alt: BlueFlag spawn room
+            display: left
+            extension: jpg
+            folder_name: leveldesign
+          6:
+            type: paragraph
+            content: Le joueur doit dans un premier temps récupérer le jetpack, donc des sauts ont été mis en place pour valider cette feature, puis sur la suite, il apprend les différents comportements des ennemis dans le jeu.
+              Pour cela des micros situations ont été mis en place si le joueur passe par ce chemin, comme par exemple, un ennemi qui sort d'une petit grotte, tire sur les joueurs dans le dos, 
+              et, une fois les joueurs retournés, une petite vague de 5 ennemis sortent du même endroit, on y apprend ici au joueur la surprise et la proximité de cet ennemi.
+              Puis des tourelles sont présentes seules dans une clairière afin d’apprendre à contourner cette cible.
+              La map fait découvrir aussi aux joueurs tous les environnements disponible dans le jeu afin de le teaser pour la suite.
+        medias:
+          local:
+            1:
+              name: unreal-turnament-logo
+              alt: Logo Unreal Turnament
+              extension: jpg
+              folder_name: leveldesign
+            2:
+              name: CTF_G420_Thumbnail
+              alt: CTF_G420 main screenshot
+              extension: jpg
+              folder_name: leveldesign
+            3:
+              name: CTF_G420_basement
+              alt: CTF_G420 basement sniper spot
+              extension: jpg
+              folder_name: leveldesign
+

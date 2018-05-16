@@ -62,7 +62,7 @@ class Category{
      *     targetEntity="\App\Entity\Project\Project",
      *     mappedBy="category"
      * )
-     * @ORM\OrderBy({"initDate" = "DESC"})
+     * @ORM\OrderBy({"endDate" = "DESC"})
      */
     private $projects;
 

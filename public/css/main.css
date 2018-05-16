@@ -50,7 +50,6 @@ li {
     font-family: "aldrich";
 }
 p {
-    text-align: justify;
     font-size: 18px;
 }
 a{
@@ -165,6 +164,12 @@ header {
 }
 #header-top-row span{
     font-size: 18px;
+}
+#header-top-row #lg-designer {
+    float: left;
+}
+#header-top-row #left-top-info {
+    text-align: right;
 }
 .header-row {
     overflow: hidden;
@@ -286,7 +291,13 @@ header {
     overflow: visible;
 }
 #header-bottom-row .header-column {
-    width: 21%;
+    width: 22%;
+}
+#header-bottom-row .header-column.align-left {
+    text-align: right;
+}
+#header-bottom-row .header-column.align-right {
+    text-align: left;
 }
 #header-pic {
     height: 0;
@@ -523,6 +534,19 @@ h1#project-name {
 .slick-prev {
     left: 0;
     border-left:none;
+}
+.slick-prev:before,
+.slick-next:before {
+    display: none;
+    content: "";
+}
+.slick-prev img,
+.slick-next img {
+    width: 45px !important;
+    height: auto !important;
+}
+.slick-prev img {
+    transform: rotateY(180deg);
 }
 .slick-next {
     right: 0;

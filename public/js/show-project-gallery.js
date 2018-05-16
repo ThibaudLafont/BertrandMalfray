@@ -4,7 +4,9 @@ $('.slick-container').slick({
     dots: true,
     infinite: true,
     centerMode: true,
-    variableWidth: true
+    variableWidth: true,
+    nextArrow: "<button type='button' class='slick-next'><img src='/img/arrow-gallery.png'></img></button>",
+    prevArrow: "<button type='button' class='slick-prev'><img src='/img/arrow-gallery.png'></img></button>"
 });
 
 // Fancy Box config
