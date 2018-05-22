@@ -364,7 +364,7 @@ projects:
         type: local
         name: Tank01
         alt : Tank01
-        extension: png
+        extension: jpg
         display: right
         folder_name: gamedesign
     medias:

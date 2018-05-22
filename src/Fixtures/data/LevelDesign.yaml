@@ -195,7 +195,7 @@ projects:
             name: blackfox_timeline
             alt: Diagramme des pourcentages des actions
             display: left
-            extension: png
+            extension: jpg
             folder_name: leveldesign
           12:
             type: paragraph
@@ -250,7 +250,7 @@ projects:
             6:
               name: blackfox_timeline
               alt: Diagramme des pourcentages des actions
-              extension: png
+              extension: jpg
               folder_name: leveldesign
             7:
               name: MapGeneraleArma3
@@ -496,7 +496,7 @@ projects:
             type: local
             name: 03_Jetpack01
             alt : 03_Jetpack01
-            extension: png
+            extension: jpg
             display: right
             folder_name: gamedesign
           6:
@@ -521,7 +521,7 @@ projects:
             3:
               name: 01_Promontoire01
               alt : 01_Promontoire01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             4:
               name: 02_Jetpack00
@@ -531,12 +531,12 @@ projects:
             5:
               name: 02_Jetpack01
               alt : 02_Jetpack01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             6:
               name: 03_Jetpack01
               alt : 03_Jetpack01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             7:
               name: 03_Jetpack02
@@ -546,12 +546,12 @@ projects:
             8:
               name: 03_Jetpack03
               alt : 03_Jetpack03
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             9:
               name: 04_Canyon01
               alt : 04_Canyon01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             10:
               name: 04_Canyon02
@@ -561,17 +561,17 @@ projects:
             11:
               name: 04_Canyon03
               alt : 04_Canyon03
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             12:
               name: 05_Jungle01
               alt : 05_Jungle01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             13:
               name: 06_Turret01
               alt : 06_Turret01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             14:
               name: 07_Favelas00
@@ -581,17 +581,17 @@ projects:
             15:
               name: 07_Favelas01
               alt : 07_Favelas01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             16:
               name: 07_Favelas02
               alt : 07_Favelas02
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             17:
               name: 08_Exit01
               alt : 08_Exit01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             18:
               name: Fusion-RLD
@@ -601,12 +601,12 @@ projects:
             19:
               name: zz_Cover01
               alt : zz_Cover01
-              extension: png
+              extension: jpg
               folder_name: gamedesign
             20:
               name: zz_Cover02
               alt : zz_Cover02
-              extension: png
+              extension: jpg
               folder_name: gamedesign
           distant:
             1:
