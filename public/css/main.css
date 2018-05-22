@@ -373,6 +373,11 @@ section#homepage-content {
 img#homepage-fronpic {
     width: 100%;
 }
+#cv-links p {
+    text-align: center;
+    width: 50%;
+    float: right;
+}
 
 /*Lists Project*/
 section#category-detail {
