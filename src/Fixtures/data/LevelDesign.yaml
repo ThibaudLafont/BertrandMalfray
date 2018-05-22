@@ -223,9 +223,9 @@ projects:
         medias:
           local:
             1:
-              name: blackfox-logo
+              name: logo-blackfox
               alt : Logo de BlackFox
-              extension: png
+              extension: jpg
               folder_name: leveldesign
             2:
               name: 01_screenshot_SyndikateAmbush
@@ -331,13 +331,23 @@ projects:
         medias:
           local:
             1:
-              name: Black_Rift_Logo
+              name: logo-blackriftVR
               alt : Black Rift Logo
-              extension: png
-              folder_name: leveldesign
+              extension: jpg
+              folder_name: gamedesign
             2:
-              name: Bank_architect_map
-              alt : Bank dimensions
+              name: Copie de Bank_1
+              alt : Copie de Bank_1
+              extension: jpg
+              folder_name: leveldesign
+            3:
+              name: Copie de Bank_2
+              alt : Copie de Bank_2
+              extension: jpg
+              folder_name: leveldesign
+            4:
+              name: Copie de Bank_3
+              alt : Copie de Bank_3
               extension: jpg
               folder_name: leveldesign
           distant:
@@ -469,11 +479,11 @@ projects:
             content: Note d'intention
           2:
             type: local
-            name: CTF_G420_Exterior
-            alt: Planche de rendu d'une création de map de capture de drapeau sur unreal tournament.
-            display: right
+            name: 02_Jetpack00
+            alt : 02_Jetpack00
             extension: jpg
-            folder_name: leveldesign
+            display: left
+            folder_name: gamedesign
           3:
             type: paragraph
             content: J'ai été en charge du niveau tuto, qui très vite a été orienté en map ouverte, afin d'avoir un sentiment de liberté sur la map.
@@ -484,11 +494,11 @@ projects:
             content: Explication
           5:
             type: local
-            name: CTF_G420_BlueFlag
-            alt: BlueFlag spawn room
-            display: left
-            extension: jpg
-            folder_name: leveldesign
+            name: 03_Jetpack01
+            alt : 03_Jetpack01
+            extension: png
+            display: right
+            folder_name: gamedesign
           6:
             type: paragraph
             content: Le joueur doit dans un premier temps récupérer le jetpack, donc des sauts ont été mis en place pour valider cette feature, puis sur la suite, il apprend les différents comportements des ennemis dans le jeu.
@@ -499,18 +509,124 @@ projects:
         medias:
           local:
             1:
-              name: unreal-turnament-logo
-              alt: Logo Unreal Turnament
+              name: logo-fusion
+              alt : logo-fusion
               extension: jpg
-              folder_name: leveldesign
+              folder_name: gamedesign
             2:
-              name: CTF_G420_Thumbnail
-              alt: CTF_G420 main screenshot
+              name: 00_Map_Chemin_Principal01
+              alt : 00_Map_Chemin_Principal01
               extension: jpg
-              folder_name: leveldesign
+              folder_name: gamedesign
             3:
-              name: CTF_G420_basement
-              alt: CTF_G420 basement sniper spot
+              name: 01_Promontoire01
+              alt : 01_Promontoire01
+              extension: png
+              folder_name: gamedesign
+            4:
+              name: 02_Jetpack00
+              alt : 02_Jetpack00
               extension: jpg
-              folder_name: leveldesign
+              folder_name: gamedesign
+            5:
+              name: 02_Jetpack01
+              alt : 02_Jetpack01
+              extension: png
+              folder_name: gamedesign
+            6:
+              name: 03_Jetpack01
+              alt : 03_Jetpack01
+              extension: png
+              folder_name: gamedesign
+            7:
+              name: 03_Jetpack02
+              alt : 03_Jetpack02
+              extension: jpg
+              folder_name: gamedesign
+            8:
+              name: 03_Jetpack03
+              alt : 03_Jetpack03
+              extension: png
+              folder_name: gamedesign
+            9:
+              name: 04_Canyon01
+              alt : 04_Canyon01
+              extension: png
+              folder_name: gamedesign
+            10:
+              name: 04_Canyon02
+              alt : 04_Canyon02
+              extension: jpg
+              folder_name: gamedesign
+            11:
+              name: 04_Canyon03
+              alt : 04_Canyon03
+              extension: png
+              folder_name: gamedesign
+            12:
+              name: 05_Jungle01
+              alt : 05_Jungle01
+              extension: png
+              folder_name: gamedesign
+            13:
+              name: 06_Turret01
+              alt : 06_Turret01
+              extension: png
+              folder_name: gamedesign
+            14:
+              name: 07_Favelas00
+              alt : 07_Favelas00
+              extension: jpg
+              folder_name: gamedesign
+            15:
+              name: 07_Favelas01
+              alt : 07_Favelas01
+              extension: png
+              folder_name: gamedesign
+            16:
+              name: 07_Favelas02
+              alt : 07_Favelas02
+              extension: png
+              folder_name: gamedesign
+            17:
+              name: 08_Exit01
+              alt : 08_Exit01
+              extension: png
+              folder_name: gamedesign
+            18:
+              name: Fusion-RLD
+              alt : Fusion-RLD
+              extension: jpg
+              folder_name: gamedesign
+            19:
+              name: zz_Cover01
+              alt : zz_Cover01
+              extension: png
+              folder_name: gamedesign
+            20:
+              name: zz_Cover02
+              alt : zz_Cover02
+              extension: png
+              folder_name: gamedesign
+          distant:
+            1:
+              name: Gameplay Fusion - Drone
+              alt : Gameplay Fusion - Drone
+              src: 7mtqWliPnPo
+            2:
+              name: Gameplay Fusion - Explosion
+              alt : Gameplay Fusion - Explosion
+              src: hOajxxCg87w
+            3:
+              name: Gameplay Fusion - Hammer Attack
+              alt : Gameplay Fusion - Hammer Attack
+              src: FaPVSPi2m_I
+            4:
+              name: Gameplay Fusion - PickUp
+              alt : Gameplay Fusion - PickUp
+              src: L9xkvDCMiLg
+            5:
+              name: Gameplay Fusion - Turret
+              alt : Gameplay Fusion - Turret
+              src: cur4GODWmtA
 

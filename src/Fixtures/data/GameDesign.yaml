@@ -61,15 +61,19 @@ projects:
     medias:
       local:
         1:
-          name: unreal-turnament-logo
-          alt: Logo Unreal Turnament
+          name: logo-Bink_Zink
+          alt: Logo Blink Zink
           extension: jpg
-          folder_name: leveldesign
+          folder_name: gamedesign
       distant:
         1:
-          name: Preview_Spacebase41
-          alt : Turn-around de DM Spacebase41 sur unreal tournament.
-          src: U6FBfrNXjFU
+          name: Bink&Zink End cinematic
+          alt : Bink&Zink End cinematic
+          src: sn3crazbJLo
+        2:
+          name: Trailer_Melonyx
+          alt : Trailer Bink & Zink
+          src: T-OM9Hdz19A
   Le roi des voleurs:
     init_date: 01-11-2016
     end_date: 15-01-2017
@@ -88,25 +92,46 @@ projects:
         level: 1
         content: Règle
       2:
+        type: local
+        name: roidesvoleurs-quartiers
+        alt: Quartiers Le Roi Des Voleurs
+        extension: jpg
+        display: left
+        folder_name: gamedesign
+      3:
         type: paragraph
         content: La partie se joue en 3 manches de 3 tours de jeu.
           La règle du jeu est de voler le plus possible de butin sur les quartiers, tout les coups sont permis (même la triche).
           5 cartes qui représentent des quartiers sont placés sur la table devant les joueurs, 
           Au début de la partie, des jetons représentant ces quartiers sont distribués aux joueurs.
-      3:
+      4:
+        type: local
+        name: roidesvoleurs-actions
+        alt: Actions Le Roi Des Voleurs
+        extension: jpg
+        display: right
+        folder_name: gamedesign
+      5:
         type: paragraph
-        content: "A chaque début de manche, les joueurs distribuent des cartes “actions” qui permettent de choisir l’action à effectuer sur le quartiers.
+        content: "<p style='clear:left'>A chaque début de manche, les joueurs distribuent des cartes “actions” qui permettent de choisir l’action à effectuer sur le quartiers.
           <br/>Il existe 4 actions possibles : <ul>
             <li><strong>Voler</strong> : Récupérer le butin </li>
             <li><strong>Embusquer</strong> : Si un joueur parvient à voler dans ce quartier, alors il récupère son butin. Sinon l’action échoue.</li>
             <li><strong>Prévenir</strong> : Si un joueur réussit une action voler ou embusquer, son action échoue et il doit payer 1 pièce d’or de sa bourse au joueur ayant prévenue. Si personne ne réussit d’action, ce dernier doit payer 1 pièce d’or à la banque. </li>
             <li><strong>Coup monté</strong> : Si plusieurs cartes “ coup monté ” sont placé dans le même quartier, les joueurs se partagent le butin. Si une carte “ coup monté “ est placée seule, l’action échoue. L’action est réussie même si une embuscade ou un prévenir est joué.
-          </li></ul>"
-      4:
+          </li></ul></p>"
+      6:
         type: title
         level: 1
         content: Déroulement d'un tour
-      5:
+      7:
+        type: local
+        name: roidesvoleurs-personnages
+        alt: Personnages Le Roi Des Voleurs
+        extension: jpg
+        display: right
+        folder_name: gamedesign
+      8:
         type: paragraph
         content: 
         content: "<ol>
@@ -118,14 +143,14 @@ projects:
             <li><strong>Fin du tour</strong> : Une fois 3 tours passés, il reste une seule carte action dans la main des joueurs, celle-ci est défaussé, et 7 sont à nouveau distribué pour une nouvelle manche.</li>
             <li><strong>Fin de la manche</strong> : </li>
           </ol>"
-      6:
+      9:
         type: title
         level: 1
         content: Interactions
-      7:
+      10:
         type: paragraph
         content: ""
-      8:
+      11:
         type: paragraph
         content: "En cas de cartes actions joués sur la même carte quartier :
           <ul>
@@ -138,15 +163,25 @@ projects:
     medias:
       local:
         1:
-          name: unreal-turnament-logo
-          alt: Logo Unreal Turnament
+          name: logo-roidesvoleurs
+          alt: Logo Le Roi Des Voleurs
           extension: jpg
-          folder_name: leveldesign
-      distant:
-        1:
-          name: Preview_Spacebase41
-          alt : Turn-around de DM Spacebase41 sur unreal tournament.
-          src: U6FBfrNXjFU
+          folder_name: gamedesign
+        2:
+          name: roidesvoleurs-actions
+          alt: Actions Le Roi Des Voleurs
+          extension: jpg
+          folder_name: gamedesign
+        3:
+          name: roidesvoleurs-personnages
+          alt: Personnages Le Roi Des Voleurs
+          extension: jpg
+          folder_name: gamedesign
+        4:
+          name: roidesvoleurs-quartiers
+          alt: Quartiers Le Roi Des Voleurs
+          extension: jpg
+          folder_name: gamedesign
   Black Rift VR GD:
     init_date: 01-02-2017
     end_date: 01-05-2017
@@ -169,20 +204,27 @@ projects:
         level: 1
         content: Gameplay
       2:
+        type: local
+        name: Copie de 03_Game_System
+        alt : Black Rift Game System
+        extension: png
+        display: left
+        folder_name: gamedesign
+      3:
         type: paragraph
         content: Le joueur joue un cow-boy qui doit partir de la ville fantôme rempli de monstres.
           Comme tout cow-boy qui se respecte, il a sur lui un colt ainsi qu’une ceinture lui permettant de le ranger, et servant d’inventaire à dynamite.
           Suite à une griffure de monstre, le cow-boy acquiert des pouvoirs comme une télékinésie, un sonar lui permettant de voir les ennemis et les objets interactifs, et une flamme permettant d’allumer les dynamites.
           Grâce à cette main de monstre, il a aussi la possibilité de soulever des lourds objets que sa main humaine ne pourrait pas soulever.
           En VR, le toy est beaucoup utilisé, ainsi j’ai décidé que le jeu se concentre sur la recherche et l’utilisation d’objets dans l’environnement permettant au joueur de bouger quasiment tous les meubles pour une sensation de liberté accrue.
-      3:
+      4:
         type: paragraph
         content: Pour plus de dynamisme lors du déplacement pendant les phases de combat, j’ai voulu enlever le fondu au noir de la téléportation qui prenait 1 à 2 secondes de déplacement. En enlevant ce fondu, la téléportation faisait apparaître une motion thickness. Pour contrer cela, j’ai décidé d’en faire un dash, avec FX. Il a fallu équilibrer la vitesse et la distance, mais le résultat donne moins de motion thickness tout en accélérant les déplacements des joueurs.
-      4:
+      5:
         type: title
         level: 1
         content: Story
-      5:
+      6:
         type: paragraph
         content: 
         content: Le joueur joue un cow-boy, qui se fait griffer par un wendigo, un monstre d’os.
@@ -190,10 +232,35 @@ projects:
     medias:
       local:
         1:
-          name: Black_Rift_Logo
+          name: logo-blackriftVR
           alt : Black Rift Logo
-          extension: png
-          folder_name: leveldesign
+          extension: jpg
+          folder_name: gamedesign
+      distant:
+        1:
+          name: Trailer Game " Black Rift"
+          alt : Trailer Game " Black Rift"
+          src: jSOh8UK-Vbs
+        2:
+          name: Gameplay Colt BlackRiftVR
+          alt : Gameplay Colt BlackRiftVR
+          src: vzL1qdozqwc
+        3:
+          name: Gameplay dynamite BlackRiftVR
+          alt : Gameplay dynamite BlackRiftVR
+          src: BaSOA86XOEk
+        4:
+          name: Gameplay Telekinesis BlackRiftVR
+          alt : Gameplay Telekinesis BlackRiftVR
+          src: UUuwHSzIuwM
+        5:
+          name: Gameplay Sonar BlackRiftVR
+          alt : Gameplay Sonar BlackRiftVR
+          src: XEfPJpz2u0c
+        6:
+          name: Gameplay Telekinesis BlackRiftVR 2
+          alt : Gameplay Telekinesis BlackRiftVR 2
+          src: 7tG1nPePNYM
   Fusion GD:
     init_date: 01-09-2017 
     end_date: 30-04-2018
@@ -226,39 +293,59 @@ projects:
           Le tank a un shotgun et plus de vie et d’armure, destiné à être au milieu de la zone de combat.
           Le light quant à elle, à une mitraillette, lui permettant d’être plus mobile."
       3:
+        type: local
+        name: fusion-RGDCombat
+        alt : fusion-RGDCombat
+        extension: jpg
+        display: left
+        folder_name: gamedesign
+      4:
         type: paragraph
         content: Un des feature que j’ai imaginé est le “marteau-pilon”, les joueurs sont en l’air et quand ils appuient sur la touche le personnage fonce vers le sol, à l’impact il fait des dégâts dans un périmètre donné tout en envoyant en l’air les ennemis.
           J’ai créé un tableau de RGD, pour trouver les paramètres atomique de chaque mécanique où l’on voulait de la difficulté.
-      4:
-        type: paragraph
-        content: J’ai testé différents sauts sur un prototype pour évaluer les différences entre plusieurs, afin d’avoir une sensation de liberté assez haute sans pour autant devoir déployé beaucoup de graphismes. 
-          <br/>Nous avons opté pour un dash exécutable au sol ou en l’air, qui permet de se rattraper lors d’un saut raté ou d’esquiver des tirs.
-          Il a été mis en place car une des features imaginée, le climb (escalade) n’est pas resté car ralentissant le flow, et nous était utile seulement en cas de chute.
       5:
-        type: paragraph
-        content: J’ai contribué aussi à l’élaboration de la caméra, notamment lors des sauts / chutes ainsi que les tirs des joueurs.
+        type: local
+        name: fusion-RGDNavigation
+        alt : fusion-RGDNavigation
+        extension: jpg
+        display: right
+        folder_name: gamedesign
       6:
         type: paragraph
-        content: En charge du narrative design complet du jeu, j’ai élaboré une histoire, définit les entités existantes et lieux emblématiques ainsi que les ambiances, j’ai travaillé en collaboration avec une autre section pour élaborer la cinématique de début. Et j’ai créé les cinématiques de fin et de crédits.
+        content: "<p style='clear:left'>J’ai testé différents sauts sur un prototype pour évaluer les différences entre plusieurs, afin d’avoir une sensation de liberté assez haute sans pour autant devoir déployé beaucoup de graphismes.
+          <br/>Nous avons opté pour un dash exécutable au sol ou en l’air, qui permet de se rattraper lors d’un saut raté ou d’esquiver des tirs. Il a été mis en place car une des features imaginée, le climb (escalade) n’est pas resté car ralentissant le flow, et nous était utile seulement en cas de chute.</p>"
       7:
+        type: paragraph
+        content: "<p style='clear:right'>J’ai contribué aussi à l’élaboration de la caméra, notamment lors des sauts / chutes ainsi que les tirs des joueurs.</p>"
+      8:
+        type: paragraph
+        content: En charge du narrative design complet du jeu, j’ai élaboré une histoire, définit les entités existantes et lieux emblématiques ainsi que les ambiances, j’ai travaillé en collaboration avec une autre section pour élaborer la cinématique de début. Et j’ai créé les cinématiques de fin et de crédits.
+      9:
         type: title
         level: 1
         content: Story
-      8:
+      10:
         type: paragraph
         content: "Après des siècles d'exploitation intensive des ressources de la planète, de déforestation, de réchauffement incontrôlé de l'atmosphère, d'extinction de masse des espèces, les humains se rendent compte qu’ils se dirigent immanquablement vers l’autodestruction. <br/>
           Pour éviter ce funeste destin, ils se lancent dans la construction d’un arbre capable de s’auto-régénérer afin de recréer une forêt viable: K.A.L.I. Mais cette entité doté d’intelligence se rend compte que les responsables de la destruction de la planète ne sont autres que les humains. Elle devient vite incontrôlable et commence à faire repousser les arbres et ainsi étendre une vaste forêt, avalant des pays et des continents entier, plongeant la moitié de la planète sous une ère forestière en une cinquantaine d’années.<br/>
           Les humains décident alors de modifier leurs machines actuelles d’industrie pour des machines de combats afin de reprendre le contrôle de cette forêt, mais en réponse à cela, la forêt intelligente crée des gardiens mi-mécaniques mi-organiques en ré-utilisant la technologie humaine. <br/>
           Ecrasée par la forêt, l'humanité voit réduire son nombre à moins de 300 millions d'individus éparpillés sur toute la planète dans des territoires arides et dénués de végétation. Ils tentent toujours d’entrer dans la forêt avec leurs machines, utilisant la force afin de récupérer des ressources nécessaires à leur survie. <br/>
           Mais ces gardiens en charge de faire régner la paix dans la forêt considèrent les humains comme la plus grande menace de la planète, et font tout pour les arrêter."
-      9:
+      11:
         type: paragraph
         content: Les joueurs arrivent dans une guerre sans savoir réellement qu’elle est déjà finie. K.A.L.I a commencé à exterminer l’humanité et ce sont les joueurs qui vont en décimer les dernières traces.
-      10:
+      12:
         type: title
         level: 2
         content: "Exemples d’Entités :"
-      11:
+      13:
+        type: local
+        name: Kali01
+        alt : Kali01
+        extension: jpg
+        display: right
+        folder_name: gamedesign
+      14:
         type: paragraph
         content: "<ul>
             <li><strong>K.A.L.I </strong> : Entité intelligente qui régit la forêt. Elle fût à la base créé par les hommes pour reconstruire la nature sur Terre. Cette expérience doit améliorer un arbre afin que la terre régénère des minéraux et végétaux détruit par l’être humain.<br/>
@@ -266,12 +353,45 @@ projects:
             Grâce aux capacités intellectuelle que lui a donné les hommes, l’entité décide de se retourner contre ses créateurs afin de continuer sa mission prioritaire : la régénération de la nature sur Terre.</li>
             <li><strong>Sentinelle</strong> : Entité créé par l’IA afin de protéger la nature de toute menace. L’IA a créé ces “gardiens” grâce à un habile mélange d’arbre et de technologie récupéré sur les différents champ de bataille humain, qu’elle fusionne dans des oeufs implantés dans différents arbres, buissons...</li>
           </ul>"
+      15:
+        type: local
+        name: Light01
+        alt : Light01
+        extension: jpg
+        display: left
+        folder_name: gamedesign
+      16:
+        type: local
+        name: Tank01
+        alt : Tank01
+        extension: png
+        display: right
+        folder_name: gamedesign
     medias:
       local:
         1:
-          name: Black_Rift_Logo
-          alt : Black Rift Logo
-          extension: png
-          folder_name: leveldesign
-
-
+          name: logo-fusion
+          alt : Logo Fusion
+          extension: jpg
+          folder_name: gamedesign
+      distant:
+        1:
+          name: Gameplay Fusion - Drone
+          alt : Gameplay Fusion - Drone
+          src: 7mtqWliPnPo
+        2:
+          name: Gameplay Fusion - Explosion
+          alt : Gameplay Fusion - Explosion
+          src: hOajxxCg87w
+        3:
+          name: Gameplay Fusion - Hammer Attack
+          alt : Gameplay Fusion - Hammer Attack
+          src: FaPVSPi2m_I
+        4:
+          name: Gameplay Fusion - PickUp
+          alt : Gameplay Fusion - PickUp
+          src: L9xkvDCMiLg
+        5:
+          name: Gameplay Fusion - Turret
+          alt : Gameplay Fusion - Turret
+          src: cur4GODWmtA
