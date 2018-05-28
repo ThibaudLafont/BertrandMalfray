@@ -299,6 +299,10 @@ header {
 #header-bottom-row .header-column.align-right {
     text-align: left;
 }
+#header-bottom-row .header-column.align-left a,
+#header-bottom-row .header-column.align-right a {
+    font-size: 16px;
+}
 #header-pic {
     height: 0;
     overflow: visible;

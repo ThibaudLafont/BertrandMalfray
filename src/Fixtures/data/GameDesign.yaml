@@ -78,7 +78,7 @@ projects:
     init_date: 01-11-2016
     end_date: 15-01-2017
     contributorsNbre: 3
-    summary: Jeu Cartoon, sur le thème spatial, où le joueur doit collaborer avec deux personnages pour avancer à travers le niveau et atteindre la fin. En charge du game design complet.
+    summary: Jeu de société basé sur le bluff et la chance. Les joueurs doivent “piller” différents quartiers qui s’enrichissent tour à tour afin de devenir le plus riche et ainsi gagner la partie.
     skills:
       - Analyse de jeu de société de type argent - bluff - gestion
       - Création prototype
