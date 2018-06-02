@@ -65,7 +65,6 @@ hr {
 .horizontal-center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .align-left {
