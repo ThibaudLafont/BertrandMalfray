@@ -53,15 +53,6 @@ class ProjectAdmin extends AbstractAdmin
                 ])
             ->end()
             ->with('Détails', ['class' => 'col-md-4'])
-                ->add('highConceptType', TextType::class, [
-                    'label' => 'Type'
-                ])
-                ->add('highConceptGender', TextType::class, [
-                    'label' => 'Genre'
-                ])
-                ->add('highConceptTarget', TextType::class, [
-                    'label' => 'Cible'
-                ])
                 ->add('initDate', DateType::class, [
                     'format' => 'ddMMyyyy',
                     'label' => 'Initié le',
@@ -76,6 +67,17 @@ class ProjectAdmin extends AbstractAdmin
                     'label' => 'Nombre de contributeurs'
                 ])
             ->end()
+            ->with('High Concept', ['class' => 'col-md-4'])
+                ->add('highConceptType', TextType::class, [
+                    'label' => 'Type'
+                ])
+                ->add('highConceptGender', TextType::class, [
+                    'label' => 'Genre'
+                ])
+                ->add('highConceptTarget', TextType::class, [
+                    'label' => 'Cible'
+                ])
+            ->end()
             ->with('Gallerie', ['class' => 'col-md-8'])
                 ->add('projectHasMedias', CollectionType::class, [
                     'by_reference' => false,
@@ -86,6 +88,8 @@ class ProjectAdmin extends AbstractAdmin
                     'sortable' => 'position',
                     'admin_code' => 'custom.media.admin.project_has_media'
                 ])
+            ->end()
+            ->with('Liste de compétences', ['class' => 'col-md-4'])
             ->end();
     }
 
