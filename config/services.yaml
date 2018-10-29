@@ -46,6 +46,17 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Projet }
         public: true
 
+    # Media Items
+    custom.media.admin.project_has_media:
+        class: App\Application\Sonata\MediaBundle\Admin\ProjectHasMediaAdmin
+        arguments:
+            - ~
+            - App\Entity\Sonata\ProjectHasMedia
+            - Application:ProjectHasMediaAdmin
+            - '@sonata.media.pool'
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin}
+
     # Sonata providers
     sonata.media.provider.custom.image:
         class: App\Application\Sonata\MediaBundle\Provider\CustomImageProvider

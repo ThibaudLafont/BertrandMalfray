@@ -2,6 +2,8 @@
 namespace App\Entity\Project;
 
 use App\Traits\Entity\Hydrate;
+use App\Entity\Sonata\ProjectHasMedia;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -83,6 +85,27 @@ class Project{
     private $contributorsNbre;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="hc_type", type="string")
+     */
+    private $highConceptType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="hc_gender", type="string")
+     */
+    private $highConceptGender;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="hc_target", type="string")
+     */
+    private $highConceptTarget;
+
+    /**
      * @var mixed
      *
      * @ORM\OneToMany(
@@ -91,15 +114,6 @@ class Project{
      * )
      */
     private $skillListItems;
-
-    /**
-     * @var HighConcept
-     *
-     * @ORM\OneToOne(
-     *     targetEntity="HighConcept"
-     * )
-     */
-    private $highConcept;
 
     /**
      * Category of project
@@ -114,12 +128,29 @@ class Project{
     private $category;
 
     /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Sonata\ProjectHasMedia",
+     *     mappedBy="project",
+     *     cascade={"persist", "remove"},
+     *     orphanRemoval=true
+     * )
+     */
+    private $projectHasMedias;
+
+    /**
      * @var EventDispatcher
      */
     private $contentFormatter;
 
     // Traits
     use Hydrate;
+
+    public function __construct()
+    {
+        $this->projectHasMedias = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -286,22 +317,6 @@ class Project{
     }
 
     /**
-     * @return HighConcept
-     */
-    public function getHighConcept()
-    {
-        return $this->highConcept;
-    }
-
-    /**
-     * @param HighConcept $highConcept
-     */
-    public function setHighConcept(HighConcept $highConcept)
-    {
-        $this->highConcept = $highConcept;
-    }
-
-    /**
      * @return string
      */
     public function getContent()
@@ -347,6 +362,82 @@ class Project{
     public function setContentFormatter($contentFormatter)
     {
         $this->contentFormatter = $contentFormatter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHighConceptType()
+    {
+        return $this->highConceptType;
+    }
+
+    /**
+     * @param string $highConceptType
+     */
+    public function setHighConceptType(string $highConceptType): void
+    {
+        $this->highConceptType = $highConceptType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHighConceptGender()
+    {
+        return $this->highConceptGender;
+    }
+
+    /**
+     * @param string $highConceptGender
+     */
+    public function setHighConceptGender(string $highConceptGender): void
+    {
+        $this->highConceptGender = $highConceptGender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHighConceptTarget()
+    {
+        return $this->highConceptTarget;
+    }
+
+    /**
+     * @param string $highConceptTarget
+     */
+    public function setHighConceptTarget(string $highConceptTarget): void
+    {
+        $this->highConceptTarget = $highConceptTarget;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProjectHasMedias()
+    {
+        return $this->projectHasMedias;
+    }
+
+    public function setProjectHasMedias($projectHasMedias)
+    {
+        // Avoid existant projectHasMedias duplication
+        $this->projectHasMedias->clear();
+
+        // Loop and assign Entities to this Book
+        foreach($projectHasMedias as $projectHasMedia){
+            if($projectHasMedia instanceof ProjectHasMedia){
+                $this->addProjectHasMedia($projectHasMedia);
+            }
+        }
+    }
+
+    public function addProjectHasMedia(ProjectHasMedia $projectHasMedia) {
+        // Add BookHasMedia to array
+        $this->projectHasMedias->add($projectHasMedia);
+        //Set this to bookHasMedia
+        $projectHasMedia->setProject($this);
     }
 
 }
