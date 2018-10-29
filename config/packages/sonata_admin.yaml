@@ -1,8 +1,15 @@
 sonata_admin:
-    title: 'Sonata Admin'
+    title: Fondation Du Doute
+    search: false
     dashboard:
-        blocks:
-            - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            Contenu:
+                items:
+                    - admin.project
+            Médiathèque:
+                icon: '<i class="fa fa-image"></i>'
+                items:
+                    - sonata.media.admin.media
 
     assets:
         extra_javascripts:
