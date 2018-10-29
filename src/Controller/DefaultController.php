@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Project\Project;
 use App\Form\Type\ContactType;
+use App\Service\MailSender;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +17,7 @@ class DefaultController extends Controller
      *     name="homepage"
      * )
      */
-    public function homeAction(Request $request, \Swift_Mailer $mailer) {
+    public function homeAction(Request $request, MailSender $mailer) {
 
         $form = $this->createForm('App\Form\Type\ContactType');
 
@@ -27,19 +28,7 @@ class DefaultController extends Controller
 
                 $data = $form->getData();
 
-                $message = (new \Swift_Message($data['name'] . ' cherche à te joindre'))
-                    ->setSender($data['email'], $data['name'])
-                    ->setReplyTo($data['email'], $data['name'])
-                    ->setTo(['contact@bertrandmalfray.fr' => 'Bertrand Malfray'])
-                    ->setBody("
-Nom : {$data['name']} 
-Mail: {$data['email']}
-
-
-Contenu: \"{$data['content']}\"
-                    ");
-
-                $mailer->send($message);
+                $mailer->sendMail($data['name'], $data['email'], $data['content']);
 
                 $this->addFlash('success', 'Le mail a bien été envoyé');
 
