@@ -11,7 +11,7 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
 use Sonata\FormatterBundle\Form\Type\FormatterType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -63,8 +63,11 @@ class ProjectAdmin extends AbstractAdmin
                     'label' => 'Terminé le',
                     'years' => range(2016, date('Y'))
                 ])
-                ->add('contributorsNbre', NumberType::class, [
-                    'label' => 'Nombre de contributeurs'
+                ->add('contributorsNbre', IntegerType::class, [
+                    'label' => 'Nombre de contributeurs',
+                    'attr' => [
+                        'min' => 0
+                    ]
                 ])
             ->end()
             ->with('High Concept', ['class' => 'col-md-4'])
