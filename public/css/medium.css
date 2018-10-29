@@ -1,3 +1,8 @@
+/* Universal */
+.mobile-only{
+    display:initial;
+}
+
 /*HEADER*/
 #desktop-header {
     display: none;
@@ -54,6 +59,11 @@ navbar ul {
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
+}
+img#homepage-fronpic {
+    width: 100%;
+    float: none;
+    margin-right: 0rem;
 }
 
 .slick-prev,

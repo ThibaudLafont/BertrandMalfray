@@ -29,7 +29,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param $slugName
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @Route(

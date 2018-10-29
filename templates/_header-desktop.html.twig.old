@@ -1,10 +1,3 @@
-{#<section id="desktop-header">#}
-
-    {#<img id="home-pic" src="/img/picto/home.png" alt="Home pictogram">#}
-    {#<img id="linkedin-pic" src="/img/picto/linkedin.png" alt="LinkedIn pictogram">#}
-    {#<p>Bertrand Malfray</p>#}
-    {#<p>Game/Level Designer</p>#}
-{#</section>#}
 <div id="desktop-header">
     <!-- Header top row -->
     <div id="header-top-row" class="header-row">
@@ -36,7 +29,7 @@
 
     <!-- Header bottom row -->
     <div id="header-bottom-row" class="header-row">
-        <!-- Header bottom left column -->
+    <!-- Header bottom left column -->
         <!-- Decoration -->
         <div class="align-left decorate"></div>
         <!-- BG -->
@@ -49,7 +42,7 @@
             <a href="/projects/level-design">Projets Level Design</a>
         </div>
 
-        <!-- Header bottom row right column -->
+    <!-- Header bottom row right column -->
         <!-- Decoration -->
         <div class="align-right decorate"></div>
         <!-- BG -->

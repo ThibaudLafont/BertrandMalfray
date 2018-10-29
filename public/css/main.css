@@ -73,6 +73,9 @@ hr {
 .align-right {
     float: right;
 }
+.mobile-only{
+    display:none;
+}
 
 /*blue-border*/
 hr,
@@ -150,6 +153,9 @@ section#homepage-content,
 /*HEADER*/
 .mobile-header {
     display: none;
+}
+#linkedin-pic {
+    float: right;
 }
 header {
     background-color: black;
@@ -341,6 +347,9 @@ section#homepage-content {
     clear: left;
     display: flex;
 }
+.homepage-subrow {
+    padding: 2%;
+}
 .homepage-column {
     float: left;
     width: 46%;
@@ -374,7 +383,9 @@ section#homepage-content {
     color: white;
 }
 img#homepage-fronpic {
-    width: 100%;
+    width: 43%;
+    float: left;
+    margin-right: 1rem;
 }
 #cv-links p {
     text-align: center;
