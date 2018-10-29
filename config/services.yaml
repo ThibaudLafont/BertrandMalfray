@@ -38,6 +38,14 @@ services:
             - { name: doctrine.orm.entity_listener }
             - { name: doctrine.orm.entity_listener, entity_manager: custom }
 
+    # Admin classes
+    admin.project:
+        class: App\Admin\ProjectAdmin
+        arguments: [~, App\Entity\Project\Project, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Projet }
+        public: true
+
     # Sonata providers
     sonata.media.provider.custom.image:
         class: App\Application\Sonata\MediaBundle\Provider\CustomImageProvider

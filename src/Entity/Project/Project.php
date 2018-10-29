@@ -1,11 +1,8 @@
 <?php
 namespace App\Entity\Project;
 
-use App\Entity\Project\Explanation\Explanation;
 use App\Traits\Entity\Hydrate;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 
 /**
  * Class Project
@@ -44,7 +41,7 @@ class Project{
      *
      * @var \DateTime
      *
-     * @ORM\Column(name="init_date", type="datetime")
+     * @ORM\Column(name="init_date", type="date")
      */
     private $initDate;
 
@@ -53,7 +50,7 @@ class Project{
      *
      * @var \DateTime
      *
-     * @ORM\Column(name="end_date", type="datetime")
+     * @ORM\Column(name="end_date", type="date")
      */
     private $endDate;
 
@@ -63,6 +60,20 @@ class Project{
      * @ORM\Column(name="summary", type="text")
      */
     private $summary;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="raw_content", type="text")
+     */
+    private $rawContent;
 
     /**
      * @var int
@@ -103,41 +114,12 @@ class Project{
     private $category;
 
     /**
-     * Main text content of project
-     *
-     * @var Explanation
-     *
-     * @ORM\OneToOne(targetEntity="\App\Entity\Project\Explanation\Explanation")
+     * @var EventDispatcher
      */
-    private $explanation;
-
-    /**
-     * @var mixed
-     *
-     * @ORM\OneToMany(
-     *     targetEntity="\App\Entity\Media\Local\Project",
-     *     mappedBy="project"
-     * )
-     */
-    private $localMedias;
-
-    /**
-     * @var mixed
-     *
-     * @ORM\OneToMany(
-     *     targetEntity="\App\Entity\Media\Distant\Project",
-     *     mappedBy="project"
-     * )
-     */
-    private $distantMedias;
+    private $contentFormatter;
 
     // Traits
     use Hydrate;
-
-    public function __construct()
-    {
-        $this->contributors = new ArrayCollection();
-    }
 
     /**
      * Get id
@@ -191,7 +173,7 @@ class Project{
     /**
      * @return Category
      */
-    public function getCategory(): Category
+    public function getCategory()
     {
         return $this->category;
     }
@@ -207,7 +189,7 @@ class Project{
     /**
      * @return \DateTime
      */
-    public function getInitDate(): \DateTime
+    public function getInitDate()
     {
         return $this->initDate;
     }
@@ -223,7 +205,6 @@ class Project{
     public function setInitDate($initDate)
     {
         if(is_string($initDate)) $initDate = $this->stringToDateTime($initDate);
-        elseif(!($initDate instanceof \DateTime)) throw new InvalidTypeException("InitDate is not string or datetime");
 
         $this->initDate = $initDate;
     }
@@ -231,7 +212,7 @@ class Project{
     /**
      * @return \DateTime
      */
-    public function getEndDate(): \DateTime
+    public function getEndDate()
     {
         return $this->endDate;
     }
@@ -242,25 +223,8 @@ class Project{
     public function setEndDate($endDate)
     {
         if(is_string($endDate)) $endDate = $this->stringToDateTime($endDate);
-        elseif(!($endDate instanceof \DateTime)) throw new InvalidTypeException("EndDate is not string or datetime");
 
         $this->endDate = $endDate;
-    }
-
-    /**
-     * @return Explanation
-     */
-    public function getExplanation(): Explanation
-    {
-        return $this->explanation;
-    }
-
-    /**
-     * @param Explanation $explanation
-     */
-    public function setExplanation(Explanation $explanation)
-    {
-        $this->explanation = $explanation;
     }
 
     public function getDuration()
@@ -278,15 +242,6 @@ class Project{
     {
         return '/project/' . $this->getSlugName();
     }
-
-    /**
-     * @return mixed
-     */
-    public function getLocalMedias()
-    {
-        return $this->localMedias;
-    }
-
     /**
      * @return string
      */
@@ -304,21 +259,14 @@ class Project{
     }
 
     /**
-     * @return mixed
-     */
-    public function getDistantMedias()
-    {
-        return $this->distantMedias;
-    }
-
-    /**
      * @return string
      */
-    public function getContributorsNbre() : string
+    public function getContributorsNbre()
     {
-        $count = $this->contributorsNbre;
-        if($count === 0) return 'Aucun collaborateur';
-        return $count . ' collaborateurs';
+//        $count = $this->contributorsNbre;
+//        if($count === 0) return 'Aucun collaborateur';
+//        return $count . ' collaborateurs';
+        return $this->contributorsNbre;
     }
 
     /**
@@ -340,7 +288,7 @@ class Project{
     /**
      * @return HighConcept
      */
-    public function getHighConcept(): HighConcept
+    public function getHighConcept()
     {
         return $this->highConcept;
     }
@@ -351,6 +299,54 @@ class Project{
     public function setHighConcept(HighConcept $highConcept)
     {
         $this->highConcept = $highConcept;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawContent()
+    {
+        return $this->rawContent;
+    }
+
+    /**
+     * @param string $rawContent
+     */
+    public function setRawContent($rawContent)
+    {
+        $this->rawContent = $rawContent;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContentFormatter()
+    {
+        return $this->contentFormatter;
+    }
+
+    /**
+     * @param mixed $contentFormatter
+     */
+    public function setContentFormatter($contentFormatter)
+    {
+        $this->contentFormatter = $contentFormatter;
     }
 
 }
