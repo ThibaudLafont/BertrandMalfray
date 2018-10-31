@@ -4,6 +4,7 @@ namespace App\Entity;
 use App\Entity\Sonata\CoverImage;
 use App\Entity\Sonata\Pdf;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class IndexInfo
@@ -34,6 +35,12 @@ class IndexInfo
      * @var CoverImage
      *
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\CoverImage", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Assert\NotNull(message="L'image de bio est obligatoire")
+     * @Assert\Type(
+     *     type="object",
+     *     message="L'image de biographie doit être du type CoverImage."
+     * )
      */
     private $bioImage;
 
@@ -41,6 +48,12 @@ class IndexInfo
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner une biographie")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le contenu doit être une chaine de caractères"
+     * )
      */
     private $content;
 
@@ -55,6 +68,8 @@ class IndexInfo
      * @var int
      *
      * @ORM\Column(name="phone_number", type="bigint", columnDefinition="INT(10) UNSIGNED ZEROFILL")
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un numéro de téléphone")
      */
     private $phoneNumber;
 
@@ -62,6 +77,12 @@ class IndexInfo
      * @var string
      *
      * @ORM\Column(name="city", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner une ville")
+     * @Assert\Type(
+     *     type="string",
+     *     message="La ville doit être une chaine de caractères"
+     * )
      */
     private $city;
 
@@ -69,6 +90,12 @@ class IndexInfo
      * @var Pdf
      *
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\Pdf", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un CV de level design")
+     * @Assert\Type(
+     *     type="object",
+     *     message="Le CV doit être un objet de type PDF"
+     * )
      */
     private $ldCv;
 
@@ -76,6 +103,12 @@ class IndexInfo
      * @var Pdf
      *
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\Pdf", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un CV de game design")
+     * @Assert\Type(
+     *     type="object",
+     *     message="Le CV doit être un objet de type PDF"
+     * )
      */
     private $gdCv;
 
