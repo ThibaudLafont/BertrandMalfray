@@ -2,10 +2,12 @@
 namespace App\Admin;
 
 use App\Entity\Project\Category;
+use App\Entity\Project\Project;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Form\Type\AdminType;
 use Sonata\AdminBundle\Form\Type\ModelListType;
 use Sonata\CoreBundle\Form\Type\CollectionType;
 use Sonata\FormatterBundle\Form\Type\FormatterType;
@@ -81,7 +83,10 @@ class ProjectAdmin extends AbstractAdmin
                     'label' => 'Cible'
                 ])
             ->end()
-            ->with('Gallerie', ['class' => 'col-md-8'])
+            ->with('Médias', ['class' => 'col-md-8'])
+                ->add('coverImage', AdminType::class, [
+                    'label' => 'Image de couverture'
+                ])
                 ->add('projectHasMedias', CollectionType::class, [
                     'by_reference' => false,
                     'label' => 'Gallerie'
@@ -93,6 +98,15 @@ class ProjectAdmin extends AbstractAdmin
                 ])
             ->end()
             ->with('Liste de compétences', ['class' => 'col-md-4'])
+                ->add('skillListItems', CollectionType::class, [
+                    'by_reference' => false,
+                    'label' => 'Compétences'
+                ], [
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'sortable' => 'position',
+                    'admin_code' => 'admin.project.skill'
+                ])
             ->end();
     }
 
@@ -105,5 +119,12 @@ class ProjectAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('name')
             ->add('category.name');
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof Project
+            ? $object->getName()
+            : 'Projet'; // shown in the breadcrumb on the create view
     }
 }

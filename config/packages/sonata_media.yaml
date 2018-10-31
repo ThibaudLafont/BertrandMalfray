@@ -9,10 +9,28 @@ sonata_media:
                 - sonata.media.provider.custom.image
                 - sonata.media.provider.file
                 - sonata.media.provider.custom.vimeo
-
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
+
+        visual:
+            providers:
+                - sonata.media.provider.custom.image
+                - sonata.media.provider.custom.vimeo
+                - sonata.media.provider.custom.dailymotion
+                - sonata.media.provider.custom.youtube
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
+
+        image:
+            providers:
+                - sonata.media.provider.custom.image
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
 
     cdn:
         server:

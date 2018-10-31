@@ -1,14 +1,14 @@
 <?php
 namespace App\Application\Sonata\MediaBundle\Admin;
 
-use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Form\Type\ModelListType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
-class ProjectHasMediaAdmin extends AbstractAdmin
+class CoverImageAdmin extends \Sonata\MediaBundle\Admin\GalleryHasMediaAdmin
 {
+
     /**
      * {@inheritdoc}
      */
@@ -20,11 +20,15 @@ class ProjectHasMediaAdmin extends AbstractAdmin
             $link_parameters = $this->getParentFieldDescription()->getOption('link_parameters', []);
         }
 
-        $link_parameters['mediaType'] = 'visual';
-        $link_parameters['context'] = 'visual';
+        // Limit the type of medias during browsing
+        $link_parameters['mediaType'] = 'image';
+        $link_parameters['context'] = 'image';
 
         $formMapper
-            ->add('media', ModelListType::class, ['required' => false], [
+            ->add('media', ModelListType::class, [
+                'required' => false,
+                'label' => false
+            ], [
                 'link_parameters' => $link_parameters,
             ])
             ->add('position', HiddenType::class)

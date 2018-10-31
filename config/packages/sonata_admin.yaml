@@ -1,5 +1,5 @@
 sonata_admin:
-    title: Fondation Du Doute
+    title: Administration
     search: false
     dashboard:
         groups:
@@ -9,7 +9,7 @@ sonata_admin:
             Médiathèque:
                 icon: '<i class="fa fa-image"></i>'
                 items:
-                    - sonata.media.admin.media
+                    - custom.media.admin.media
 
     assets:
         extra_javascripts:

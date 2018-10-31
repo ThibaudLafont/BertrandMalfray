@@ -1,6 +1,8 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Entity\Project\Lists\ProjectList;
+use App\Entity\Sonata\CoverImage;
 use App\Traits\Entity\Hydrate;
 use App\Entity\Sonata\ProjectHasMedia;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -110,7 +112,9 @@ class Project{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Project\Lists\ProjectList",
-     *     mappedBy="project"
+     *     mappedBy="project",
+     *     cascade={"persist", "remove"},
+     *     orphanRemoval=true
      * )
      */
     private $skillListItems;
@@ -126,6 +130,13 @@ class Project{
      * )
      */
     private $category;
+
+    /**
+     * @var CoverImage
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\Sonata\CoverImage", cascade={"persist", "remove"}, orphanRemoval=true)
+     */
+    private $coverImage;
 
     /**
      * @var ArrayCollection
@@ -150,6 +161,7 @@ class Project{
     public function __construct()
     {
         $this->projectHasMedias = new ArrayCollection();
+        $this->skillListItems = new ArrayCollection();
     }
 
     /**
@@ -316,6 +328,26 @@ class Project{
         return $this->skillListItems;
     }
 
+    public function setSkillListItems($skillListItems)
+    {
+        // Avoid existant skillListItems duplication
+        $this->skillListItems->clear();
+
+        // Loop and assign Entities to this Book
+        foreach($skillListItems as $skill){
+            if($skill instanceof ProjectList){
+                $this->addSkillListItem($skill);
+            }
+        }
+    }
+
+    public function addSkillListItem(ProjectList $skill) {
+        // Add BookHasMedia to array
+        $this->skillListItems->add($skill);
+        //Set this to bookHasMedia
+        $skill->setProject($this);
+    }
+
     /**
      * @return string
      */
@@ -438,6 +470,22 @@ class Project{
         $this->projectHasMedias->add($projectHasMedia);
         //Set this to bookHasMedia
         $projectHasMedia->setProject($this);
+    }
+
+    /**
+     * @return CoverImage
+     */
+    public function getCoverImage()
+    {
+        return $this->coverImage;
+    }
+
+    /**
+     * @param CoverImage $coverImage
+     */
+    public function setCoverImage(CoverImage $coverImage): void
+    {
+        $this->coverImage = $coverImage;
     }
 
 }
