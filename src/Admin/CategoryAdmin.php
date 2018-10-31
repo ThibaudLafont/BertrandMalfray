@@ -20,10 +20,15 @@ class CategoryAdmin extends AbstractAdmin
 
         // Build Form
         $formMapper
-            ->with($name, ['class' => 'col-md-8'])
-                ->add('summary', TextareaType::class)
+            ->with($name)
+                ->add('summary', TextareaType::class, [
+                    'label' => 'Résumé',
+                    'attr' => [
+                        'rows' => 10
+                    ]
+                ])
             ->end()
-            ->with('Liste de compétences', ['class' => 'col-md-4'])
+            ->with('Liste de compétences')
                 ->add('skillListItems', CollectionType::class, [
                     'by_reference' => false,
                     'label' => 'Compétences'
