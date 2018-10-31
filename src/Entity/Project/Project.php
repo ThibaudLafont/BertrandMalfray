@@ -32,7 +32,6 @@ class Project{
      *
      * @ORM\Column(name="name", type="string", length=75)
      *
-     * @Assert\NotNull(message="Veuillez renseigner un titre")
      * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $name;
@@ -71,8 +70,7 @@ class Project{
      *
      * @ORM\Column(name="summary", type="text")
      *
-     * @Assert\NotNull(message="Veuillez renseigner un titre")
-     * @Assert\NotBlank(message="Veuillez renseigner un titre")
+     * @Assert\NotBlank(message="Veuillez renseigner un résumé")
      */
     private $summary;
 

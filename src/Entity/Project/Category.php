@@ -25,8 +25,10 @@ class Category{
 
     /**
      * @var string
-     * maxlength, striptags, isString, unique
+     *
      * @ORM\Column(name="name", type="string", length=75)
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $name;
 
@@ -39,8 +41,10 @@ class Category{
 
     /**
      * @var string
-     * maxlength, striptags, isString
+     *
      * @ORM\Column(name="summary", type="text")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un résumé")
      */
     private $summary;
 
@@ -53,7 +57,12 @@ class Category{
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
      * )
+     *
      * @Assert\Valid
+     * @Assert\Count(
+     *      min = 1,
+     *      minMessage = "Veuillez fournir au moins une compétence"
+     * )
      */
     private $skillListItems;
 
