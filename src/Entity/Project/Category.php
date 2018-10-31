@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity\Project;
 
+use App\Entity\Project\Lists\CategoryList;
 use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -47,7 +48,9 @@ class Category{
      *
      * @ORM\OneToMany(
      *     targetEntity="\App\Entity\Project\Lists\CategoryList",
-     *     mappedBy="category"
+     *     mappedBy="category",
+     *     cascade={"persist", "remove"},
+     *     orphanRemoval=true
      * )
      */
     private $skillListItems;
@@ -163,6 +166,26 @@ class Category{
     public function getSkillListItems()
     {
         return $this->skillListItems;
+    }
+
+    public function setSkillListItems($skillListItems)
+    {
+        // Avoid existant skillListItems duplication
+        $this->skillListItems->clear();
+
+        // Loop and assign Entities to this Book
+        foreach($skillListItems as $skill){
+            if($skill instanceof CategoryList){
+                $this->addSkillListItem($skill);
+            }
+        }
+    }
+
+    public function addSkillListItem(CategoryList $skill) {
+        // Add BookHasMedia to array
+        $this->skillListItems->add($skill);
+        //Set this to bookHasMedia
+        $skill->setCategory($this);
     }
 
 }
