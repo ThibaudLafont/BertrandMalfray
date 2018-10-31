@@ -35,6 +35,7 @@ class ProjectAdmin extends AbstractAdmin
                     'label' => 'Résumé'
                 ])
                 ->add('content', FormatterType::class, [
+                    'label' => 'Contenu',
                     'format_field_options' => [
                         'choices' => [
                             'richhtml' => 'richhtml'
