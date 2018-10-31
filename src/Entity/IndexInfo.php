@@ -70,6 +70,10 @@ class IndexInfo
      * @ORM\Column(name="phone_number", type="bigint", columnDefinition="INT(10) UNSIGNED ZEROFILL")
      *
      * @Assert\NotNull(message="Veuillez renseigner un numéro de téléphone")
+     * @Assert\Type(
+     *     type="numeric",
+     *     message="Le numéro de téléphone doit être une valeur numérique"
+     * )
      */
     private $phoneNumber;
 
@@ -189,7 +193,7 @@ class IndexInfo
     /**
      * @param int $phoneNumber
      */
-    public function setPhoneNumber(int $phoneNumber): void
+    public function setPhoneNumber($phoneNumber): void
     {
         $this->phoneNumber = $phoneNumber;
     }

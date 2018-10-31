@@ -27,6 +27,10 @@ abstract class AbstractList
      * @ORM\Column(name="content", type="string")
      *
      * @Assert\NotBlank(message="Veuillez renseigner le contenu")
+     * @Assert\Type(
+     *     type="string",
+     *     message="La compétence doit être une chaine de caractères"
+     * )
      */
     private $content;
 

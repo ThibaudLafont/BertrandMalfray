@@ -33,6 +33,10 @@ class Project{
      * @ORM\Column(name="name", type="string", length=75)
      *
      * @Assert\NotBlank(message="Veuillez renseigner un titre")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le nom doit être une chaine de caractères"
+     * )
      */
     private $name;
 
@@ -71,6 +75,10 @@ class Project{
      * @ORM\Column(name="summary", type="text")
      *
      * @Assert\NotBlank(message="Veuillez renseigner un résumé")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le résumé doit être une chaine de caractères"
+     * )
      */
     private $summary;
 
@@ -80,6 +88,10 @@ class Project{
      * @ORM\Column(name="content", type="text")
      *
      * @Assert\NotBlank(message="Veuillez renseigner un contenu")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le contenu doit être une chaine de caractères"
+     * )
      */
     private $content;
 
@@ -98,6 +110,10 @@ class Project{
      * @ORM\Column(name="contributors_nbre", type="integer")
      *
      * @Assert\NotNull(message="Veuillez renseigner un nombre de collaborateurs")
+     * @Assert\Type(
+     *     type="int",
+     *     message="Le nombre de collaborateurs doit être un entier"
+     * )
      */
     private $contributorsNbre;
 
@@ -107,6 +123,10 @@ class Project{
      * @ORM\Column(name="hc_type", type="string")
      *
      * @Assert\NotBlank(message="Veuillez renseigner un type de concept")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le type du concept doit être une chaine de caractères"
+     * )
      */
     private $highConceptType;
 
@@ -116,6 +136,10 @@ class Project{
      * @ORM\Column(name="hc_gender", type="string")
      *
      * @Assert\NotBlank(message="Veuillez renseigner un genre de concept")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le genre du concept doit être une chaine de caractères"
+     * )
      */
     private $highConceptGender;
 
@@ -125,6 +149,10 @@ class Project{
      * @ORM\Column(name="hc_target", type="string")
      *
      * @Assert\NotBlank(message="Veuillez renseigner une cible pour le concept")
+     * @Assert\Type(
+     *     type="string",
+     *     message="La cible du concept doit être une chaine de caractères"
+     * )
      */
     private $highConceptTarget;
 
@@ -157,6 +185,10 @@ class Project{
      * )
      *
      * @Assert\NotNull(message="La catégorie est obligatoire")
+     * @Assert\Type(
+     *     type="object",
+     *     message="La catégorie doit être un objet de type Category"
+     * )
      */
     private $category;
 
@@ -166,6 +198,10 @@ class Project{
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\CoverImage", cascade={"persist", "remove"}, orphanRemoval=true)
      *
      * @Assert\NotNull(message="L'image de couverture est obligatoire")
+     * @Assert\Type(
+     *     type="object",
+     *     message="L'image de couverture doit être un objet CoverImage"
+     * )
      */
     private $coverImage;
 

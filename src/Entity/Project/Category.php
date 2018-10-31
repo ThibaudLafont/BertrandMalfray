@@ -29,6 +29,10 @@ class Category{
      * @ORM\Column(name="name", type="string", length=75)
      *
      * @Assert\NotBlank(message="Veuillez renseigner un titre")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le titre doit être une chaine de caractères"
+     * )
      */
     private $name;
 
@@ -45,6 +49,10 @@ class Category{
      * @ORM\Column(name="summary", type="text")
      *
      * @Assert\NotBlank(message="Veuillez renseigner un résumé")
+     * @Assert\Type(
+     *     type="string",
+     *     message="Le résumé doit être une chaine de caractères"
+     * )
      */
     private $summary;
 
