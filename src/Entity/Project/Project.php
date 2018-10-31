@@ -7,6 +7,7 @@ use App\Traits\Entity\Hydrate;
 use App\Entity\Sonata\ProjectHasMedia;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Project
@@ -30,6 +31,9 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=75)
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un titre")
+     * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $name;
 
@@ -46,6 +50,8 @@ class Project{
      * @var \DateTime
      *
      * @ORM\Column(name="init_date", type="date")
+     *
+     * @Assert\NotNull(message="Veuillez renseigner une date de début")
      */
     private $initDate;
 
@@ -55,6 +61,8 @@ class Project{
      * @var \DateTime
      *
      * @ORM\Column(name="end_date", type="date")
+     *
+     * @Assert\NotNull(message="Veuillez renseigner une date de fin")
      */
     private $endDate;
 
@@ -62,6 +70,9 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="summary", type="text")
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un titre")
+     * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $summary;
 
@@ -69,6 +80,8 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un contenu")
      */
     private $content;
 
@@ -76,6 +89,8 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="raw_content", type="text")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un contenu")
      */
     private $rawContent;
 
@@ -83,6 +98,8 @@ class Project{
      * @var int
      *
      * @ORM\Column(name="contributors_nbre", type="integer")
+     *
+     * @Assert\NotNull(message="Veuillez renseigner un nombre de collaborateurs")
      */
     private $contributorsNbre;
 
@@ -90,6 +107,8 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="hc_type", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un type de concept")
      */
     private $highConceptType;
 
@@ -97,6 +116,8 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="hc_gender", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un genre de concept")
      */
     private $highConceptGender;
 
@@ -104,6 +125,8 @@ class Project{
      * @var string
      *
      * @ORM\Column(name="hc_target", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner une cible pour le concept")
      */
     private $highConceptTarget;
 
@@ -115,6 +138,12 @@ class Project{
      *     mappedBy="project",
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
+     * )
+     *
+     * @Assert\Valid
+     * @Assert\Count(
+     *      min = 1,
+     *      minMessage = "Veuillez fournir au moins une compétence"
      * )
      */
     private $skillListItems;
@@ -128,6 +157,8 @@ class Project{
      *     targetEntity="\App\Entity\Project\Category",
      *     inversedBy="projects"
      * )
+     *
+     * @Assert\NotNull(message="La catégorie est obligatoire")
      */
     private $category;
 
@@ -135,6 +166,8 @@ class Project{
      * @var CoverImage
      *
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\CoverImage", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Assert\NotNull(message="L'image de couverture est obligatoire")
      */
     private $coverImage;
 
@@ -146,6 +179,11 @@ class Project{
      *     mappedBy="project",
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
+     * )
+     *
+     * @Assert\Count(
+     *      min = 1,
+     *      minMessage = "Veuillez fournir au moins un élément de gallerie"
      * )
      */
     private $projectHasMedias;
@@ -306,9 +344,6 @@ class Project{
      */
     public function getContributorsNbre()
     {
-//        $count = $this->contributorsNbre;
-//        if($count === 0) return 'Aucun collaborateur';
-//        return $count . ' collaborateurs';
         return $this->contributorsNbre;
     }
 
@@ -486,6 +521,19 @@ class Project{
     public function setCoverImage(CoverImage $coverImage): void
     {
         $this->coverImage = $coverImage;
+    }
+
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez entrer un nombre de contributeur valide")
+     */
+    public function isContributorNbreValid()
+    {
+        $return = true;
+        $nbre = $this->getContributorsNbre();
+        if(!is_int($nbre) || $nbre < 0)
+            $return = false;
+        return $return;
     }
 
 }

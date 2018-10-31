@@ -4,6 +4,7 @@ namespace App\Entity\Project;
 use App\Entity\Project\Lists\CategoryList;
 use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Category
@@ -52,6 +53,7 @@ class Category{
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
      * )
+     * @Assert\Valid
      */
     private $skillListItems;
 

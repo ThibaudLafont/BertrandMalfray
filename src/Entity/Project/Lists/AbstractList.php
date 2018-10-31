@@ -2,6 +2,7 @@
 namespace App\Entity\Project\Lists;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class AbstractList
@@ -24,6 +25,8 @@ abstract class AbstractList
      * @var string
      *
      * @ORM\Column(name="content", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner le contenu")
      */
     private $content;
 
