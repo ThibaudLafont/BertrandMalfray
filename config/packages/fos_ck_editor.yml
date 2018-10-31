@@ -5,12 +5,10 @@ fos_ck_editor:
         default:
             # default toolbar plus Format button
             toolbar:
-            - [Bold, Italic, Underline, -, Cut, Copy, Paste,
-              PasteText, PasteFromWord, -, Undo, Redo, -,
-              NumberedList, BulletedList, -, Outdent, Indent, -,
-              Blockquote, -, Image, Link, Unlink, Table]
-            - [Format, Maximize, Source]
-
+            - [Format, Bold, Italic, Underline, -, Undo, Redo, -,
+              NumberedList, BulletedList, -,
+              Blockquote, -, Image, Link, Unlink]
+            - [Maximize]
             filebrowserBrowseRoute: admin_sonata_media_media_ckeditor_browser
             filebrowserImageBrowseRoute: admin_sonata_media_media_ckeditor_browser
             filebrowserImageBrowseRouteParameters:
@@ -22,3 +20,8 @@ fos_ck_editor:
             filebrowserImageUploadRoute: admin_sonata_media_media_ckeditor_upload
             filebrowserImageUploadRouteParameters:
                 provider: sonata.media.provider.custom.image
+        bio:
+            toolbar:
+            - [Format, Bold, Italic, Underline, -,
+              NumberedList, BulletedList, -, Link, Unlink]
+            - [Undo, Redo, -, Maximize,]

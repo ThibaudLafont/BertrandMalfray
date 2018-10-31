@@ -113,13 +113,14 @@ class ProjectAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('name');
+        $datagridMapper->add('name')
+            ->add('category.name');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name')
-            ->add('category.name');
+        $listMapper->addIdentifier('name', null, ['label' => 'Nom'])
+            ->add('category.name', null, ['label' => 'Catégorie']);
     }
 
     public function toString($object)

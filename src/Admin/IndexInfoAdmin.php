@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Form\Type\AdminType;
+use Sonata\AdminBundle\Form\Type\Filter\NumberType;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\CoreBundle\Form\Type\CollectionType;
 use Sonata\FormatterBundle\Form\Type\FormatterType;
@@ -47,7 +48,7 @@ class IndexInfoAdmin extends AbstractAdmin
                     ],
                     'format_field'         => 'contentFormatter',
                     'target_field'         => 'content',
-                    'ckeditor_context'     => 'default',
+                    'ckeditor_context'     => 'bio',
                     'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
                 ])
             ->end()
@@ -55,7 +56,7 @@ class IndexInfoAdmin extends AbstractAdmin
                 ->add('city', TextType::class, [
                     'label' => 'Ville actuelle'
                 ])
-                ->add('phoneNumber', IntegerType::class, [
+                ->add('phoneNumber', TextType::class, [
                     'label' => 'Numéro de téléphone'
                 ])
             ->end();
@@ -63,17 +64,18 @@ class IndexInfoAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('id');
+        return null;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id');
+        $listMapper->addIdentifier('name', null, ['label' => 'Nom']);
     }
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->remove('create');
+//        $collection->remove('create');
+        $collection->remove('delete');
     }
 
     public function toString($object)

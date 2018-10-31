@@ -24,6 +24,13 @@ class IndexInfo
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string")
+     */
+    private $name;
+
+    /**
      * @var CoverImage
      *
      * @ORM\OneToOne(targetEntity="App\Entity\Sonata\CoverImage", cascade={"persist", "remove"}, orphanRemoval=true)
@@ -47,7 +54,7 @@ class IndexInfo
     /**
      * @var int
      *
-     * @ORM\Column(name="phone_number", type="bigint")
+     * @ORM\Column(name="phone_number", type="bigint", columnDefinition="INT(10) UNSIGNED ZEROFILL")
      */
     private $phoneNumber;
 
@@ -76,6 +83,11 @@ class IndexInfo
      * @var EventDispatcher
      */
     private $contentFormatter;
+
+    public function __construct()
+    {
+        $this->setName('Informations index');
+    }
 
     /**
      * @return int
@@ -211,6 +223,22 @@ class IndexInfo
     public function setContentFormatter($contentFormatter)
     {
         $this->contentFormatter = $contentFormatter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
 
 }
