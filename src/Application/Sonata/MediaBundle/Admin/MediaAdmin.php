@@ -51,8 +51,8 @@ class MediaAdmin extends BaseMediaAdmin
         }
 
         // Audio medias
-        if($mediaType === 'audio') {
-            $query->setParameter('my_param', 'sonata.media.provider.audio');
+        if($mediaType === 'pdf') {
+            $query->setParameter('my_param', 'sonata.media.provider.pdf');
         // Visual media
         } elseif ($mediaType === 'image' || $mediaType === 'visual') {
             // Image Provider

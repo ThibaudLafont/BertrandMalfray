@@ -7,7 +7,7 @@ sonata_media:
                 - sonata.media.provider.custom.dailymotion
                 - sonata.media.provider.custom.youtube
                 - sonata.media.provider.custom.image
-                - sonata.media.provider.file
+                - sonata.media.provider.pdf
                 - sonata.media.provider.custom.vimeo
             formats:
                 small: { width: 100 , quality: 70}
@@ -27,6 +27,14 @@ sonata_media:
         image:
             providers:
                 - sonata.media.provider.custom.image
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
+
+        pdf:
+            providers:
+                - sonata.media.provider.pdf
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}

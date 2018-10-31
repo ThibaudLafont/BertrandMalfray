@@ -2,6 +2,14 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
     <file source-language="en" target-language="fr" datatype="plaintext" original="SonataMediaBundle.en.xliff">
         <body>
+            <trans-unit id="sonata.media.provider.pdf">
+                <source>sonata.media.provider.pdf</source>
+                <target>PDF</target>
+            </trans-unit>
+            <trans-unit id="sonata.media.provider.pdf.description">
+                <source>sonata.media.provider.pdf.description</source>
+                <target>Ajouter un PDF</target>
+            </trans-unit>
             <trans-unit id="sonata.media.provider.custom.image">
                 <source>sonata.media.provider.custom.image</source>
                 <target>Image</target>

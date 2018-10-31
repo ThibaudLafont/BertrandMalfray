@@ -5,6 +5,7 @@ sonata_admin:
         groups:
             Contenu:
                 items:
+                    - admin.index.info
                     - admin.category
                     - admin.project
             Médiathèque:
